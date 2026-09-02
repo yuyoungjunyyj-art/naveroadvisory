@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;display=swap');
+      .nv-logo-title {
+        font-family: 'Montserrat', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 700;
+      }
+      .nv-logo-sub {
+        font-family: 'Montserrat', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+
+  <!-- Top Line: NAVERO (Spans from x=50 to x=570, width=520) -->
+  <text 
+    x="310" 
+    y="70" 
+    text-anchor="middle" 
+    fill="#00205B"
+    class="nv-logo-title"
+    font-size="64"
+    textLength="520"
+    lengthAdjust="spacing"
+  >NAVERO</text>
+
+  <!-- Bottom Line: KOREA MARKET ENTRY & ADVISORY (Spans from x=52 to x=568, width=516 - strictly bounded within NAVERO) -->
+  <text 
+    x="310" 
+    y="114" 
+    text-anchor="middle" 
+    fill="#00205B"
+    class="nv-logo-sub"
+    font-size="15.5"
+    textLength="514"
+    lengthAdjust="spacing"
+  >KOREA MARKET ENTRY &amp; ADVISORY</text>
+</svg>

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'Cinzel', serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom smooth scroll and transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glow effects for dark theme */
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 15px 40px -10px rgba(12, 28, 79, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

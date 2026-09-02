@@ -1,0 +1,8 @@
+{
+  "name": "NAVERO Strategic Advisory",
+  "description": "Premium South Korea business expansion and strategic consulting advisory for international hospitality, service-sector leaders, and global founders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Skyscraper Gradients -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b0c4de"/>
+      <stop offset="50%" stop-color="#9bb3cf"/>
+      <stop offset="100%" stop-color="#738da8"/>
+    </linearGradient>
+    <linearGradient id="buildingGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#94a3b8" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="buildingGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <!-- Suit & Shirt Gradients -->
+    <linearGradient id="blazerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="35%" stop-color="#cbd5e1"/>
+      <stop offset="75%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#091428"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fce7d2"/>
+      <stop offset="60%" stop-color="#f1cca8"/>
+      <stop offset="100%" stop-color="#e2b28c"/>
+    </linearGradient>
+    <radialGradient id="faceShade" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#ffebd6"/>
+      <stop offset="75%" stop-color="#f1cca8"/>
+      <stop offset="100%" stop-color="#dca578"/>
+    </radialGradient>
+
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="198"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#circleClip)">
+    <!-- Base Background -->
+    <rect width="400" height="400" fill="url(#skyGrad)"/>
+
+    <!-- High-Rise Skyscraper Windows & Blur Simulation -->
+    <!-- Left Building -->
+    <rect x="30" y="30" width="80" height="280" fill="url(#buildingGrad1)" rx="2"/>
+    <line x1="30" y1="70" x2="110" y2="70" stroke="#f8fafc" stroke-width="1.5" stroke-opacity="0.5"/>
+    <line x1="30" y1="110" x2="110" y2="110" stroke="#f8fafc" stroke-width="1.5" stroke-opacity="0.5"/>
+    <line x1="30" y1="150" x2="110" y2="150" stroke="#f8fafc" stroke-width="1.5" stroke-opacity="0.5"/>
+    <line x1="30" y1="190" x2="110" y2="190" stroke="#f8fafc" stroke-width="1.5" stroke-opacity="0.5"/>
+
+    <!-- Center/Right Buildings -->
+    <rect x="130" y="40" width="70" height="260" fill="url(#buildingGrad2)" rx="2"/>
+    <rect x="250" y="20" width="120" height="300" fill="url(#buildingGrad1)" rx="2"/>
+    <line x1="250" y1="60" x2="370" y2="60" stroke="#f8fafc" stroke-width="2" stroke-opacity="0.4"/>
+    <line x1="250" y1="100" x2="370" y2="100" stroke="#f8fafc" stroke-width="2" stroke-opacity="0.4"/>
+    <line x1="250" y1="140" x2="370" y2="140" stroke="#f8fafc" stroke-width="2" stroke-opacity="0.4"/>
+    <line x1="250" y1="180" x2="370" y2="180" stroke="#f8fafc" stroke-width="2" stroke-opacity="0.4"/>
+
+    <!-- Window glass vertical frame divider -->
+    <line x1="355" y1="0" x2="355" y2="400" stroke="#475569" stroke-width="12" opacity="0.6"/>
+
+    <!-- Soft ambient bokeh & greenery hint at bottom left -->
+    <circle cx="100" cy="270" r="45" fill="#4d7c0f" opacity="0.3" filter="blur(8px)"/>
+
+    <!-- Body: Light Grey Tailored Suit Jacket (Blazer) -->
+    <path d="M60 400 C68 310 120 268 190 268 C210 268 280 270 340 310 C350 335 355 375 355 400 Z" fill="url(#blazerGrad)"/>
+
+    <!-- Lapel left & right -->
+    <path d="M125 400 L160 290 L188 335 L145 400 Z" fill="#94a3b8" opacity="0.4"/>
+    <path d="M275 400 L240 290 L212 335 L255 400 Z" fill="#64748b" opacity="0.4"/>
+    <path d="M160 290 L188 335 L190 400 L140 400 Z" fill="#cbd5e1"/>
+    <path d="M240 290 L212 335 L210 400 L260 400 Z" fill="#94a3b8"/>
+
+    <!-- Dark Navy Button-Down Shirt -->
+    <path d="M168 268 L190 320 L200 340 L210 320 L232 268 Z" fill="url(#shirtGrad)"/>
+    <path d="M190 320 L200 400 L210 320 Z" fill="url(#shirtGrad)"/>
+    <!-- Collar wings -->
+    <path d="M162 258 L188 290 L198 265 Z" fill="#0f172a"/>
+    <path d="M238 258 L212 290 L202 265 Z" fill="#1e293b"/>
+    <!-- Shirt dark button -->
+    <circle cx="200" cy="350" r="3.5" fill="#020617"/>
+    <circle cx="200" cy="385" r="3.5" fill="#020617"/>
+
+    <!-- Neck with natural light shading -->
+    <path d="M174 205 L174 266 C174 278 226 278 226 266 L226 205 Z" fill="url(#skinGrad)"/>
+    <path d="M174 240 C185 260 215 260 226 240 L226 266 C226 278 174 278 174 266 Z" fill="#dca578" opacity="0.45"/>
+
+    <!-- Head / Face -->
+    <ellipse cx="200" cy="175" rx="58" ry="68" fill="url(#faceShade)"/>
+
+    <!-- Hair (Styled short spiky with fade on sides as in photo) -->
+    <!-- Side hair -->
+    <path d="M142 165 C138 125 152 95 180 82 C160 115 152 145 146 170 Z" fill="#1e293b"/>
+    <path d="M258 165 C262 125 248 95 220 82 C240 115 248 145 254 170 Z" fill="#1e293b"/>
+    <!-- Top Hair Volume & Spikes -->
+    <path d="M152 110 C155 75 180 58 200 56 C220 58 245 75 248 110 C238 85 220 72 200 72 C180 72 162 85 152 110 Z" fill="#0f172a"/>
+    <!-- Individual styled texture spikes on top -->
+    <path d="M170 82 L178 58 L188 74 L200 54 L212 74 L222 58 L230 82 Z" fill="#1e293b"/>
+    <path d="M185 70 L195 52 L205 68 L215 54 L220 72 Z" fill="#0f172a"/>
+
+    <!-- Ears -->
+    <ellipse cx="142" cy="180" rx="9" ry="16" fill="#f1cca8"/>
+    <ellipse cx="258" cy="180" rx="9" ry="16" fill="#f1cca8"/>
+    <path d="M142 173 C144 178 144 185 142 189" stroke="#dca578" stroke-width="2" fill="none"/>
+    <path d="M258 173 C256 178 256 185 258 189" stroke="#dca578" stroke-width="2" fill="none"/>
+
+    <!-- Eyebrows (Neat, masculine, expressive) -->
+    <path d="M165 154 C175 147 186 150 192 156" stroke="#0f172a" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+    <path d="M208 156 C214 150 225 147 235 154" stroke="#0f172a" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes (Warm, engaging, with smile crinkle) -->
+    <!-- Left eye -->
+    <path d="M168 168 Q180 162 191 168" stroke="#1e293b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <ellipse cx="180" cy="168" rx="4.8" ry="4" fill="#0f172a"/>
+    <circle cx="182" cy="166.5" r="1.5" fill="#ffffff"/>
+    <path d="M168 173 Q180 176 191 173" stroke="#dca578" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Right eye -->
+    <path d="M209 168 Q220 162 232 168" stroke="#1e293b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <ellipse cx="220" cy="168" rx="4.8" ry="4" fill="#0f172a"/>
+    <circle cx="222" cy="166.5" r="1.5" fill="#ffffff"/>
+    <path d="M209 173 Q220 176 232 173" stroke="#dca578" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Nose -->
+    <path d="M198 165 L196 190 Q196 195 200 195 Q204 195 204 190 L202 165" stroke="#dca578" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <ellipse cx="192" cy="192" rx="2.5" ry="1.5" fill="#dca578"/>
+    <ellipse cx="208" cy="192" rx="2.5" ry="1.5" fill="#dca578"/>
+
+    <!-- Smile (Warm, confident, showing white teeth) -->
+    <path d="M178 208 Q200 230 222 208" stroke="#1e293b" stroke-width="3" stroke-linecap="round" fill="#ffffff"/>
+    <path d="M182 208 Q200 222 218 208 Z" fill="#ffffff"/>
+    <path d="M184 209 Q200 211 216 209" stroke="#cbd5e1" stroke-width="1.2" fill="none"/>
+
+    <!-- Beard / Goatee / Stubble (Neat trim matching photo) -->
+    <!-- Upper lip light stubble -->
+    <path d="M188 202 Q200 204 212 202" stroke="#334155" stroke-width="2" stroke-linecap="round" opacity="0.4" fill="none"/>
+    <!-- Chin goatee trim -->
+    <path d="M186 226 Q200 236 214 226" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round" opacity="0.75" fill="none"/>
+    <path d="M192 235 Q200 240 208 235" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" opacity="0.7" fill="none"/>
+    <!-- Jawline light shadow -->
+    <path d="M158 195 Q170 230 200 244 Q230 230 242 195" stroke="#334155" stroke-width="2" opacity="0.25" fill="none"/>
+
+    <!-- Outer frame border with subtle sky glow -->
+    <circle cx="200" cy="200" r="197" fill="none" stroke="#38bdf8" stroke-width="5" stroke-opacity="0.75"/>
+  </g>
+</svg>

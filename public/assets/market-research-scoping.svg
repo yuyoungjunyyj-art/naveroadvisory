@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <!-- Skyline & Window Light Gradients -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cce0f5"/>
+      <stop offset="60%" stop-color="#e2ecf8"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78909c"/>
+      <stop offset="100%" stop-color="#90a4ae"/>
+    </linearGradient>
+    <linearGradient id="seoulCityGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <!-- Wood Table Gradient -->
+    <linearGradient id="tableGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="40%" stop-color="#78350f"/>
+      <stop offset="80%" stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="tableGleam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- TV Screen Gradient -->
+    <linearGradient id="tvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f294a"/>
+      <stop offset="50%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0c1e3d"/>
+    </linearGradient>
+
+    <!-- Suits Gradients -->
+    <linearGradient id="greySuit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="navySuit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="blueSuit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="skin1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde4cf"/>
+      <stop offset="100%" stop-color="#e8b894"/>
+    </linearGradient>
+    <linearGradient id="skin2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8d7b8"/>
+      <stop offset="100%" stop-color="#dca578"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Background Sky -->
+  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Distant Seoul Mountains -->
+  <path d="M700 320 Q850 250 1000 310 Q1100 270 1200 300 L1200 450 L700 450 Z" fill="url(#mountainGrad)" opacity="0.6"/>
+
+  <!-- Seoul Skyscrapers Skyline Backdrop -->
+  <!-- Left buildings -->
+  <rect x="220" y="240" width="90" height="280" fill="url(#seoulCityGrad)"/>
+  <rect x="330" y="180" width="110" height="340" fill="#94a3b8" opacity="0.85"/>
+  <line x1="330" y1="220" x2="440" y2="220" stroke="#fff" stroke-width="1" opacity="0.4"/>
+  <line x1="330" y1="260" x2="440" y2="260" stroke="#fff" stroke-width="1" opacity="0.4"/>
+  <line x1="330" y1="300" x2="440" y2="300" stroke="#fff" stroke-width="1" opacity="0.4"/>
+
+  <!-- Center-right skyscrapers -->
+  <rect x="460" y="260" width="75" height="260" fill="url(#seoulCityGrad)"/>
+  <rect x="550" y="210" width="85" height="310" fill="#cbd5e1"/>
+  <rect x="650" y="280" width="60" height="240" fill="#94a3b8"/>
+  <rect x="730" y="230" width="95" height="290" fill="#cbd5e1"/>
+  <rect x="840" y="270" width="70" height="250" fill="#94a3b8"/>
+  <rect x="930" y="220" width="120" height="300" fill="url(#seoulCityGrad)"/>
+
+  <!-- Glass Window Frames (High-Rise Office) -->
+  <rect x="310" y="0" width="16" height="600" fill="#475569"/>
+  <rect x="610" y="0" width="16" height="600" fill="#475569"/>
+  <rect x="890" y="0" width="16" height="600" fill="#475569"/>
+  <rect x="0" y="580" width="1200" height="18" fill="#334155"/>
+
+  <!-- 2. TV Screen on Stand (Left) with Slide Content -->
+  <!-- Stand & Base -->
+  <rect x="40" y="600" width="10" height="180" fill="#1e293b"/>
+  <path d="M10 770 L80 770 L60 800 L30 800 Z" fill="#0f172a"/>
+  <!-- TV Outer Bezel -->
+  <rect x="0" y="80" width="245" height="540" fill="#020617" rx="6"/>
+  <!-- TV Screen Inner Surface -->
+  <rect x="8" y="90" width="229" height="520" fill="#f8fafc"/>
+
+  <!-- Presentation Slide Header Box -->
+  <rect x="18" y="115" width="210" height="185" fill="#1e293b" rx="4"/>
+  <text x="28" y="145" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="bold" letter-spacing="0.05em">MARKET RESEARCH &amp; SCOPING:</text>
+  <text x="28" y="168" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">ASIA-PACIFIC MARKET OPPORTUNITIES</text>
+  
+  <line x1="28" y1="185" x2="215" y2="185" stroke="#38bdf8" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Slide Bullets -->
+  <circle cx="34" cy="205" r="2.5" fill="#38bdf8"/>
+  <text x="42" y="209" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">Global pestilence in market assessment</text>
+
+  <circle cx="34" cy="225" r="2.5" fill="#38bdf8"/>
+  <text x="42" y="229" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">Definition &amp; scope of foreign market entry</text>
+
+  <circle cx="34" cy="245" r="2.5" fill="#38bdf8"/>
+  <text x="42" y="249" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">Delineate size and critical transitions</text>
+
+  <circle cx="34" cy="265" r="2.5" fill="#38bdf8"/>
+  <text x="42" y="269" fill="#e2e8f0" font-family="sans-serif" font-size="8.5">Market fundamentals &amp; roadmap</text>
+
+  <!-- Lower slide chart graph graphic -->
+  <rect x="25" y="320" width="195" height="150" fill="#f1f5f9" rx="3"/>
+  <path d="M35 440 L70 410 L110 420 L150 370 L195 345" stroke="#0284c7" stroke-width="3.5" fill="none"/>
+  <circle cx="195" cy="345" r="4.5" fill="#0284c7"/>
+  <text x="35" y="340" fill="#0f172a" font-family="sans-serif" font-size="9" font-weight="bold">Korea Hospitality Index</text>
+
+  <!-- 3. Presenter Standing by TV (Young Asian Male Consultant in Grey Blazer) -->
+  <!-- Lower body / Legs in dark trousers -->
+  <path d="M280 520 L270 780 L305 780 L320 540 L345 780 L380 780 L365 520 Z" fill="#0f172a"/>
+  <!-- Torso & Light Grey Blazer -->
+  <path d="M260 270 C280 260 380 260 400 270 L390 530 L270 530 Z" fill="url(#greySuit)"/>
+  <!-- Black Inner Shirt -->
+  <path d="M310 265 L325 340 L350 265 Z" fill="#090d16"/>
+  <!-- Blazer Lapels -->
+  <path d="M275 270 L320 400 L305 460 L270 360 Z" fill="#cbd5e1"/>
+  <path d="M385 270 L340 400 L355 460 L390 360 Z" fill="#cbd5e1"/>
+  <!-- Left Arm Extended Pointing with Pen -->
+  <path d="M270 285 L220 315 L190 280 L230 265 Z" fill="url(#greySuit)"/>
+  <ellipse cx="188" cy="278" rx="8" ry="7" fill="url(#skin1)"/>
+  <!-- Pen in hand pointing to TV -->
+  <line x1="188" y1="278" x2="155" y2="245" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <!-- Right Arm along side -->
+  <path d="M390 285 L405 380 L390 440 L370 430 L380 360 Z" fill="url(#greySuit)"/>
+  <!-- Neck & Face -->
+  <path d="M318 220 L318 265 L345 265 L345 220 Z" fill="url(#skin1)"/>
+  <ellipse cx="332" cy="210" rx="24" ry="30" fill="url(#skin1)"/>
+  <!-- Hair (Black, styled neat side fade) -->
+  <path d="M308 205 C308 175 320 165 338 165 C355 165 358 180 358 205 C352 182 340 178 332 178 C320 178 312 185 308 205 Z" fill="#0f172a"/>
+  <!-- Facial profile features -->
+  <ellipse cx="324" cy="205" rx="2.5" ry="2" fill="#0f172a"/>
+  <ellipse cx="340" cy="205" rx="2.5" ry="2" fill="#0f172a"/>
+  <path d="M328 225 Q333 230 338 225" stroke="#9a3412" stroke-width="1.8" fill="none"/>
+
+  <!-- 4. Large Boardroom Oval Wood Conference Table -->
+  <!-- Table Base & Legs -->
+  <ellipse cx="700" cy="740" rx="420" ry="120" fill="#1e130c"/>
+  <path d="M280 620 C280 500 1120 500 1120 620 C1120 850 280 850 280 620 Z" fill="url(#tableGrad)"/>
+  <!-- Table Gloss Gleam Top Edge -->
+  <path d="M320 590 C450 540 950 540 1080 590 C950 560 450 560 320 590 Z" fill="url(#tableGleam)"/>
+
+  <!-- 5. Consultants & Executives Seated Around Table -->
+
+  <!-- Consultant 1 (Left Forefront - Woman with curly hair in grey suit, back/side view) -->
+  <g transform="translate(30, 40)">
+    <path d="M400 480 C360 490 320 560 320 660 L460 660 C460 580 430 500 400 480 Z" fill="#475569"/>
+    <!-- Head & Voluminous Curly Hair -->
+    <circle cx="395" cy="430" r="38" fill="#78350f"/>
+    <circle cx="380" cy="445" r="28" fill="#92400e"/>
+    <circle cx="410" cy="445" r="28" fill="#92400e"/>
+    <!-- Arm on table with pen & notepad -->
+    <path d="M410 540 L470 580 L440 600 Z" fill="#475569"/>
+    <rect x="460" y="570" width="55" height="40" fill="#f8fafc" rx="2"/>
+    <line x1="465" y1="580" x2="505" y2="580" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="465" y1="590" x2="500" y2="590" stroke="#94a3b8" stroke-width="1"/>
+  </g>
+
+  <!-- Consultant 2 (Asian Female Executive in Black Suit with Laptop) -->
+  <g transform="translate(10, 0)">
+    <!-- Body -->
+    <path d="M490 420 C510 400 560 400 580 420 L590 560 L480 560 Z" fill="url(#navySuit)"/>
+    <path d="M525 410 L535 450 L545 410 Z" fill="#ffffff"/>
+    <!-- Head -->
+    <ellipse cx="535" cy="370" rx="20" ry="25" fill="url(#skin1)"/>
+    <!-- Long Black Hair -->
+    <path d="M515 375 C515 340 530 335 545 335 C560 335 565 350 565 410 C555 415 550 365 535 365 C520 365 515 385 515 410 Z" fill="#0f172a"/>
+    <!-- Laptop in front -->
+    <polygon points="500,560 550,560 560,530 510,530" fill="#94a3b8"/>
+    <polygon points="510,530 560,530 560,490 510,490" fill="#cbd5e1"/>
+    <circle cx="535" cy="510" r="3" fill="#64748b"/>
+  </g>
+
+  <!-- Consultant 3 (Caucasian Male Consultant in Navy Blue Suit with Laptop) -->
+  <g transform="translate(120, -10)">
+    <!-- Body in Sharp Navy Blazer -->
+    <path d="M600 410 C620 390 690 390 710 410 L720 570 L590 570 Z" fill="url(#blueSuit)"/>
+    <path d="M640 405 L655 455 L670 405 Z" fill="#ffffff"/>
+    <!-- Head -->
+    <ellipse cx="655" cy="360" rx="22" ry="26" fill="url(#skin2)"/>
+    <!-- Short Brown Hair -->
+    <path d="M635 350 C635 330 650 325 665 325 C680 325 682 340 680 355 C670 340 645 340 635 350 Z" fill="#5c3d2e"/>
+    <!-- Laptop in front -->
+    <polygon points="630,570 690,570 700,535 640,535" fill="#475569"/>
+    <polygon points="640,535 700,535 700,490 640,490" fill="#94a3b8"/>
+  </g>
+
+  <!-- Consultant 4 (Asian Female Consultant in Black Suit) -->
+  <g transform="translate(240, 20)">
+    <!-- Body -->
+    <path d="M680 430 C695 410 740 410 755 430 L765 570 L670 570 Z" fill="#0f172a"/>
+    <path d="M710 425 L718 460 L726 425 Z" fill="#ffffff"/>
+    <!-- Head -->
+    <ellipse cx="718" cy="380" rx="18" ry="23" fill="url(#skin1)"/>
+    <!-- Bob Hairstyle -->
+    <path d="M700 380 C700 350 710 345 725 345 C740 345 745 360 745 395 C735 390 730 365 720 365 C710 365 705 375 700 395 Z" fill="#020617"/>
+  </g>
+
+  <!-- Executive 5 (Mature Senior Executive with Silver/Grey Hair in Navy Suit - Far Right) -->
+  <g transform="translate(320, 20)">
+    <!-- Body -->
+    <path d="M760 420 C780 395 860 395 880 420 L900 600 L740 600 Z" fill="url(#navySuit)"/>
+    <path d="M805 415 L820 475 L835 415 Z" fill="#e0f2fe"/>
+    <path d="M817 440 L820 520 L823 440 Z" fill="#b91c1c"/>
+    <!-- Head -->
+    <ellipse cx="820" cy="365" rx="24" ry="28" fill="url(#skin2)"/>
+    <!-- Short Silver Grey Hair -->
+    <path d="M798 355 C798 330 815 325 832 325 C848 325 850 340 848 360 C840 340 810 340 798 355 Z" fill="#cbd5e1"/>
+  </g>
+
+  <!-- 6. Boardroom Table Artifacts (Dossiers, Coffee Mugs, Water Glasses) -->
+  <!-- White Research Dossier in center foreground -->
+  <g transform="translate(680, 590)">
+    <!-- Folder Base -->
+    <polygon points="0,0 120,0 135,70 15,70" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="0" y1="5" x2="120" y2="5" stroke="#0284c7" stroke-width="3"/>
+    <!-- Dossier Title -->
+    <text x="15" y="32" fill="#0f172a" font-family="sans-serif" font-size="7.5" font-weight="bold">MARKET RESEARCH</text>
+    <text x="15" y="42" fill="#0f172a" font-family="sans-serif" font-size="7" font-weight="bold">&amp; SCOPING: KOREA</text>
+    <!-- Globe Icon -->
+    <circle cx="95" cy="38" r="14" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2"/>
+    <ellipse cx="95" cy="38" rx="8" ry="14" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <line x1="81" y1="38" x2="109" y2="38" stroke="#0284c7" stroke-width="1"/>
+  </g>
+
+  <!-- Ceramic Coffee Mugs on table -->
+  <g transform="translate(420, 570)">
+    <rect x="0" y="0" width="18" height="24" fill="#ffffff" rx="3" stroke="#e2e8f0"/>
+    <path d="M18 5 Q24 12 18 19" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+  </g>
+  <g transform="translate(740, 555)">
+    <rect x="0" y="0" width="16" height="22" fill="#334155" rx="3"/>
+    <path d="M16 4 Q21 11 16 17" stroke="#334155" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Clear Glass of Water -->
+  <g transform="translate(450, 505)">
+    <polygon points="0,0 14,0 12,20 2,20" fill="#e0f2fe" opacity="0.6" stroke="#94a3b8" stroke-width="1"/>
+    <polygon points="1,5 13,5 11.5,19 2.5,19" fill="#38bdf8" opacity="0.4"/>
+  </g>
+  <g transform="translate(710, 500)">
+    <polygon points="0,0 14,0 12,20 2,20" fill="#e0f2fe" opacity="0.6" stroke="#94a3b8" stroke-width="1"/>
+    <polygon points="1,5 13,5 11.5,19 2.5,19" fill="#38bdf8" opacity="0.4"/>
+  </g>
+
+  <!-- Soft Ambient Studio Shadow Vignette -->
+  <rect width="1200" height="800" fill="url(#tableGleam)" opacity="0.1" pointer-events="none"/>
+</svg>
