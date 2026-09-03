@@ -41,23 +41,56 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ theme, lang }) => {
                     href="https://www.linkedin.com/in/youngjunyu/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1.5 focus:outline-none"
+                    className="group block focus:outline-none"
                   >
-                    <h3 className="text-xl font-bold group-hover:text-sky-400 transition-colors">
+                    <div className="flex items-center gap-1.5">
+                      <h3
+                        className={`text-xl font-bold tracking-tight transition-colors group-hover:text-sky-500 ${
+                          theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                        }`}
+                      >
+                        {t.about.founderName}
+                      </h3>
+                      <ExternalLink
+                        className={`w-3.5 h-3.5 transition-colors opacity-70 group-hover:opacity-100 group-hover:text-sky-500 ${
+                          theme === 'dark' ? 'text-slate-400' : 'text-slate-600'
+                        }`}
+                      />
+                    </div>
+                    <p
+                      className={`text-xs font-semibold uppercase tracking-wider ${
+                        theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                      }`}
+                    >
                       {t.about.leadName}
-                    </h3>
-                    <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-400 transition-colors opacity-0 group-hover:opacity-100" />
+                    </p>
                   </a>
-                  <p className="text-xs font-semibold text-sky-400">{t.about.firm}</p>
+                  <p
+                    className={`text-xs font-semibold mt-0.5 ${
+                      theme === 'dark' ? 'text-sky-400' : 'text-sky-600'
+                    }`}
+                  >
+                    {t.about.firm}
+                  </p>
                 </div>
               </div>
 
               {/* Founder Direct Quote */}
-              <div className="relative p-5 rounded-2xl bg-white/5 border border-white/10 dark:border-white/5 mb-6">
-                <Quote className="w-6 h-6 text-sky-400/40 absolute top-3 right-3" />
+              <div
+                className={`relative p-5 rounded-2xl border mb-6 ${
+                  theme === 'dark'
+                    ? 'bg-white/5 border-white/10'
+                    : 'bg-slate-50 border-slate-200'
+                }`}
+              >
+                <Quote
+                  className={`w-6 h-6 absolute top-3 right-3 ${
+                    theme === 'dark' ? 'text-sky-400/40' : 'text-sky-600/30'
+                  }`}
+                />
                 <p
                   className={`text-sm italic leading-relaxed font-serif ${
-                    theme === 'dark' ? 'text-slate-200' : 'text-slate-700'
+                    theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
                   }`}
                 >
                   {t.about.quote}
@@ -65,17 +98,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ theme, lang }) => {
               </div>
 
               {/* Strategic Specialization Checklist */}
-              <div className="space-y-2.5 text-xs text-slate-300 dark:text-slate-300 mb-6">
+              <div
+                className={`space-y-2.5 text-xs mb-6 ${
+                  theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                }`}
+              >
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                  <CheckCircle className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
                   <span>Hospitality, Hotel & Service-Sector Specialization</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                  <CheckCircle className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
                   <span>Cross-Border FDI & Commercial Deal Structuring</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                  <CheckCircle className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
                   <span>Direct Access to Seoul Landlords & Tier-1 Operators</span>
                 </div>
               </div>

@@ -30,7 +30,7 @@ export const ConsultantAvatar: React.FC<ConsultantAvatarProps> = ({
       href="https://www.linkedin.com/in/youngjunyu/"
       target="_blank"
       rel="noopener noreferrer"
-      title="Youngjun Yu - Principal Consultant (View LinkedIn Profile)"
+      title="JUN (Youngjun Yu) - Principal Consultant (View LinkedIn Profile)"
       className={`relative group inline-block focus:outline-none flex-shrink-0 transition-transform duration-300 hover:scale-105 active:scale-95 ${className}`}
       id="principal-consultant-linkedin-link"
     >
@@ -40,7 +40,7 @@ export const ConsultantAvatar: React.FC<ConsultantAvatarProps> = ({
       >
         <img
           src={consultantPhoto}
-          alt="Youngjun Yu - Principal Consultant"
+          alt="JUN (Youngjun Yu) - Principal Consultant"
           referrerPolicy="no-referrer"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = '/assets/youngjun-yu.png';
