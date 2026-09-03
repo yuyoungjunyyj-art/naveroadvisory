@@ -63,12 +63,14 @@ export const Footer: React.FC<FooterProps> = ({ theme, lang }) => {
                   {t.nav.assessment}
                 </a>
               </li>
+              {/* Temporarily hidden: Insights quick link
               <li>
                 <a href="#insights" className="hover:text-sky-400 transition-colors flex items-center gap-1">
                   <span>{t.nav.insight || 'Insight'}</span>
                   <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-semibold">New</span>
                 </a>
               </li>
+              */}
               <li>
                 <a href="#contact" className="hover:text-sky-400 transition-colors">
                   {t.nav.contact}

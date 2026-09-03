@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
     { name: t.nav.services, href: '#services' },
     { name: t.nav.process, href: '#process' },
     { name: t.nav.assessment, href: '#assessment' },
-    { name: t.nav.insight, href: '#insights' },
+    // { name: t.nav.insight, href: '#insights' }, // Temporarily hidden for upcoming update
     { name: t.nav.contact, href: '#contact' },
   ];
 

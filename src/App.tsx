@@ -79,9 +79,11 @@ export default function App() {
           <MarketAssessmentTool theme={theme} lang={lang} />
         </FadeSection>
 
+        {/* Temporarily hidden: STRATEGIC INSIGHTS & PUBLICATIONS (will be re-enabled after revision)
         <FadeSection id="section-insights">
           <InsightsSection theme={theme} lang={lang} />
         </FadeSection>
+        */}
 
         <FadeSection id="section-about">
           <AboutSection theme={theme} lang={lang} />
