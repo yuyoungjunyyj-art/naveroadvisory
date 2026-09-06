@@ -46,6 +46,31 @@ export default function App() {
     }
   }, [theme]);
 
+  // Handle direct navigation to hash anchors (e.g., #insights, #contact)
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetId = hash.replace(/^#/, '');
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    // Trigger on mount after layout stabilization and on subsequent hash changes
+    const timer1 = setTimeout(handleHashScroll, 150);
+    const timer2 = setTimeout(handleHashScroll, 500);
+    window.addEventListener('hashchange', handleHashScroll);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      window.removeEventListener('hashchange', handleHashScroll);
+    };
+  }, []);
+
   return (
     <div
       id="app-root"
@@ -79,11 +104,9 @@ export default function App() {
           <MarketAssessmentTool theme={theme} lang={lang} />
         </FadeSection>
 
-        {/* Temporarily hidden: STRATEGIC INSIGHTS & PUBLICATIONS (will be re-enabled after revision)
         <FadeSection id="section-insights">
           <InsightsSection theme={theme} lang={lang} />
         </FadeSection>
-        */}
 
         <FadeSection id="section-about">
           <AboutSection theme={theme} lang={lang} />
