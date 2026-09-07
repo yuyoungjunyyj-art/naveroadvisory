@@ -13,7 +13,7 @@ export const translations = {
       bookConsultation: 'Request Consultation',
     },
     hero: {
-      badge: 'PREMIUM SOUTH KOREA MARKET EXPANSION ADVISORY',
+      badge: 'SOUTH KOREAN STRATEGIC ADVISORY FIRM · SEOUL HEADQUARTERS',
       titleLine1: 'Navigating Complexity.',
       titleLine2: 'Driving Global Growth.',
       titleHighlight: '',
@@ -77,11 +77,11 @@ export const translations = {
       quote:
         '"I help founders and business owners turn South Korea expansion plans into practical, well-coordinated action."',
       p1:
-        'Through Navero, we work with international hospitality and service-sector businesses that see immense potential in Korea but require a trusted local perspective to move forward with clarity.',
+        'NAVERO Strategic Advisory is a premier South Korean boutique consultancy based in Seoul, Republic of Korea. We specialize in cross-border strategic advisory and execution for international hospitality, premium lifestyle, and service-sector enterprises expanding into South Korea.',
       p2:
         'We support clients from the earliest stage of market exploration through commercial planning, partner engagement, and go-to-market execution.',
       p3:
-        'We bring together deep local-market understanding and a hands-on approach, helping international teams make informed decisions and build the relationships needed to operate effectively in Korea.',
+        'Headquartered in Seoul, our team combines native Korean market intelligence, direct institutional networks, and hands-on advisory to help global executives make definitive, profitable decisions.',
       values: [
         {
           title: 'Local Precision',
@@ -99,7 +99,7 @@ export const translations = {
       roleBadge: 'Principal Consultant & Founder',
       founderName: 'JUN',
       leadName: 'Principal Consultant',
-      firm: 'NAVERO Advisory · Seoul, South Korea',
+      firm: 'NAVERO Strategic Advisory · Seoul, South Korea',
     },
     contact: {
       eyebrow: 'CONNECT & CONSULT',
@@ -152,12 +152,12 @@ export const translations = {
     footer: {
       tagline: 'Navigating Complexity. Driving Global Growth.',
       description:
-        'NAVERO Strategic Advisory is the premier Seoul-based boutique consultancy guiding global hospitality, service brands, and investors to triumph in South Korea.',
+        'NAVERO Strategic Advisory is a premier South Korean corporate strategy and business expansion consultancy headquartered in Seoul, Republic of Korea, guiding international hospitality, service brands, and investors to triumph in South Korea.',
       quickLinks: 'Navigation',
       services: 'Core Pillars',
       legal: 'Confidentiality & Terms',
       copyright: `© ${new Date().getFullYear()} NAVERO Strategic Advisory. All rights reserved.`,
-      location: 'Seoul, Republic of Korea',
+      location: 'Headquartered in Seoul, Republic of Korea (대한민국 서울 본사)',
     },
   },
   ko: {
@@ -172,7 +172,7 @@ export const translations = {
       bookConsultation: '상담 요청하기',
     },
     hero: {
-      badge: '대한민국 프리미엄 비즈니스 확장 전략 자문',
+      badge: '대한민국 서울 본사 · 한국 비즈니스 확장 전략 자문사',
       titleLine1: '복잡성을 넘어,',
       titleLine2: '글로벌 성장을 견인합니다.',
       titleHighlight: '',
@@ -231,16 +231,16 @@ export const translations = {
       actionPrompt: '나베로 수석 컨설턴트와의 비공개 1:1 전략 세션을 통해 구체적인 로드맵을 수립하세요.',
     },
     about: {
-      eyebrow: '나베로(NAVERO) 소개',
-      title: '글로벌 비전과 로컬 역량의 연결',
+      eyebrow: '나베로 전략자문 소개',
+      title: '글로벌 비전과 한국 시장의 역동성을 잇는 파트너',
       quote:
-        '"저는 창업가와 비즈니스 오너가 복잡한 한국 확장 계획을 실질적이고 잘 조율된 행동으로 옮길 수 있도록 돕습니다."',
+        '"저는 창업가와 경영진이 복잡한 한국 비즈니스 확장 계획을 실질적이고 정교한 실행 성과로 완성할 수 있도록 돕습니다."',
       p1:
-        '나베로(NAVERO Advisory)는 한국 시장의 잠재력을 높이 평가하지만, 명확하고 안전하게 전진하기 위해 신뢰할 수 있는 현지 관점이 필요한 해외 호스피탈리티 및 서비스 기업과 협력합니다.',
+        '나베로(NAVERO Strategic Advisory)는 대한민국 서울에 본사를 둔 한국 독립 전략 자문사입니다. 한국 시장에 진출하고자 하는 글로벌 호스피탈리티, 프리미엄 서비스 및 라이프스타일 기업을 대상으로 신뢰할 수 있는 로컬 관점과 실행 솔루션을 제공합니다.',
       p2:
         '초기 시장 탐색 단계부터 상업 기획, 파트너 참여, 그리고 현장 출시 실행에 이르기까지 전 과정을 밀착 지원합니다.',
       p3:
-        '심도 있는 로컬 시장에 대한 이해와 직접 발로 뛰는 현장 실행력을 결합하여, 글로벌 팀이 정보에 기반한 결정을 내리고 한국에서 효과적으로 비즈니스를 운영할 수 있는 관계를 구축합니다.',
+        '서울 본사의 깊이 있는 로컬 시장 이해와 직접 발로 뛰는 현장 실행력을 결합하여, 글로벌 팀이 정보에 기반한 결정을 내리고 한국에서 효과적으로 비즈니스를 운영할 수 있는 관계를 구축합니다.',
       values: [
         {
           title: '로컬 정밀성',
@@ -258,7 +258,7 @@ export const translations = {
       roleBadge: '수석 컨설턴트 / 대표',
       founderName: 'JUN',
       leadName: 'Principal Consultant',
-      firm: '나베로(NAVERO Advisory) · 서울, 대한민국',
+      firm: '나베로(NAVERO Strategic Advisory) · 대한민국 서울 본사',
     },
     contact: {
       eyebrow: '연결 & 상담',
@@ -311,12 +311,12 @@ export const translations = {
     footer: {
       tagline: '복잡성을 넘어, 글로벌 성장을 견인합니다.',
       description:
-        '나베로(NAVERO Strategic Advisory)는 해외 유수 호스피탈리티, 서비스 브랜드 및 투자사의 성공적인 대한민국 시장 진출을 돕는 독립 전략 자문사입니다.',
+        '나베로(NAVERO Strategic Advisory)는 대한민국 서울에 본사를 둔 한국 독립 전략 자문사로, 해외 유수 호스피탈리티, 서비스 브랜드 및 투자사의 성공적인 대한민국 시장 진출과 성장을 견인합니다.',
       quickLinks: '바로가기',
       services: '전문 분야',
       legal: '비밀유지 및 약관',
       copyright: `© ${new Date().getFullYear()} NAVERO Strategic Advisory. All rights reserved.`,
-      location: '대한민국 서울특별시',
+      location: '대한민국 서울특별시 본사 (Seoul, Republic of Korea)',
     },
   },
 };

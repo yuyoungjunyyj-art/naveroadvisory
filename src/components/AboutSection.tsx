@@ -105,15 +105,27 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ theme, lang }) => {
               >
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
-                  <span>Hospitality, Hotel & Service-Sector Specialization</span>
+                  <span>
+                    {lang === 'ko'
+                      ? '대한민국 호스피탈리티 & 프리미엄 서비스 특화'
+                      : 'South Korea Hospitality & Service-Sector Specialization'}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
-                  <span>Cross-Border FDI & Commercial Deal Structuring</span>
+                  <span>
+                    {lang === 'ko'
+                      ? '크로스보더 FDI 및 국내 상업 계약 구조화'
+                      : 'Cross-Border FDI & Korea Commercial Deal Structuring'}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
-                  <span>Direct Access to Seoul Landlords & Tier-1 Operators</span>
+                  <span>
+                    {lang === 'ko'
+                      ? '서울 주요 부동산 소유주 및 Tier-1 운영사 직통 채널'
+                      : 'Direct Access to Seoul Landlords & Tier-1 Operators'}
+                  </span>
                 </div>
               </div>
 

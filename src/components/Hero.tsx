@@ -33,6 +33,18 @@ export const Hero: React.FC<HeroProps> = ({ theme, lang }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Hero Copy & Actions */}
           <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+            {/* South Korea Headquarters Identity Badge */}
+            <div
+              className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-bold tracking-wider uppercase transition-colors ${
+                theme === 'dark'
+                  ? 'bg-sky-500/10 border-sky-500/25 text-sky-300'
+                  : 'bg-white border-slate-300/80 text-[#0c1c4f] shadow-sm'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>{t.hero.badge}</span>
+            </div>
+
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15]">
               <span className={`block font-serif font-medium ${theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'}`}>
