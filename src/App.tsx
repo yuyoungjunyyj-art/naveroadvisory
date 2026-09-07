@@ -6,6 +6,8 @@ import { ServicesSection } from './components/ServicesSection';
 import { ProcessSection } from './components/ProcessSection';
 import { MarketAssessmentTool } from './components/MarketAssessmentTool';
 import { InsightsSection } from './components/InsightsSection';
+import { ArticleReaderModal } from './components/ArticleReaderModal';
+import { insightsArticles } from './data/insightsData';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -33,6 +35,37 @@ export default function App() {
     setTheme(newTheme);
     localStorage.setItem('navTheme', newTheme);
   };
+
+  // State for article reader modal
+  const [selectedArticleSlug, setSelectedArticleSlug] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const articleParam = params.get('article');
+      if (articleParam) return articleParam;
+    }
+    return null;
+  });
+
+  const handleOpenArticle = (slug: string) => {
+    setSelectedArticleSlug(slug);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('article', slug);
+      window.history.pushState({}, '', url.toString());
+    }
+  };
+
+  const handleCloseArticle = () => {
+    setSelectedArticleSlug(null);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('article');
+      window.history.pushState({}, '', url.toString());
+    }
+  };
+
+  const currentArticle =
+    insightsArticles.find((a) => a.slug === selectedArticleSlug) || null;
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -105,7 +138,11 @@ export default function App() {
         </FadeSection>
 
         <FadeSection id="section-insights">
-          <InsightsSection theme={theme} lang={lang} />
+          <InsightsSection
+            theme={theme}
+            lang={lang}
+            onOpenArticle={handleOpenArticle}
+          />
         </FadeSection>
 
         <FadeSection id="section-about">
@@ -116,6 +153,15 @@ export default function App() {
           <ContactSection theme={theme} lang={lang} />
         </FadeSection>
       </main>
+
+      {/* Full Article Reader Modal */}
+      <ArticleReaderModal
+        article={currentArticle}
+        isOpen={Boolean(selectedArticleSlug && currentArticle)}
+        onClose={handleCloseArticle}
+        theme={theme}
+        lang={lang}
+      />
 
       {/* Comprehensive Footer */}
       <FadeSection id="section-footer">
