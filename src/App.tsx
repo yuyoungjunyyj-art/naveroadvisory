@@ -87,7 +87,7 @@ export default function App() {
       />
 
       {/* Main Content Sections with scroll fade-in / fade-out animations */}
-      <main id="main-content" className="space-y-0 overflow-hidden">
+      <main id="main-content" className="space-y-0 overflow-x-hidden">
         <FadeSection id="section-hero">
           <Hero theme={theme} lang={lang} />
         </FadeSection>

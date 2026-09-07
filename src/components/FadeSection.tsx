@@ -6,6 +6,8 @@ interface FadeSectionProps {
   id?: string;
   className?: string;
   delay?: number;
+  once?: boolean;
+  amount?: number | 'some' | 'all';
 }
 
 export const FadeSection: React.FC<FadeSectionProps> = ({
@@ -13,16 +15,18 @@ export const FadeSection: React.FC<FadeSectionProps> = ({
   id,
   className = '',
   delay = 0,
+  once = true,
+  amount = 'some',
 }) => {
   return (
     <motion.div
       id={id}
       className={className}
-      initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: false, amount: 0.18, margin: '-40px 0px -40px 0px' }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once, amount, margin: '0px' }}
       transition={{
-        duration: 0.8,
+        duration: 0.6,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
