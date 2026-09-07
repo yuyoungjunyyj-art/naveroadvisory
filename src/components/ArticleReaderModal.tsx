@@ -153,7 +153,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                   <Calendar className="w-3.5 h-3.5 text-sky-400" />
                   <span>{article.date[lang]}</span>
                 </span>
-                <span>•</span>
+                <span className="opacity-30">|</span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-sky-400" />
                   <span>{article.readTime[lang]}</span>
@@ -199,16 +199,13 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
           <div className="p-6 sm:p-10 space-y-12">
             {/* Section 1: The assumption problem */}
             <section className="space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-sky-400"></span>
-                <h2
-                  className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
-                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                  }`}
-                >
-                  {isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)'}
-                </h2>
-              </div>
+              <h2
+                className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
+                  theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                }`}
+              >
+                {isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)'}
+              </h2>
               <p
                 className={`text-base sm:text-lg leading-relaxed ${
                   theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
@@ -220,16 +217,13 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
 
             {/* Section 2: Five assumptions to retire (Numbered list without boxes) */}
             <section className="space-y-6">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-sky-400"></span>
-                <h2
-                  className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
-                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                  }`}
-                >
-                  {isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)'}
-                </h2>
-              </div>
+              <h2
+                className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
+                  theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                }`}
+              >
+                {isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)'}
+              </h2>
 
               {/* Numbered Editorial List without boxes */}
               <ol className="divide-y divide-slate-200 dark:divide-white/10 list-none p-0 m-0">
@@ -295,18 +289,15 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
 
             {/* Section 4: 3 Critical Questions Before Signing */}
             <section className="space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-sky-400"></span>
-                <h2
-                  className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
-                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                  }`}
-                >
-                  {isEn
-                    ? 'Three questions principals should answer before signing'
-                    : '계약 서명 전 경영진이 자문해야 할 3가지 질문'}
-                </h2>
-              </div>
+              <h2
+                className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
+                  theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                }`}
+              >
+                {isEn
+                  ? 'Three questions principals should answer before signing'
+                  : '계약 서명 전 경영진이 자문해야 할 3가지 질문'}
+              </h2>
               <p
                 className={`text-sm sm:text-base leading-relaxed ${
                   theme === 'dark' ? 'text-slate-300' : 'text-slate-600'

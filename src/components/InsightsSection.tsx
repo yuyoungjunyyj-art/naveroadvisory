@@ -132,7 +132,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
                 <Calendar className="w-3.5 h-3.5 text-sky-400" />
                 <span>{featuredArticle.date[lang]}</span>
               </span>
-              <span>•</span>
+              <span className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-sky-400" />
                 <span>{featuredArticle.readTime[lang]}</span>
