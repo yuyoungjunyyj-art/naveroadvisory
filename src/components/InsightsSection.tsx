@@ -366,37 +366,38 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({ theme, lang })
                 </h3>
               </div>
 
-              {/* 5 Points Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Numbered Editorial List without boxes */}
+              <ol className="divide-y divide-slate-200 dark:divide-white/10 list-none p-0 m-0">
                 {fiveAssumptions.map((item, idx) => (
-                  <div
+                  <li
                     key={item.num}
-                    className={`p-5 rounded-2xl border transition-all duration-200 ${
-                      theme === 'dark'
-                        ? 'bg-white/[0.03] border-white/10 hover:border-sky-500/40'
-                        : 'bg-slate-50/80 border-slate-200 hover:border-sky-300 hover:bg-white'
-                    } ${idx === 4 ? 'md:col-span-2 lg:col-span-2' : ''}`}
+                    id={`assumption-${idx + 1}`}
+                    className="py-6 first:pt-1 last:pb-2 flex items-start gap-4 sm:gap-6"
                   >
-                    <div className="text-sky-400 font-mono text-xs font-bold mb-2 tracking-wider">
-                      ASSUMPTION {item.num}
+                    <div className="flex-shrink-0 w-8 sm:w-10">
+                      <span className="font-serif text-2xl sm:text-3xl font-bold text-sky-500 dark:text-sky-400 select-none">
+                        {idx + 1}.
+                      </span>
                     </div>
-                    <h4
-                      className={`text-sm sm:text-base font-bold leading-snug mb-2.5 ${
-                        theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                      }`}
-                    >
-                      {item.headline}
-                    </h4>
-                    <p
-                      className={`text-xs sm:text-sm leading-relaxed ${
-                        theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                      }`}
-                    >
-                      {item.detail}
-                    </p>
-                  </div>
+                    <div className="space-y-2 flex-1">
+                      <h4
+                        className={`text-base sm:text-lg font-bold leading-snug ${
+                          theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                        }`}
+                      >
+                        {item.headline}
+                      </h4>
+                      <p
+                        className={`text-sm sm:text-base leading-relaxed ${
+                          theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
+                        }`}
+                      >
+                        {item.detail}
+                      </p>
+                    </div>
+                  </li>
                 ))}
-              </div>
+              </ol>
 
               <div
                 className={`p-4 rounded-xl text-xs sm:text-sm font-medium border flex items-center gap-3 ${
