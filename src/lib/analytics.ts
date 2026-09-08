@@ -38,24 +38,8 @@ export function initGA(): void {
         window.dataLayer.push(arguments);
       };
       window.gtag('js', new Date());
+      window.gtag('config', measurementId);
     }
-
-    // Inject official Google Tag script if not already in DOM
-    const existingScript = document.querySelector(
-      `script[src*="googletagmanager.com/gtag/js?id=${measurementId}"]`
-    );
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-      document.head.appendChild(script);
-    }
-
-    window.gtag('config', measurementId, {
-      send_page_view: false, // We control page view events manually for SPA accuracy
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure',
-    });
 
     // eslint-disable-next-line no-console
     console.info(`[GA4] Active with measurement ID: ${measurementId}`);
