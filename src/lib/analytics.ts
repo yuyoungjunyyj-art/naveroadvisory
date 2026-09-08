@@ -16,16 +16,15 @@ declare global {
   }
 }
 
-// Read GA4 Measurement ID from Vite environment or window override
+// Read GA4 Measurement ID from Vite environment or direct configuration
 export const GA_MEASUREMENT_ID =
-  (import.meta.env.VITE_GA_MEASUREMENT_ID as string) || '';
+  (import.meta.env.VITE_GA_MEASUREMENT_ID as string) || 'G-7828NVY9ZS';
 
 let isInitialized = false;
 
 /**
  * Initializes Google Analytics 4
- * Automatically injects the official gtag.js script if a valid ID is provided.
- * Falls back to structured console logging in development mode.
+ * Automatically injects the official gtag.js script if not already present.
  */
 export function initGA(): void {
   if (isInitialized || typeof window === 'undefined') return;
@@ -33,18 +32,25 @@ export function initGA(): void {
   const measurementId = GA_MEASUREMENT_ID.trim();
 
   if (measurementId && measurementId !== 'G-XXXXXXXXXX') {
-    // Inject official Google Tag script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    document.head.appendChild(script);
-
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag() {
-      window.dataLayer.push(arguments);
-    };
+    if (!window.gtag) {
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+    }
 
-    window.gtag('js', new Date());
+    // Inject official Google Tag script if not already in DOM
+    const existingScript = document.querySelector(
+      `script[src*="googletagmanager.com/gtag/js?id=${measurementId}"]`
+    );
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      document.head.appendChild(script);
+    }
+
     window.gtag('config', measurementId, {
       send_page_view: false, // We control page view events manually for SPA accuracy
       anonymize_ip: true,
@@ -52,7 +58,7 @@ export function initGA(): void {
     });
 
     // eslint-disable-next-line no-console
-    console.info(`[GA4] Initialized with measurement ID: ${measurementId}`);
+    console.info(`[GA4] Active with measurement ID: ${measurementId}`);
   } else {
     // Development mode helper
     // eslint-disable-next-line no-console
