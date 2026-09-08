@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   X,
   ArrowLeft,
@@ -12,11 +12,23 @@ import {
   HelpCircle,
   ArrowUpRight,
   Sparkles,
+  Eye,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Theme, Language } from '../types';
 import { InsightArticle } from '../data/insightsData';
 import { getInsightShareUrl, copyTextToClipboard } from '../utils/seo';
+import {
+  incrementArticleView,
+  formatArticleViews,
+  formatPublishedDate,
+  getArticleViews,
+} from '../utils/articleViews';
+import {
+  trackArticleView,
+  trackArticleScroll,
+  trackArticleShare,
+} from '../lib/analytics';
 
 interface ArticleReaderModalProps {
   article: InsightArticle | null;
@@ -35,6 +47,59 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
 }) => {
   const isEn = lang === 'en';
   const [copied, setCopied] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [currentViews, setCurrentViews] = useState<number>(() => {
+    return article ? getArticleViews(article.id, article.publishedAt) : 0;
+  });
+
+  // Track article open & increment view count
+  useEffect(() => {
+    if (!isOpen || !article) return;
+
+    // Increment view count with session deduplication
+    const { views } = incrementArticleView(article.id, article.publishedAt);
+    setCurrentViews(views);
+
+    // Stream event to GA4
+    trackArticleView({
+      articleId: article.id,
+      articleTitle: article.title[lang],
+      category: article.category[lang],
+      publishedAt: article.publishedAt,
+      viewCount: views,
+      lang,
+    });
+  }, [isOpen, article?.id, lang]);
+
+  // Track reader scroll progress (25%, 50%, 75%, 100%)
+  useEffect(() => {
+    if (!isOpen || !article) return;
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const milestonesReached = new Set<number>();
+
+    const handleScroll = () => {
+      const { scrollTop, scrollHeight, clientHeight } = container;
+      const maxScroll = scrollHeight - clientHeight;
+      if (maxScroll <= 0) return;
+
+      const percent = Math.min(100, Math.round((scrollTop / maxScroll) * 100));
+      const milestones = [25, 50, 75, 100];
+
+      for (const milestone of milestones) {
+        if (percent >= milestone && !milestonesReached.has(milestone)) {
+          milestonesReached.add(milestone);
+          trackArticleScroll(article.id, milestone);
+        }
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, [isOpen, article?.id]);
 
   // Close on Escape key press and lock background scrolling
   useEffect(() => {
@@ -65,13 +130,17 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
     const success = await copyTextToClipboard(shareUrl);
     if (success) {
       setCopied(true);
+      trackArticleShare(article.id, 'copy_link');
       setTimeout(() => setCopied(false), 3000);
     }
   };
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto flex items-start justify-center bg-black/75 backdrop-blur-md transition-all">
+      <div
+        ref={scrollContainerRef}
+        className="fixed inset-0 z-50 overflow-y-auto flex items-start justify-center bg-black/75 backdrop-blur-md transition-all"
+      >
         {/* Modal Window Container */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
@@ -148,10 +217,15 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 {article.category[lang]} | {article.corridor[lang]}
               </span>
 
-              <div className="flex items-center gap-3 text-xs text-slate-400">
-                <span className="flex items-center gap-1.5">
+              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
+                <span className="flex items-center gap-1.5" title="Publication Date">
                   <Calendar className="w-3.5 h-3.5 text-sky-400" />
-                  <span>{article.date[lang]}</span>
+                  <span>{formatPublishedDate(article.publishedAt, lang)}</span>
+                </span>
+                <span className="opacity-30">|</span>
+                <span className="flex items-center gap-1.5 font-mono text-[11px]" title="Total Reads">
+                  <Eye className="w-3.5 h-3.5 text-sky-400" />
+                  <span className="font-semibold text-slate-300">{formatArticleViews(currentViews, lang)}</span>
                 </span>
                 <span className="opacity-30">|</span>
                 <span className="flex items-center gap-1.5">

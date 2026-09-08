@@ -9,6 +9,7 @@ export interface InsightArticle {
     en: string;
     ko: string;
   };
+  publishedAt: string; // ISO date format (YYYY-MM-DD) for automatic date calculation & views tracking
   date: {
     en: string;
     ko: string;
@@ -93,9 +94,10 @@ export const insightsArticles: InsightArticle[] = [
       en: 'SOUTHEAST ASIA ↔ KOREA',
       ko: '동남아시아 ↔ 한국',
     },
+    publishedAt: '2026-02-18',
     date: {
-      en: '2026 Strategic Advisory Release',
-      ko: '2026 전략 자문 리포트',
+      en: 'Feb 18, 2026',
+      ko: '2026년 2월 18일',
     },
     readTime: {
       en: '5 min read',

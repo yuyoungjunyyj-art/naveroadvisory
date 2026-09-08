@@ -3,6 +3,7 @@ import { Globe, Sun, Moon, Menu, X, ArrowUpRight } from 'lucide-react';
 import { Language, Theme } from '../types';
 import { translations } from '../data/translations';
 import { NaveroLogo } from './NaveroLogo';
+import { trackConsultationClick } from '../lib/analytics';
 
 interface HeaderProps {
   lang: Language;
@@ -163,6 +164,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
             <a
               id="header-cta-btn"
               href="#contact"
+              onClick={() => trackConsultationClick('header_desktop')}
               className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold tracking-wide uppercase transition-all duration-200 transform hover:-translate-y-0.5 ${
                 theme === 'dark'
                   ? 'bg-gradient-to-r from-sky-400 to-sky-500 text-[#050b14] hover:shadow-lg hover:shadow-sky-500/25'
@@ -280,7 +282,10 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
 
             <a
               href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                trackConsultationClick('header_mobile');
+                setMobileMenuOpen(false);
+              }}
               className={`w-full text-center py-3 rounded-xl text-sm font-bold uppercase tracking-wider mt-2 ${
                 theme === 'dark'
                   ? 'bg-sky-400 text-slate-950 shadow-lg shadow-sky-500/20'

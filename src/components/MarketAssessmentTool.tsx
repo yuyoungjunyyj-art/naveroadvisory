@@ -13,6 +13,7 @@ import {
 import { Theme, Language } from '../types';
 import { translations } from '../data/translations';
 import { assessmentQuestionsData } from '../data/content';
+import { trackAssessmentEvent } from '../lib/analytics';
 
 interface MarketAssessmentToolProps {
   theme: Theme;
@@ -30,15 +31,20 @@ export const MarketAssessmentTool: React.FC<MarketAssessmentToolProps> = ({ them
   const totalQuestions = assessmentQuestionsData.length;
 
   const handleSelectOption = (questionId: string, score: number, tip: string) => {
+    if (Object.keys(answers).length === 0) {
+      trackAssessmentEvent('started');
+    }
     setAnswers((prev) => ({ ...prev, [questionId]: score }));
     setSelectedTips((prev) => ({ ...prev, [questionId]: tip }));
   };
 
   const handleNext = () => {
+    trackAssessmentEvent('step_completed', { step: currentStep + 1 });
     if (currentStep < totalQuestions - 1) {
       setCurrentStep((prev) => prev + 1);
     } else {
       setShowResult(true);
+      trackAssessmentEvent('finished', { score: normalizedScore });
     }
   };
 

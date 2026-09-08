@@ -13,10 +13,17 @@ import {
   Linkedin,
   Twitter,
   Copy,
+  Eye,
 } from 'lucide-react';
 import { Theme, Language } from '../types';
 import { insightsArticles } from '../data/insightsData';
 import { getInsightShareUrl, copyTextToClipboard } from '../utils/seo';
+import {
+  getArticleViews,
+  formatArticleViews,
+  formatPublishedDate,
+} from '../utils/articleViews';
+import { trackArticleShare, trackArticleView } from '../lib/analytics';
 
 interface InsightsSectionProps {
   theme: Theme;
@@ -38,6 +45,23 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
   const shareUrl = getInsightShareUrl(featuredArticle.slug);
   const shareTitle = `${featuredArticle.title[lang]} | NAVERO Strategic Advisory`;
 
+  // Dynamic publication view count
+  const [viewCount, setViewCount] = useState<number>(() =>
+    getArticleViews(featuredArticle.id, featuredArticle.publishedAt)
+  );
+
+  const handleArticleClick = (slug: string) => {
+    trackArticleView({
+      articleId: featuredArticle.id,
+      articleTitle: featuredArticle.title[lang],
+      category: featuredArticle.category[lang],
+      publishedAt: featuredArticle.publishedAt,
+      viewCount,
+      lang,
+    });
+    onOpenArticle(slug);
+  };
+
   const handleShare = async (slug: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     const url = getInsightShareUrl(slug);
@@ -45,6 +69,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
 
     if (success) {
       setCopiedSlug(slug);
+      trackArticleShare(featuredArticle.id, 'copy_link');
       setTimeout(() => {
         setCopiedSlug(null);
       }, 3000);
@@ -127,10 +152,15 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               </span>
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-slate-400">
-              <span className="flex items-center gap-1.5">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5" title="Publication Date">
                 <Calendar className="w-3.5 h-3.5 text-sky-400" />
-                <span>{featuredArticle.date[lang]}</span>
+                <span>{formatPublishedDate(featuredArticle.publishedAt, lang)}</span>
+              </span>
+              <span className="opacity-30">|</span>
+              <span className="flex items-center gap-1.5 font-mono text-[11px]" title="Total Reads">
+                <Eye className="w-3.5 h-3.5 text-sky-400" />
+                <span className="font-semibold text-slate-300">{formatArticleViews(viewCount, lang)}</span>
               </span>
               <span className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
@@ -145,7 +175,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
             {/* Headline & Subtitle */}
             <div className="space-y-3">
               <h3
-                onClick={() => onOpenArticle(featuredArticle.slug)}
+                onClick={() => handleArticleClick(featuredArticle.slug)}
                 className={`text-2xl sm:text-3xl lg:text-4xl font-serif font-bold tracking-tight cursor-pointer transition-colors ${
                   theme === 'dark' ? 'text-white hover:text-sky-300' : 'text-[#0c1c4f] hover:text-sky-600'
                 }`}
@@ -262,7 +292,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               {/* Read Full Article Button */}
               <button
                 id="btn-open-article-subpage"
-                onClick={() => onOpenArticle(featuredArticle.slug)}
+                onClick={() => handleArticleClick(featuredArticle.slug)}
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-sky-500 hover:bg-sky-400 transition-all shadow-md shadow-sky-500/25 hover:shadow-lg hover:shadow-sky-500/30 group"
               >
                 <span>{isEn ? 'Read Full Publication' : '전체 아티클 읽기'}</span>

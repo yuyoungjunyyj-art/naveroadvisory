@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Theme, Language } from '../types';
 import { translations } from '../data/translations';
+import { trackContactSubmission } from '../lib/analytics';
 
 interface ContactSectionProps {
   theme: Theme;
@@ -108,6 +109,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ theme, lang }) =
         if (typeof data.message === 'string' && data.message.includes('Activation')) {
           setActivationNotice(true);
         }
+        trackContactSubmission({
+          serviceRequired: formData.sector || 'General Advisory',
+          hasTimeline: Boolean(formData.timeline && formData.timeline !== 'Not specified'),
+        });
         setIsSubmitted(true);
       } else {
         throw new Error(data.message || 'Submission request could not be processed');

@@ -12,6 +12,11 @@ import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { FadeSection } from './components/FadeSection';
+import {
+  initGA,
+  trackPageView,
+  trackPreferenceChange,
+} from './lib/analytics';
 
 export default function App() {
   // Initialize language (default 'en' as requested, with persistence)
@@ -29,11 +34,13 @@ export default function App() {
   const handleSetLang = (newLang: Language) => {
     setLang(newLang);
     localStorage.setItem('navLang', newLang);
+    trackPreferenceChange('language', newLang);
   };
 
   const handleSetTheme = (newTheme: Theme) => {
     setTheme(newTheme);
     localStorage.setItem('navTheme', newTheme);
+    trackPreferenceChange('theme', newTheme);
   };
 
   // State for article reader modal
@@ -67,6 +74,12 @@ export default function App() {
   const currentArticle =
     insightsArticles.find((a) => a.slug === selectedArticleSlug) || null;
 
+  // Initialize GA4 and track initial pageview
+  useEffect(() => {
+    initGA();
+    trackPageView(window.location.pathname + window.location.hash);
+  }, []);
+
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -88,6 +101,7 @@ export default function App() {
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          trackPageView(window.location.pathname + hash, `Section: ${targetId}`);
         }
       }
     };
