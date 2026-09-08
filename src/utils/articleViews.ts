@@ -16,12 +16,12 @@ function getBaselineViews(publishedAt: string): number {
   try {
     const pubDate = new Date(publishedAt).getTime();
     const now = Date.now();
-    const daysSince = Math.max(1, Math.floor((now - pubDate) / (1000 * 60 * 60 * 24)));
-    // Realistic initial readership curve: 350 reads first week + ~18 reads/day
-    const base = 850 + daysSince * 14;
+    const daysSince = Math.max(0, Math.floor((now - pubDate) / (1000 * 60 * 60 * 24)));
+    // Realistic readership curve starting from publication date
+    const base = 128 + daysSince * 15;
     return base;
   } catch {
-    return 980;
+    return 130;
   }
 }
 
@@ -91,7 +91,7 @@ export function formatPublishedDate(publishedAt: string, lang: 'ko' | 'en'): str
   try {
     const date = new Date(publishedAt);
     if (isNaN(date.getTime())) {
-      return lang === 'ko' ? '2026년 2월 18일 발행' : 'Published Feb 18, 2026';
+      return lang === 'ko' ? '2026년 9월 7일 발행' : 'Published Sep 7, 2026';
     }
 
     if (lang === 'ko') {
@@ -108,6 +108,6 @@ export function formatPublishedDate(publishedAt: string, lang: 'ko' | 'en'): str
     };
     return `Published ${date.toLocaleDateString('en-US', options)}`;
   } catch {
-    return lang === 'ko' ? '2026년 2월 18일 발행' : 'Published Feb 18, 2026';
+    return lang === 'ko' ? '2026년 9월 7일 발행' : 'Published Sep 7, 2026';
   }
 }

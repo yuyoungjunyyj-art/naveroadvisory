@@ -94,10 +94,10 @@ export const insightsArticles: InsightArticle[] = [
       en: 'SOUTHEAST ASIA ↔ KOREA',
       ko: '동남아시아 ↔ 한국',
     },
-    publishedAt: '2026-02-18',
+    publishedAt: '2026-09-07',
     date: {
-      en: 'Feb 18, 2026',
-      ko: '2026년 2월 18일',
+      en: 'Sep 7, 2026',
+      ko: '2026년 9월 7일',
     },
     readTime: {
       en: '5 min read',
