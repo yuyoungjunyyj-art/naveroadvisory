@@ -38,28 +38,17 @@ export interface InsightArticle {
     en: string;
     ko: string;
   };
-  assumptionProblem?: {
+  assumptionProblem: {
     en: string;
     ko: string;
   };
-  fiveAssumptions?: Array<{
+  fiveAssumptions: Array<{
     num: string;
     headline: {
       en: string;
       ko: string;
     };
     detail: {
-      en: string;
-      ko: string;
-    };
-  }>;
-  coreSections?: Array<{
-    id: string;
-    title: {
-      en: string;
-      ko: string;
-    };
-    content: {
       en: string;
       ko: string;
     };
@@ -75,21 +64,6 @@ export interface InsightArticle {
   decisionQuestions: {
     en: string[];
     ko: string[];
-  };
-  linkedInDistribution?: {
-    brandPage: {
-      timing: { en: string; ko: string };
-      body: { en: string; ko: string };
-      hashtags: string[];
-    };
-    principalConsultant: {
-      timing: { en: string; ko: string };
-      body: { en: string; ko: string };
-    };
-    executiveQuestion: {
-      timing: { en: string; ko: string };
-      body: { en: string; ko: string };
-    };
   };
   sources: Array<{
     title: {
@@ -109,171 +83,6 @@ export interface InsightArticle {
 }
 
 export const insightsArticles: InsightArticle[] = [
-  {
-    id: 'wellness-hospitality-beyond-seoul',
-    slug: 'wellness-hospitality-beyond-seoul',
-    category: {
-      en: 'WELLNESS | REGIONAL TOURISM',
-      ko: '웰니스 | 지역 관광',
-    },
-    corridor: {
-      en: 'SITE SELECTION',
-      ko: '입지 선정 전략',
-    },
-    publishedAt: '2026-09-09',
-    date: {
-      en: 'Sep 9, 2026',
-      ko: '2026년 9월 9일',
-    },
-    readTime: {
-      en: '4 min read',
-      ko: '4분 소요',
-    },
-    title: {
-      en: 'Wellness Hospitality Beyond Seoul',
-      ko: '서울을 넘어선 웰니스 호스피탈리티 (Wellness Hospitality Beyond Seoul)',
-    },
-    subtitle: {
-      en: 'Where a regional Korea proposition can work - and what must be true first',
-      ko: '지방 거점 웰니스 모델이 성립할 수 있는 입지 조건과 충족되어야 할 필수 전제',
-    },
-    teaserSummary: {
-      en: 'A regional wellness asset needs more than scenery. The proposition must earn the return journey through access, length of stay, repeat demand, credible programming and an economics that survives seasonality.',
-      ko: '지방 웰니스 자산에는 수려한 자연경관 그 이상이 필요합니다. 접근성, 체류 기간, 재방문 수요, 신뢰할 수 있는 로컬 프로그램, 그리고 계절적 비수기를 극복하는 경제성을 통해 다시 찾는 여정(return journey)을 증명해야 합니다.',
-    },
-    previewTakeaways: {
-      en: [
-        'Korea’s regional landscape makes wellness concepts attractive, but scenery is not an operating model.',
-        'Weekend spikes and viral social media moments cannot replace sustainable weekday and off-season demand.',
-        'Credible local programming and operating partner capability determine viability beyond the launch phase.',
-      ],
-      ko: [
-        '한국의 수려한 자연경관이 웰니스 콘셉트를 매력적으로 만들지만, 풍경 자체가 운영 모델이 될 수는 없습니다.',
-        '단순한 주말 쏠림이나 SNS 바이럴 모멘텀은 주중과 비수기를 지탱할 안정적 수요 기반이 되지 못합니다.',
-        '초기 오픈 기간을 넘어 비즈니스를 지속시키는 핵심은 신뢰할 수 있는 로컬 프로그램과 운영 파트너 역량입니다.',
-      ],
-    },
-    executiveThesis: {
-      en: 'A regional wellness asset needs more than scenery. The proposition must earn the return journey through access, length of stay, repeat demand, credible programming and an economics that survives seasonality.',
-      ko: '지방 웰니스 자산에는 수려한 자연경관 그 이상이 필요합니다. 접근성, 체류 기간, 재방문 수요, 신뢰할 수 있는 프로그램, 그리고 비수기를 버텨낼 수 있는 단위 경제성을 통해 다시 찾는 여정을 성립시켜야 합니다.',
-    },
-    coreSections: [
-      {
-        id: 'regional-temptation',
-        title: {
-          en: 'The regional temptation',
-          ko: '지방 시장의 유혹과 현실 (The regional temptation)',
-        },
-        content: {
-          en: 'Korea’s regional landscape can make a wellness-hospitality story immediately attractive. Yet a destination is not an operating model. The market may be constrained by access, travel time, seasonality, staffing, domestic travel patterns, local partner capability and the narrowness of the addressable customer cohort. These variables need more attention than a visual concept deck.',
-          ko: '한국의 수려한 지방 자연경관은 웰니스 호스피탈리티 서사를 즉각적으로 매력적으로 보이게 만듭니다. 그러나 매력적인 여행지(destination)라는 사실 그 자체가 지속 가능한 운영 모델(operating model)을 의미하지는 않습니다. 실제 시장은 접근성, 이동 소요 시간, 계절성, 인력 채용, 국내 여행 패턴, 현지 파트너의 실행 역량, 그리고 유효 타깃 고객군의 협소함에 의해 강하게 제약받을 수 있습니다. 이러한 핵심 변수들은 화려한 시각적 콘셉트 기획서보다 훨씬 더 깊은 주의를 기울여야 할 대상입니다.',
-        },
-      },
-      {
-        id: 'return-journey-test',
-        title: {
-          en: 'The return-journey test',
-          ko: '다시 찾는 여정의 검증 (The return-journey test)',
-        },
-        content: {
-          en: 'Ask whether a guest can get there easily, stay long enough, pay for the experience and return. Then ask whether local programming is credible enough to sustain the proposition beyond the launch period. KTO regional visitation and spending tools, transport assessment and primary customer research should be read together. A single weekend spike or social-media moment is not a reliable demand base.',
-          ko: '고객이 수월하게 도달할 수 있는지, 충분한 기간 머무르는지, 그 경험에 대해 기꺼이 적정 가격을 지불하고 다시 돌아올 것인지를 먼저 물어야 합니다. 그다음 현지 프로그램이 초기 론칭 홍보 기간을 지나서도 사업을 지탱할 만큼 신뢰할 수 있는지 검토해야 합니다. 한국관광공사(KTO)의 지역별 방문·소비 분석 툴, 교통망 평가, 그리고 1차 타깃 고객 조사를 반드시 종합적으로 분석해야 합니다. 단 한 번의 주말 인파 급증이나 SNS상의 바이럴 모멘텀은 결코 신뢰할 수 있는 수요 기반이 될 수 없습니다.',
-        },
-      },
-    ],
-    verdictQuote: {
-      en: 'Begin with a modest, testable proposition. If the first customer, the stay pattern, the operating partner and the off-season plan are not clear, the opportunity remains a destination story rather than a viable regional business.',
-      ko: '검증 가능한 규모의 절제된 가설부터 시작하십시오. 최초의 고객, 체류 패턴, 운영 파트너, 그리고 비수기 계획이 명확하지 않다면, 그것은 사업성 있는 지역 비즈니스가 아니라 단지 하나의 목적지 서사에 머무를 뿐입니다.',
-    },
-    verdictDetail: {
-      en: 'Define the first customer, the stay pattern, the operating partner and the off-season plan. If those elements are not clear, the opportunity remains a destination story rather than a viable regional business.',
-      ko: '첫 번째 고객 프로필, 체류 패턴, 현지 운영 파트너, 그리고 비수기 방어 계획을 정밀하게 규정하십시오. 이 요소들이 명확하지 않다면, 해당 기회는 실질적인 지역 비즈니스가 아니라 단순한 여행지 이야기에 불과합니다.',
-    },
-    decisionQuestions: {
-      en: [
-        'Can the guest reach the asset without friction?',
-        'What supports off-season and weekday demand?',
-        'Which local partner makes the experience credible?',
-      ],
-      ko: [
-        '고객이 이동 과정의 마찰 없이 해당 자산에 수월하게 도달할 수 있는가?',
-        '비수기와 주중의 수요를 실질적으로 지탱해 줄 요소는 무엇인가?',
-        '어떤 현지 파트너가 이 웰니스 경험의 진정성과 신뢰성을 담보하는가?',
-      ],
-    },
-    linkedInDistribution: {
-      brandPage: {
-        timing: {
-          en: 'Brand page - Monday',
-          ko: '브랜드 공식 채널 - 월요일',
-        },
-        body: {
-          en: 'The question is not whether wellness hospitality can exist beyond Seoul. It is where the operating conditions are strong enough for it to work. Access, seasonality, regional demand, length of stay, local partnerships and price tolerance matter more than a beautiful landscape alone. Navero sets out the location test.',
-          ko: '질문은 서울 이외의 지역에서 웰니스 호스피탈리티가 존재할 수 있는가가 아닙니다. 성공을 뒷받침할 운영 조건이 충분히 강력한 입지가 과연 어디인가입니다. 아름다운 풍경 그 자체보다 접근성, 계절성, 지역 내 유효 수요, 체류 기간, 로컬 파트너십, 그리고 가격 수용성이 훨씬 더 결정적입니다. 나베로가 입지 검증 테스트를 제시합니다.',
-        },
-        hashtags: ['#WellnessHospitality', '#KoreaMarket', '#TourismStrategy'],
-      },
-      principalConsultant: {
-        timing: {
-          en: 'Principal Consultant - Wednesday',
-          ko: '수석 컨설턴트 인사이트 - 수요일',
-        },
-        body: {
-          en: 'For a regional wellness proposition, I do not begin with the asset. I begin with the return journey. Can the guest reach it easily, stay long enough, come back, pay for the experience and access credible local programming? If the answer is unclear, the concept is still a destination story - not yet an operating model.',
-          ko: '지방 거점 웰니스 제안을 검토할 때, 저는 자산(건물/외관)에서 시작하지 않습니다. 저는 ‘다시 찾는 여정(return journey)’에서 시작합니다. 고객이 쉽게 도달하고, 충분히 머물며, 다시 방문하고, 그 가치에 지불하며, 신뢰할 수 있는 로컬 프로그램을 경험할 수 있는가? 이 질문에 명확한 답이 없다면, 그 기획은 아직 목적지 서사일 뿐 운영 모델이 아닙니다.',
-        },
-      },
-      executiveQuestion: {
-        timing: {
-          en: 'Executive question - Friday',
-          ko: '경영진 핵심 질문 - 금요일',
-        },
-        body: {
-          en: 'When assessing a Korean regional wellness location, what would you rank first: access, domestic repeat demand, international appeal, seasonality or partner ecosystem?',
-          ko: '한국 지방의 웰니스 입지를 평가할 때, 귀하는 무엇을 최우선으로 꼽으시겠습니까: 접근성, 국내 재방문 수요, 글로벌 매력도, 계절성, 아니면 파트너 생태계입니까?',
-        },
-      },
-    },
-    sources: [
-      {
-        title: {
-          en: 'KTO Data Lab',
-          ko: '한국관광 데이터랩 (KTO Data Lab)',
-        },
-        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
-        desc: {
-          en: 'Korea Tourism Organization Regional Visitation & Spending Big Data',
-          ko: '한국관광공사 지역별 방문자 및 관광 소비 빅데이터 포털',
-        },
-      },
-      {
-        title: {
-          en: 'KTO Methodology',
-          ko: 'KTO 통계 방법론 메타 정보',
-        },
-        url: 'https://datalab.visitkorea.or.kr/datalab/portal/getMetaInfoList.do',
-        desc: {
-          en: 'Regional tourism verification standards and sampling frameworks',
-          ko: '지역 관광 데이터 수집 표준 및 분석 방법론',
-        },
-      },
-      {
-        title: {
-          en: 'KOSIS (Korean Statistical Information Service)',
-          ko: '국가통계포털 (KOSIS)',
-        },
-        url: 'https://kosis.kr/eng/',
-        desc: {
-          en: 'National demographic, transportation, and regional economic accounts',
-          ko: '통계청 국가 통계 정보 포털 (인구, 교통, 지역 경제 계정)',
-        },
-      },
-    ],
-    disclaimer: {
-      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
-      ko: '본 자료의 출처 링크는 근거 데이터를 명시하며 발행일 기준 재확인이 필요합니다. 나베로(Navero)의 견해는 분석적 해석이며 제3자의 사실 진술이 아닙니다. 본 아티클은 시장 분석 논평이며 법률, 의료, 규제 또는 투자 자문이 아닙니다.',
-    },
-  },
   {
     id: 'korea-entry-assumptions',
     slug: 'is-south-korea-the-next-market',

@@ -37,26 +37,26 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
   onOpenArticle,
 }) => {
   const isEn = lang === 'en';
-  const [activeSlug, setActiveSlug] = useState<string>(insightsArticles[0].slug);
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
+  const [shareDropdownOpen, setShareDropdownOpen] = useState(false);
 
-  // Active featured article
-  const featuredArticle =
-    insightsArticles.find((a) => a.slug === activeSlug) || insightsArticles[0];
+  // We feature the primary publication
+  const featuredArticle = insightsArticles[0];
   const shareUrl = getInsightShareUrl(featuredArticle.slug);
+  const shareTitle = `${featuredArticle.title[lang]} | NAVERO Strategic Advisory`;
 
   // Dynamic publication view count
-  const viewCount = getArticleViews(featuredArticle.id, featuredArticle.publishedAt);
+  const [viewCount, setViewCount] = useState<number>(() =>
+    getArticleViews(featuredArticle.id, featuredArticle.publishedAt)
+  );
 
   const handleArticleClick = (slug: string) => {
-    const art = insightsArticles.find((a) => a.slug === slug) || featuredArticle;
-    const views = getArticleViews(art.id, art.publishedAt);
     trackArticleView({
-      articleId: art.id,
-      articleTitle: art.title[lang],
-      category: art.category[lang],
-      publishedAt: art.publishedAt,
-      viewCount: views,
+      articleId: featuredArticle.id,
+      articleTitle: featuredArticle.title[lang],
+      category: featuredArticle.category[lang],
+      publishedAt: featuredArticle.publishedAt,
+      viewCount,
       lang,
     });
     onOpenArticle(slug);
@@ -73,6 +73,13 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
       setTimeout(() => {
         setCopiedSlug(null);
       }, 3000);
+    }
+  };
+
+  const openShareWindow = (url: string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank', 'noopener,noreferrer,width=600,height=500');
     }
   };
 
@@ -116,39 +123,6 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               <span>{isEn ? 'Request Full Briefing' : '전략 자문 요청'}</span>
             </a>
           </div>
-        </div>
-
-        {/* Publication Selector Tabs */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-8">
-          <span className="text-xs font-mono uppercase tracking-wider text-slate-400 mr-1 flex items-center gap-1.5">
-            <Newspaper className="w-3.5 h-3.5 text-sky-400" />
-            {isEn ? 'Publications:' : '발행 리포트:'}
-          </span>
-          {insightsArticles.map((art, idx) => {
-            const isActive = art.slug === featuredArticle.slug;
-            return (
-              <button
-                key={art.id}
-                onClick={() => setActiveSlug(art.slug)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs transition-all border ${
-                  isActive
-                    ? 'bg-sky-500 text-white border-sky-400 shadow-md shadow-sky-500/20 font-semibold'
-                    : theme === 'dark'
-                    ? 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white'
-                    : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
-                }`}
-              >
-                <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono uppercase ${
-                  isActive
-                    ? 'bg-white/20 text-white font-bold'
-                    : 'bg-sky-500/10 text-sky-400 font-semibold'
-                }`}>
-                  {idx === 0 ? (isEn ? 'LATEST' : '최신') : (isEn ? 'REPORT' : '리포트')}
-                </span>
-                <span className="truncate max-w-[200px] sm:max-w-xs">{art.title[lang]}</span>
-              </button>
-            );
-          })}
         </div>
 
         {/* Featured Publication Teaser Card */}
@@ -327,88 +301,6 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
             </div>
           </div>
         </article>
-
-        {/* All Publications Directory */}
-        <div className="mt-16 pt-12 border-t border-slate-200 dark:border-white/10">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h3 className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
-                theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-              }`}>
-                {isEn ? 'All Advisory Publications' : '전체 리서치 아티클 목록'}
-              </h3>
-              <p className={`text-xs sm:text-sm mt-1 ${
-                theme === 'dark' ? 'text-slate-400' : 'text-slate-600'
-              }`}>
-                {isEn
-                  ? 'Access the complete catalog of NAVERO strategic research papers and operational frameworks.'
-                  : '나베로 전략 자문단이 발행한 모든 전문 리서치 및 크로스보더 운영 프레임워크를 확인하실 수 있습니다.'}
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {insightsArticles.map((art, idx) => {
-              const artViews = getArticleViews(art.id, art.publishedAt);
-              const isCurrent = art.slug === featuredArticle.slug;
-              return (
-                <div
-                  key={art.id}
-                  className={`p-6 rounded-2xl border transition-all flex flex-col justify-between ${
-                    isCurrent
-                      ? theme === 'dark'
-                        ? 'bg-sky-950/20 border-sky-500/40 ring-1 ring-sky-500/30'
-                        : 'bg-sky-50/40 border-sky-300 ring-1 ring-sky-300/50'
-                      : theme === 'dark'
-                      ? 'bg-white/[0.02] border-white/10 hover:border-white/20'
-                      : 'bg-white border-slate-200 hover:border-slate-300 shadow-sm'
-                  }`}
-                >
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-                      <span className="font-mono text-[11px] font-bold text-sky-400 uppercase tracking-wider">
-                        {art.category[lang]}
-                      </span>
-                      <div className="flex items-center gap-2 text-slate-400 text-[11px]">
-                        <span>{formatPublishedDate(art.publishedAt, lang)}</span>
-                        <span>•</span>
-                        <span>{art.readTime[lang]}</span>
-                      </div>
-                    </div>
-
-                    <h4
-                      onClick={() => handleArticleClick(art.slug)}
-                      className={`text-lg sm:text-xl font-serif font-bold tracking-tight cursor-pointer transition-colors ${
-                        theme === 'dark' ? 'text-white hover:text-sky-300' : 'text-[#0c1c4f] hover:text-sky-600'
-                      }`}
-                    >
-                      {art.title[lang]}
-                    </h4>
-
-                    <p className={`text-xs sm:text-sm leading-relaxed line-clamp-2 ${
-                      theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                    }`}>
-                      {art.subtitle[lang]}
-                    </p>
-                  </div>
-
-                  <div className="pt-5 mt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-slate-400">
-                      {formatArticleViews(artViews, lang)}
-                    </span>
-                    <button
-                      onClick={() => handleArticleClick(art.slug)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sky-500 hover:text-sky-400 transition-colors group"
-                    >
-                      <span>{isEn ? 'Read Article' : '전문 읽기'}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </section>
   );
