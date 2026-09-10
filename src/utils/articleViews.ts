@@ -89,16 +89,31 @@ export function formatArticleViews(count: number, lang: 'ko' | 'en'): string {
  */
 export function formatPublishedDate(publishedAt: string, lang: 'ko' | 'en'): string {
   try {
+    const parts = publishedAt.split('-');
+    if (parts.length === 3) {
+      const year = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10);
+      const day = parseInt(parts[2], 10);
+
+      if (lang === 'ko') {
+        return `${year}년 ${month}월 ${day}일 발행`;
+      }
+
+      const monthNames = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+      ];
+      const monthName = monthNames[month - 1] || 'Sep';
+      return `Published ${monthName} ${day}, ${year}`;
+    }
+
     const date = new Date(publishedAt);
     if (isNaN(date.getTime())) {
-      return lang === 'ko' ? '2026년 9월 7일 발행' : 'Published Sep 7, 2026';
+      return lang === 'ko' ? '2026년 9월 9일 발행' : 'Published Sep 9, 2026';
     }
 
     if (lang === 'ko') {
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
-      return `${year}년 ${month}월 ${day}일 발행`;
+      return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일 발행`;
     }
 
     const options: Intl.DateTimeFormatOptions = {
@@ -108,6 +123,6 @@ export function formatPublishedDate(publishedAt: string, lang: 'ko' | 'en'): str
     };
     return `Published ${date.toLocaleDateString('en-US', options)}`;
   } catch {
-    return lang === 'ko' ? '2026년 9월 7일 발행' : 'Published Sep 7, 2026';
+    return lang === 'ko' ? '2026년 9월 9일 발행' : 'Published Sep 9, 2026';
   }
 }

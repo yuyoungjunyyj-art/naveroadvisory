@@ -271,69 +271,93 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
 
           {/* Article Full Body */}
           <div className="p-6 sm:p-10 space-y-12">
-            {/* Section 1: The assumption problem */}
-            <section className="space-y-4">
-              <h2
-                className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
-                  theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                }`}
-              >
-                {isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)'}
-              </h2>
-              <p
-                className={`text-base sm:text-lg leading-relaxed ${
-                  theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
-                }`}
-              >
-                {article.assumptionProblem[lang]}
-              </p>
-            </section>
+            {/* Core Analytical Sections (e.g., The regional temptation, The return-journey test) */}
+            {article.coreSections && article.coreSections.map((sec) => (
+              <section key={sec.id} className="space-y-4">
+                <h2
+                  className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                  }`}
+                >
+                  {sec.title[lang]}
+                </h2>
+                <p
+                  className={`text-base sm:text-lg leading-relaxed ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                  }`}
+                >
+                  {sec.content[lang]}
+                </p>
+              </section>
+            ))}
 
-            {/* Section 2: Five assumptions to retire (Numbered list without boxes) */}
-            <section className="space-y-6">
-              <h2
-                className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
-                  theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                }`}
-              >
-                {isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)'}
-              </h2>
+            {/* Optional Section: The assumption problem (for specific publications) */}
+            {article.assumptionProblem && (
+              <section className="space-y-4">
+                <h2
+                  className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                  }`}
+                >
+                  {isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)'}
+                </h2>
+                <p
+                  className={`text-base sm:text-lg leading-relaxed ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                  }`}
+                >
+                  {article.assumptionProblem[lang]}
+                </p>
+              </section>
+            )}
 
-              {/* Numbered Editorial List without boxes */}
-              <ol className="divide-y divide-slate-200 dark:divide-white/10 list-none p-0 m-0">
-                {article.fiveAssumptions.map((item, idx) => (
-                  <li
-                    key={item.num}
-                    id={`assumption-${idx + 1}`}
-                    className="py-6 first:pt-1 last:pb-2 flex items-start gap-4 sm:gap-6"
-                  >
-                    <div className="flex-shrink-0 w-8 sm:w-10">
-                      <span className="font-serif text-2xl sm:text-3xl font-bold text-sky-500 dark:text-sky-400 select-none">
-                        {idx + 1}.
-                      </span>
-                    </div>
-                    <div className="space-y-2 flex-1">
-                      <h3
-                        className={`text-base sm:text-lg font-bold leading-snug ${
-                          theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
-                        }`}
-                      >
-                        {item.headline[lang]}
-                      </h3>
-                      <p
-                        className={`text-sm sm:text-base leading-relaxed ${
-                          theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                        }`}
-                      >
-                        {item.detail[lang]}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </section>
+            {/* Optional Section: Five assumptions to retire */}
+            {article.fiveAssumptions && article.fiveAssumptions.length > 0 && (
+              <section className="space-y-6">
+                <h2
+                  className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                  }`}
+                >
+                  {isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)'}
+                </h2>
 
-            {/* Section 3: Advisory Verdict */}
+                {/* Numbered Editorial List without boxes */}
+                <ol className="divide-y divide-slate-200 dark:divide-white/10 list-none p-0 m-0">
+                  {article.fiveAssumptions.map((item, idx) => (
+                    <li
+                      key={item.num}
+                      id={`assumption-${idx + 1}`}
+                      className="py-6 first:pt-1 last:pb-2 flex items-start gap-4 sm:gap-6"
+                    >
+                      <div className="flex-shrink-0 w-8 sm:w-10">
+                        <span className="font-serif text-2xl sm:text-3xl font-bold text-sky-500 dark:text-sky-400 select-none">
+                          {idx + 1}.
+                        </span>
+                      </div>
+                      <div className="space-y-2 flex-1">
+                        <h3
+                          className={`text-base sm:text-lg font-bold leading-snug ${
+                            theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                          }`}
+                        >
+                          {item.headline[lang]}
+                        </h3>
+                        <p
+                          className={`text-sm sm:text-base leading-relaxed ${
+                            theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
+                          }`}
+                        >
+                          {item.detail[lang]}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
+
+            {/* Advisory Verdict Section */}
             <section
               className={`p-6 sm:p-8 rounded-2xl border ${
                 theme === 'dark'
@@ -343,7 +367,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
             >
               <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-sky-400 mb-3">
                 <ShieldAlert className="w-4 h-4" />
-                <span>{isEn ? 'Advisory Verdict' : '자문단 총평 & 핵심 시사점'}</span>
+                <span>{isEn ? 'Navero Advisory Verdict' : '나베로 자문단 총평 (Navero advisory verdict)'}</span>
               </div>
               <blockquote
                 className={`text-lg sm:text-xl font-serif italic mb-4 leading-relaxed ${
@@ -361,26 +385,15 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
               </p>
             </section>
 
-            {/* Section 4: 3 Critical Questions Before Signing */}
+            {/* Decision Questions */}
             <section className="space-y-4">
               <h2
                 className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
                   theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
                 }`}
               >
-                {isEn
-                  ? 'Three questions principals should answer before signing'
-                  : '계약 서명 전 경영진이 자문해야 할 3가지 질문'}
+                {isEn ? 'Decision questions' : '의사결정을 위한 핵심 검토 질문 (Decision questions)'}
               </h2>
-              <p
-                className={`text-sm sm:text-base leading-relaxed ${
-                  theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                }`}
-              >
-                {isEn
-                  ? 'Before capital is committed to leases, fit-outs, or joint ventures, leadership should establish explicit, evidence-backed answers to three core questions:'
-                  : '임대차 계약, 인테리어 시공 또는 합작 투자에 자본을 투입하기 전에, 경영진은 다음 세 가지 핵심 질문에 대해 명확하고 실증적인 답을 확보해야 합니다:'}
-              </p>
               <div className="space-y-3 pt-2">
                 {article.decisionQuestions[lang].map((q, idx) => (
                   <div
@@ -405,6 +418,112 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 ))}
               </div>
             </section>
+
+            {/* LinkedIn Distribution Copy / Executive Perspective */}
+            {article.linkedInDistribution && (
+              <section className="space-y-5">
+                <div>
+                  <h2
+                    className={`text-xl sm:text-2xl font-serif font-bold tracking-tight mb-1 ${
+                      theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                    }`}
+                  >
+                    {isEn ? 'LinkedIn distribution copy' : '링크드인 배포용 경영진 브리프 (LinkedIn distribution copy)'}
+                  </h2>
+                  <p
+                    className={`text-xs sm:text-sm ${
+                      theme === 'dark' ? 'text-slate-400' : 'text-slate-600'
+                    }`}
+                  >
+                    {isEn
+                      ? 'Executive communication snippets calibrated for cross-border leadership distribution.'
+                      : '글로벌 및 크로스보더 경영진 소통을 위해 최적화된 채널별 배포 문구입니다.'}
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  {/* Brand page - Monday */}
+                  <div
+                    className={`p-5 rounded-2xl border transition-all ${
+                      theme === 'dark'
+                        ? 'bg-white/[0.02] border-white/10'
+                        : 'bg-white border-slate-200 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                        {article.linkedInDistribution.brandPage.timing[lang]}
+                      </span>
+                      <span className="text-[10px] font-mono uppercase text-slate-400">
+                        Brand Voice
+                      </span>
+                    </div>
+                    <p
+                      className={`text-sm leading-relaxed mb-3 ${
+                        theme === 'dark' ? 'text-slate-200' : 'text-slate-700'
+                      }`}
+                    >
+                      {article.linkedInDistribution.brandPage.body[lang]}
+                    </p>
+                    <div className="flex flex-wrap gap-2 text-xs font-mono text-sky-500">
+                      {article.linkedInDistribution.brandPage.hashtags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Principal Consultant - Wednesday */}
+                  <div
+                    className={`p-5 rounded-2xl border transition-all ${
+                      theme === 'dark'
+                        ? 'bg-white/[0.02] border-white/10'
+                        : 'bg-white border-slate-200 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                        {article.linkedInDistribution.principalConsultant.timing[lang]}
+                      </span>
+                      <span className="text-[10px] font-mono uppercase text-slate-400">
+                        Principal Commentary
+                      </span>
+                    </div>
+                    <p
+                      className={`text-sm leading-relaxed italic ${
+                        theme === 'dark' ? 'text-slate-200' : 'text-slate-700'
+                      }`}
+                    >
+                      &ldquo;{article.linkedInDistribution.principalConsultant.body[lang]}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Executive question - Friday */}
+                  <div
+                    className={`p-5 rounded-2xl border transition-all ${
+                      theme === 'dark'
+                        ? 'bg-white/[0.02] border-white/10'
+                        : 'bg-white border-slate-200 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                        {article.linkedInDistribution.executiveQuestion.timing[lang]}
+                      </span>
+                      <span className="text-[10px] font-mono uppercase text-slate-400">
+                        Discussion Prompt
+                      </span>
+                    </div>
+                    <p
+                      className={`text-sm font-medium leading-relaxed ${
+                        theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                      }`}
+                    >
+                      {article.linkedInDistribution.executiveQuestion.body[lang]}
+                    </p>
+                  </div>
+                </div>
+              </section>
+            )}
 
             {/* Section 5: Official Benchmark Data Sources & Methodology */}
             <section
