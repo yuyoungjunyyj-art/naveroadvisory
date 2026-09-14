@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /article_views/{articleId} {
+      // Allow all visitors to read global view counts
+      allow read: if true;
+      // Allow visitors to increment the view counter
+      allow create, update: if true;
+    }
+  }
+}

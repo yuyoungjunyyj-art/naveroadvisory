@@ -27,6 +27,7 @@ import {
   formatArticleViews,
   formatPublishedDate,
   getArticleViews,
+  useRealtimeArticleViews,
 } from '../utils/articleViews';
 import {
   trackArticleView,
@@ -55,17 +56,19 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
   const [copied, setCopied] = useState(false);
   const [copiedPostKey, setCopiedPostKey] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [currentViews, setCurrentViews] = useState<number>(() => {
-    return article ? getArticleViews(article.id, article.publishedAt) : 0;
-  });
+
+  // Real-time Firebase synchronized view count
+  const { views: realtimeViews, isLive } = useRealtimeArticleViews(
+    article?.id,
+    article?.publishedAt
+  );
 
   // Track article open & increment view count
   useEffect(() => {
     if (!isOpen || !article) return;
 
-    // Increment view count with session deduplication
+    // Increment view count with session deduplication & Firebase sync
     const { views } = incrementArticleView(article.id, article.publishedAt);
-    setCurrentViews(views);
 
     // Stream event to GA4
     trackArticleView({
@@ -230,9 +233,20 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                   <span>{formatPublishedDate(article.publishedAt, lang)}</span>
                 </span>
                 <span className="opacity-30">|</span>
-                <span className="flex items-center gap-1.5 font-mono text-[11px]" title="Total Reads">
+                <span
+                  className="flex items-center gap-1.5 font-mono text-[11px]"
+                  title={isEn ? 'Globally synchronized real-time readers' : '전 세계 실시간 동기화 누적 조회수'}
+                >
                   <Eye className="w-3.5 h-3.5 text-sky-400" />
-                  <span className="font-semibold text-slate-300">{formatArticleViews(currentViews, lang)}</span>
+                  <span className="font-semibold text-slate-300">{formatArticleViews(realtimeViews, lang)}</span>
+                  {isLive && (
+                    <span
+                      className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 animate-pulse"
+                      title={isEn ? 'Live Firebase sync active' : '실시간 전역 동기화 활성'}
+                    >
+                      LIVE
+                    </span>
+                  )}
                 </span>
                 <span className="opacity-30">|</span>
                 <span className="flex items-center gap-1.5">
@@ -268,7 +282,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
             >
               <div className="text-[11px] font-bold uppercase tracking-wider text-sky-500 mb-2 flex items-center gap-1.5">
                 <FileCheck2 className="w-3.5 h-3.5" />
-                <span>{isEn ? 'Executive Thesis' : '핵심 요약 (Executive Thesis)'}</span>
+                <span>{isEn ? 'Executive Thesis' : '핵심 요약'}</span>
               </div>
               <p className="text-sm sm:text-base leading-relaxed font-sans font-medium">
                 {article.executiveThesis[lang]}
@@ -285,7 +299,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                   theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
                 }`}
               >
-                {article.problemSectionTitle?.[lang] || (isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)')}
+                {article.problemSectionTitle?.[lang] || (isEn ? 'The assumption problem' : '전제의 함정')}
               </h2>
               <p
                 className={`text-base sm:text-lg leading-relaxed ${
@@ -303,7 +317,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                   theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
                 }`}
               >
-                {article.coreSectionTitle?.[lang] || (isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)')}
+                {article.coreSectionTitle?.[lang] || (isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제')}
               </h2>
 
               {/* Numbered Editorial List */}
@@ -373,7 +387,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                           {m.model[lang]}
                         </span>
                         <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 uppercase">
-                          Model 0{idx + 1}
+                          {isEn ? 'Model 0' : '모델 0'}{idx + 1}
                         </span>
                       </div>
                       <div className="space-y-2 text-xs">

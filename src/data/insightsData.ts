@@ -165,7 +165,7 @@ export const insightsArticles: InsightArticle[] = [
     },
     teaserSummary: {
       en: 'Franchising can accelerate expansion, but it cannot replace a control decision. In South Korea, an incoming brand should choose the model that protects its customer promise and learning loop - not the model that produces the quickest launch headline.',
-      ko: '프랜차이즈는 확장을 가속할 수 있지만, 통제권에 관한 핵심 의사결정을 대체할 수는 없습니다. 한국에 진입하는 해외 브랜드는 가장 빠른 론칭 헤드라인을 만들어내는 모델이 아니라, 고객과의 약속과 현지 학습 루프(Learning Loop)를 온전히 지켜낼 수 있는 운영 모델을 선택해야 합니다.',
+      ko: '프랜차이즈는 확장을 가속할 수 있지만, 통제권에 관한 핵심 의사결정을 대체할 수는 없습니다. 한국에 진입하는 해외 브랜드는 가장 빠른 론칭 헤드라인을 만들어내는 모델이 아니라, 고객과의 약속과 현지 학습 루프를 온전히 지켜낼 수 있는 운영 모델을 선택해야 합니다.',
     },
     previewTakeaways: {
       en: [
@@ -181,11 +181,11 @@ export const insightsArticles: InsightArticle[] = [
     },
     executiveThesis: {
       en: 'Franchising can accelerate expansion, but it cannot replace a control decision. In South Korea, an incoming brand should choose the model that protects its customer promise and learning loop - not the model that produces the quickest launch headline.',
-      ko: '프랜차이즈는 확장을 가속할 수 있지만, 통제권에 관한 핵심 의사결정을 대체할 수는 없습니다. 한국에 진입하는 해외 브랜드는 가장 빠른 론칭 헤드라인을 만들어내는 모델이 아니라, 고객과의 약속과 현지 학습 루프(Learning Loop)를 온전히 지켜낼 수 있는 운영 모델을 선택해야 합니다.',
+      ko: '프랜차이즈는 확장을 가속할 수 있지만, 통제권에 관한 핵심 의사결정을 대체할 수는 없습니다. 한국에 진입하는 해외 브랜드는 가장 빠른 론칭 헤드라인을 만들어내는 모델이 아니라, 고객과의 약속과 현지 학습 루프를 온전히 지켜낼 수 있는 운영 모델을 선택해야 합니다.',
     },
     problemSectionTitle: {
       en: 'Why the model matters',
-      ko: '운영 모델 선택이 결정적인 이유 (Why the model matters)',
+      ko: '운영 모델 선택이 결정적인 이유',
     },
     assumptionProblem: {
       en: 'A franchise, joint venture, licence, and direct corporate build distribute risk, decision rights, and learning in different ways. The wrong structure can separate a brand from the data, product decisions and customer feedback that define its equity. The right structure does not eliminate friction. It makes the friction visible and allocates it deliberately.',
@@ -193,7 +193,7 @@ export const insightsArticles: InsightArticle[] = [
     },
     coreSectionTitle: {
       en: 'The structural test: Three foundational questions',
-      ko: '구조적 적합성 테스트: 3가지 핵심 질문 (The structural test)',
+      ko: '구조적 적합성 테스트: 3가지 핵심 질문',
     },
     fiveAssumptions: [
       {
@@ -244,8 +244,8 @@ export const insightsArticles: InsightArticle[] = [
     modelComparison: [
       {
         model: {
-          en: 'Direct Corporate Build (직영 법인)',
-          ko: '직영 법인 설립 (Direct Corporate Build)',
+          en: 'Direct Corporate Build',
+          ko: '직영 법인 설립',
         },
         riskAllocation: {
           en: '100% Capital & Operational risk borne by principal',
@@ -266,8 +266,8 @@ export const insightsArticles: InsightArticle[] = [
       },
       {
         model: {
-          en: 'Joint Venture (JV, 합작 투자)',
-          ko: '합작 법인 (Joint Venture)',
+          en: 'Joint Venture (JV)',
+          ko: '합작 법인 (JV)',
         },
         riskAllocation: {
           en: 'Shared equity capital & local operational risk',
@@ -288,8 +288,8 @@ export const insightsArticles: InsightArticle[] = [
       },
       {
         model: {
-          en: 'Master Franchise (마스터 프랜차이즈)',
-          ko: '마스터 프랜차이즈 (Master Franchise)',
+          en: 'Master Franchise',
+          ko: '마스터 프랜차이즈',
         },
         riskAllocation: {
           en: 'Low capital risk; heavy brand equity dilution risk',
@@ -305,13 +305,13 @@ export const insightsArticles: InsightArticle[] = [
         },
         koreaSuitability: {
           en: 'Viable only with mature SOPs and comprehensive governance mapping',
-          ko: '성숙한 매뉴얼과 정밀한 계약 거버넌스 지도 확보 시 가능',
+          ko: '성숙한 매뉴얼과 정밀한 계약 거버넌스 체계 확보 시 가능',
         },
       },
       {
         model: {
-          en: 'Brand Licence (브랜드 라이선스)',
-          ko: '브랜드 라이선스 (Brand Licence)',
+          en: 'Brand Licence',
+          ko: '브랜드 라이선스',
         },
         riskAllocation: {
           en: 'Minimal financial commitment; royalty-based yield',
@@ -337,7 +337,7 @@ export const insightsArticles: InsightArticle[] = [
     },
     verdictDetail: {
       en: 'Then create a governance map covering menu or service changes, supplier approval, data access, customer experience, site selection, and remediation rights. Korean legal counsel should review the structure before execution.',
-      ko: '그런 다음 메뉴 및 서비스 변경 승인권, 원부자재 공급업체 승인권, 고객 데이터 접근 권한, 고객 경험(CX) 기준, 출점지 선정, 그리고 계약 위반 시 시정 조치권(Remediation rights)을 망라하는 정밀한 거버넌스 맵(Governance Map)을 구축하십시오. 최종 실행에 앞서 한국 전문 법률 자문단을 통해 계약 구조를 면밀히 검토받아야 합니다.',
+      ko: '그런 다음 메뉴 및 서비스 변경 승인권, 원부자재 공급업체 승인권, 고객 데이터 접근 권한, 고객 경험 기준, 출점지 선정, 그리고 계약 위반 시 시정 조치권을 망라하는 정밀한 거버넌스 맵을 구축하십시오. 최종 실행에 앞서 한국 전문 법률 자문단을 통해 계약 구조를 면밀히 검토받아야 합니다.',
     },
     decisionQuestionsTitle: {
       en: 'Decision questions for leadership before signing',
@@ -354,8 +354,8 @@ export const insightsArticles: InsightArticle[] = [
         'What concrete evidence would justify transitioning to a different operating model after the first flagship site?',
       ],
       ko: [
-        '어떠한 상황에서도 현지 파트너에게 위임할 수 없는 핵심 의사결정 권한(Decision Rights)은 무엇인가?',
-        '장기적인 초과 이익(Upside)을 나눠주면서까지 현지 파트너로부터 확보할 가치가 있는 역량은 무엇인가?',
+        '어떠한 상황에서도 현지 파트너에게 위임할 수 없는 핵심 의사결정 권한은 무엇인가?',
+        '장기적인 초과 이익을 나눠주면서까지 현지 파트너로부터 확보할 가치가 있는 역량은 무엇인가?',
         '1호 플래그십 매장 오픈 이후 다른 운영 모델로 전환하는 것을 정당화할 실증적 데이터와 기준은 무엇인가?',
       ],
     },
@@ -363,7 +363,7 @@ export const insightsArticles: InsightArticle[] = [
       {
         title: {
           en: 'KFTC Franchise Policy',
-          ko: '대한민국 공정거래위원회 가맹사업 정책 (KFTC)',
+          ko: '대한민국 공정거래위원회 가맹사업 정책',
         },
         url: 'https://www.ftc.go.kr/eng/contents.do?key=551',
         desc: {
@@ -374,7 +374,7 @@ export const insightsArticles: InsightArticle[] = [
       {
         title: {
           en: 'KTO Data Lab',
-          ko: '한국관광 데이터랩 (KTO Data Lab)',
+          ko: '한국관광 데이터랩',
         },
         url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
         desc: {
@@ -424,7 +424,7 @@ export const insightsArticles: InsightArticle[] = [
     },
     title: {
       en: 'Is South Korea the Next Market?',
-      ko: '한국은 과연 다음 시장인가? (Is South Korea the Next Market?)',
+      ko: '한국은 과연 다음 시장인가?',
     },
     subtitle: {
       en: 'Five assumptions Southeast Asian hospitality brands should retire before entry',
@@ -503,7 +503,7 @@ export const insightsArticles: InsightArticle[] = [
         num: '05',
         headline: {
           en: 'A fast launch is not always an advantage if the learning loop is weak.',
-          ko: '학습 루프(Learning loop)가 취약하다면 빠른 론칭이 결코 경쟁 우위가 될 수 없습니다.',
+          ko: '학습 루프가 취약하다면 빠른 론칭이 결코 경쟁 우위가 될 수 없습니다.',
         },
         detail: {
           en: 'Premature multi-unit commitments before proving unit economics in one micro-district compound operational liabilities rather than speed.',
@@ -528,14 +528,14 @@ export const insightsArticles: InsightArticle[] = [
       ko: [
         '첫 방문객이 아닌, "첫 번째 재방문 고객"은 누구인가?',
         '가격대, 포맷, 서비스 템포를 뒷받침할 수 있는 상권은 어디인가?',
-        '나베로(NAVERO)가 진출 보류(No-Go 또는 Delay)를 권고하게 만드는 결정적 요인은 무엇인가?',
+        '나베로가 진출 보류를 권고하게 만드는 결정적 요인은 무엇인가?',
       ],
     },
     sources: [
       {
         title: {
           en: 'KTO Data Lab',
-          ko: '한국관광 데이터랩 (KTO Data Lab)',
+          ko: '한국관광 데이터랩',
         },
         url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
         desc: {
@@ -557,7 +557,7 @@ export const insightsArticles: InsightArticle[] = [
       {
         title: {
           en: 'KOSIS (Korean Statistical Information Service)',
-          ko: '국가통계포털 (KOSIS)',
+          ko: '국가통계포털',
         },
         url: 'https://kosis.kr/eng/',
         desc: {

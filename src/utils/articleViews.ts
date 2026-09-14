@@ -1,9 +1,15 @@
+import { useState, useEffect } from 'react';
+import {
+  subscribeToRealtimeArticleViews,
+  recordGlobalArticleView,
+} from '../lib/firebase';
+
 /**
  * Article Views & Publication Date Manager
  *
  * Automatically tracks and calculates:
  * 1. Formatted publication date based on article's actual publishedAt ISO timestamp.
- * 2. Cumulative view count starting from publication date + real-time visitor increments.
+ * 2. Cumulative view count starting from publication date + real-time Firebase visitor increments.
  */
 
 const STORAGE_KEY_PREFIX = 'navero_article_views_';
@@ -12,7 +18,7 @@ const VIEWED_SESSION_KEY = 'navero_viewed_session_';
 /**
  * Calculates a realistic base baseline of reads based on publication age
  */
-function getBaselineViews(publishedAt: string): number {
+export function getBaselineViews(publishedAt: string): number {
   try {
     const pubDate = new Date(publishedAt).getTime();
     const now = Date.now();
@@ -26,7 +32,7 @@ function getBaselineViews(publishedAt: string): number {
 }
 
 /**
- * Retrieves the current total view count for an article
+ * Retrieves the current total view count for an article (fallback cache)
  */
 export function getArticleViews(articleId: string, publishedAt: string): number {
   if (typeof window === 'undefined') {
@@ -42,7 +48,8 @@ export function getArticleViews(articleId: string, publishedAt: string): number 
 
 /**
  * Increments an article's view count when read/opened.
- * Uses session deduplication to prevent accidental rapid reloads from artificially inflating counts.
+ * Uses session deduplication to prevent accidental rapid reloads from artificially inflating counts,
+ * and asynchronously syncs to Firebase Firestore for global synchronization.
  */
 export function incrementArticleView(
   articleId: string,
@@ -65,12 +72,57 @@ export function incrementArticleView(
     localStorage.setItem(`${STORAGE_KEY_PREFIX}${articleId}`, bonusViews.toString());
     sessionStorage.setItem(sessionKey, '1');
     isNewView = true;
+
+    // Asynchronously record globally into Firebase Firestore
+    recordGlobalArticleView(articleId, baseline).catch((err) => {
+      console.warn('Background Firebase global view record notice:', err);
+    });
   }
 
   return {
     views: baseline + bonusViews,
     isNewView,
   };
+}
+
+/**
+ * React Hook for Real-time Article View Subscription
+ * Connects directly to Firestore for multi-user live synchronization across the globe.
+ */
+export function useRealtimeArticleViews(
+  articleId: string | undefined,
+  publishedAt: string | undefined
+): { views: number; isLive: boolean } {
+  const initialBase = publishedAt ? getBaselineViews(publishedAt) : 130;
+  const [views, setViews] = useState<number>(() => {
+    return articleId && publishedAt ? getArticleViews(articleId, publishedAt) : initialBase;
+  });
+  const [isLive, setIsLive] = useState(false);
+
+  useEffect(() => {
+    if (!articleId || !publishedAt) return;
+
+    const base = getBaselineViews(publishedAt);
+    // Initial local read
+    setViews((prev) => Math.max(prev, getArticleViews(articleId, publishedAt)));
+
+    // Subscribe to Firebase real-time updates
+    const unsubscribe = subscribeToRealtimeArticleViews(articleId, base, (updatedViews) => {
+      setViews(updatedViews);
+      setIsLive(true);
+      // Cache latest known count in local storage
+      if (typeof window !== 'undefined') {
+        const bonus = Math.max(0, updatedViews - base);
+        localStorage.setItem(`${STORAGE_KEY_PREFIX}${articleId}`, bonus.toString());
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [articleId, publishedAt]);
+
+  return { views, isLive };
 }
 
 /**
@@ -111,3 +163,4 @@ export function formatPublishedDate(publishedAt: string, lang: 'ko' | 'en'): str
     return lang === 'ko' ? '2026년 9월 7일 발행' : 'Published Sep 7, 2026';
   }
 }
+

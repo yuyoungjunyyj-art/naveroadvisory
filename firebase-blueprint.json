@@ -1,0 +1,30 @@
+{
+  "entities": {
+    "ArticleView": {
+      "title": "Article View Counter",
+      "description": "Global real-time view counter for each strategic publication",
+      "type": "object",
+      "properties": {
+        "articleId": {
+          "type": "string",
+          "description": "Unique slug/identifier for the article"
+        },
+        "views": {
+          "type": "number",
+          "description": "Total aggregated global reader views"
+        },
+        "lastViewedAt": {
+          "type": "string",
+          "description": "Timestamp of the most recent view"
+        }
+      },
+      "required": ["articleId", "views"]
+    }
+  },
+  "firestore": {
+    "/article_views/{articleId}": {
+      "schema": "ArticleView",
+      "description": "Stores globally synchronized view counters per article, read and incrementable by readers"
+    }
+  }
+}

@@ -22,6 +22,7 @@ import {
   getArticleViews,
   formatArticleViews,
   formatPublishedDate,
+  useRealtimeArticleViews,
 } from '../utils/articleViews';
 import { trackArticleShare, trackArticleView } from '../lib/analytics';
 
@@ -44,8 +45,11 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
     insightsArticles.find((a) => a.slug === activeSlug) || insightsArticles[0];
   const shareUrl = getInsightShareUrl(activeArticle.slug);
 
-  // Dynamic publication view count for active article
-  const viewCount = getArticleViews(activeArticle.id, activeArticle.publishedAt);
+  // Real-time Firebase synchronized view count per article
+  const { views: viewCount, isLive } = useRealtimeArticleViews(
+    activeArticle.id,
+    activeArticle.publishedAt
+  );
 
   const handleArticleClick = (slug: string) => {
     const article = insightsArticles.find((a) => a.slug === slug) || activeArticle;
@@ -54,7 +58,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
       articleTitle: article.title[lang],
       category: article.category[lang],
       publishedAt: article.publishedAt,
-      viewCount: getArticleViews(article.id, article.publishedAt),
+      viewCount,
       lang,
     });
     onOpenArticle(slug);
@@ -184,7 +188,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               </span>
               {activeArticle.slug === insightsArticles[0].slug && (
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Featured Publication
+                  {isEn ? 'Featured Publication' : '주요 추천 리포트'}
                 </span>
               )}
             </div>
@@ -195,9 +199,20 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
                 <span>{formatPublishedDate(activeArticle.publishedAt, lang)}</span>
               </span>
               <span className="opacity-30">|</span>
-              <span className="flex items-center gap-1.5 font-mono text-[11px]" title="Total Reads">
+              <span
+                className="flex items-center gap-1.5 font-mono text-[11px]"
+                title={isEn ? 'Globally synchronized real-time readers' : '전 세계 실시간 동기화 누적 조회수'}
+              >
                 <Eye className="w-3.5 h-3.5 text-sky-400" />
                 <span className="font-semibold text-slate-300">{formatArticleViews(viewCount, lang)}</span>
+                {isLive && (
+                  <span
+                    className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 animate-pulse"
+                    title={isEn ? 'Live Firebase sync active' : '실시간 전역 동기화 활성'}
+                  >
+                    LIVE
+                  </span>
+                )}
               </span>
               <span className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
