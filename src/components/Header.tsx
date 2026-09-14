@@ -156,7 +156,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                한국어
+                KR
               </button>
             </div>
 
@@ -188,7 +188,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
                   : 'border-slate-300 text-[#0c1c4f] bg-slate-100'
               }`}
             >
-              {lang === 'en' ? 'KO' : 'EN'}
+              {lang === 'en' ? 'KR' : 'EN'}
             </button>
 
             {/* Quick Theme toggle on mobile header */}
@@ -262,7 +262,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
                       : 'bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-slate-300'
                   }`}
                 >
-                  English
+                  EN
                 </button>
                 <button
                   onClick={() => {
@@ -275,7 +275,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, theme, setTheme }
                       : 'bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-slate-300'
                   }`}
                 >
-                  한국어
+                  KR
                 </button>
               </div>
             </div>

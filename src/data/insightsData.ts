@@ -118,20 +118,6 @@ export interface InsightArticle {
     en: string;
     ko: string;
   };
-  linkedinKit?: {
-    brandPageMonday: {
-      en: string;
-      ko: string;
-    };
-    consultantWednesday: {
-      en: string;
-      ko: string;
-    };
-    executiveQuestionFriday: {
-      en: string;
-      ko: string;
-    };
-  };
 }
 
 export const insightsArticles: InsightArticle[] = [
@@ -386,20 +372,6 @@ export const insightsArticles: InsightArticle[] = [
     disclaimer: {
       en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory, or investment advice.',
       ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 세무, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
-    },
-    linkedinKit: {
-      brandPageMonday: {
-        en: 'Franchising can accelerate expansion. It can also lock a brand into the wrong local governance model. In Korea, the decision carries operational and disclosure implications - not just a growth target. Navero compares franchise, JV, licence and direct operation through one practical lens: where must the brand retain control, and where must it stay adaptable? Read: https://naveroadvisory.com/?article=franchising-is-governance-not-a-shortcut#insights #FranchiseStrategy #KoreaMarket #Hospitality',
-        ko: '프랜차이즈는 확장을 가속할 수 있지만, 자칫 잘못된 현지 거버넌스 모델에 브랜드를 영구 고착시킬 수 있습니다. 한국에서 운영 모델 선택은 단순한 성장 목표가 아니라 실질적인 운영 및 공정위 공시 의무를 수반합니다. 나베로는 직영, 합작투자(JV), 프랜차이즈, 라이선스를 하나의 실천적 렌즈로 비교합니다: 브랜드는 어디서 통제권을 지켜야 하고, 어디서 적응해야 하는가? 전문 읽기: https://naveroadvisory.com/?article=franchising-is-governance-not-a-shortcut#insights #프랜차이즈전략 #한국시장 #거버넌스',
-      },
-      consultantWednesday: {
-        en: '“Can we franchise Korea?” is usually the wrong first question. Start here instead: What customer promise cannot be delegated? Which local capabilities are hard to build? What decision rights must remain with the brand? Compliance is a floor. The operating model must be designed before a partner is selected. Source: KFTC franchise policy, accessed September 2026.',
-        ko: '“한국에서 프랜차이즈 할 수 있을까?”는 대개 잘못된 첫 질문입니다. 대신 이렇게 시작하십시오: 위임할 수 없는 고객과의 약속은 무엇인가? 자체 구축하기 힘든 현지 역량은 무엇인가? 브랜드가 끝까지 보유해야 할 결정권은 무엇인가? 규제 준수는 최소한의 바닥입니다. 파트너를 고르기 전에 운영 모델부터 설계되어야 합니다. (출처: KFTC 가맹사업 정책, 2026년 9월)',
-      },
-      executiveQuestionFriday: {
-        en: 'If you were entering Korea with one flagship and a five-year growth plan, which model would you test first: direct build, JV, franchise or licence? More importantly, what evidence would change your mind?',
-        ko: '만약 귀하가 1개의 플래그십과 5개년 성장 계획을 갖고 한국에 진출한다면, 직영·JV·프랜차이즈·라이선스 중 어떤 모델을 먼저 테스트하시겠습니까? 그리고 더 중요한 질문: 어떤 실증 데이터가 귀하의 마음을 바꾸게 만들겠습니까?',
-      },
     },
   },
   {

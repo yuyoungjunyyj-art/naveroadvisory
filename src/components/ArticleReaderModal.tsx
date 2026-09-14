@@ -13,8 +13,6 @@ import {
   ArrowUpRight,
   Sparkles,
   Eye,
-  Linkedin,
-  Copy,
   Table,
   BookOpen,
 } from 'lucide-react';
@@ -54,7 +52,6 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
 }) => {
   const isEn = lang === 'en';
   const [copied, setCopied] = useState(false);
-  const [copiedPostKey, setCopiedPostKey] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Real-time Firebase synchronized view count
@@ -562,161 +559,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
               </p>
             </section>
 
-            {/* Section 6: LinkedIn Thought Leadership & Distribution Kit (If provided) */}
-            {article.linkedinKit && (
-              <section
-                className={`p-6 sm:p-8 rounded-2xl border ${
-                  theme === 'dark'
-                    ? 'bg-sky-950/20 border-sky-500/30'
-                    : 'bg-sky-50/50 border-sky-200'
-                }`}
-              >
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
-                    <Linkedin className="w-4 h-4" />
-                    <span>
-                      {isEn ? 'Executive Distribution & Thought Leadership Kit' : '경영진 브리핑 & 링크드인 배포 카피'}
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                    Ready to Post
-                  </span>
-                </div>
-                <p
-                  className={`text-xs sm:text-sm leading-relaxed mb-5 ${
-                    theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                  }`}
-                >
-                  {isEn
-                    ? 'Copyable distribution copy tailored for corporate channels, principal consultant commentary, and Friday executive polls:'
-                    : '기업 브랜드 페이지, 시니어 컨설턴트 인사이트, 금요일 경영진 설문용으로 검증된 배포용 카피입니다:'}
-                </p>
-
-                <div className="space-y-4">
-                  {/* Monday: Brand Page */}
-                  <div
-                    className={`p-4 rounded-xl border space-y-2.5 ${
-                      theme === 'dark'
-                        ? 'bg-white/[0.03] border-white/10'
-                        : 'bg-white border-slate-200 shadow-sm'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">
-                        {isEn ? 'Monday — Brand Page' : '월요일 — 브랜드 공식 페이지'}
-                      </span>
-                      <button
-                        onClick={async () => {
-                          const success = await copyTextToClipboard(article.linkedinKit!.brandPageMonday[lang]);
-                          if (success) {
-                            setCopiedPostKey('brandMonday');
-                            setTimeout(() => setCopiedPostKey(null), 2500);
-                          }
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold border border-sky-400/30 text-sky-400 hover:bg-sky-400/10 transition-colors"
-                      >
-                        {copiedPostKey === 'brandMonday' ? (
-                          <>
-                            <Check className="w-3 h-3 text-emerald-400" />
-                            <span className="text-emerald-400">{isEn ? 'Copied' : '복사됨'}</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" />
-                            <span>{isEn ? 'Copy' : '복사'}</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                    <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
-                      {article.linkedinKit.brandPageMonday[lang]}
-                    </p>
-                  </div>
-
-                  {/* Wednesday: Principal Consultant */}
-                  <div
-                    className={`p-4 rounded-xl border space-y-2.5 ${
-                      theme === 'dark'
-                        ? 'bg-white/[0.03] border-white/10'
-                        : 'bg-white border-slate-200 shadow-sm'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">
-                        {isEn ? 'Wednesday — Principal Consultant' : '수요일 — 총괄 컨설턴트 논평'}
-                      </span>
-                      <button
-                        onClick={async () => {
-                          const success = await copyTextToClipboard(article.linkedinKit!.consultantWednesday[lang]);
-                          if (success) {
-                            setCopiedPostKey('consultantWednesday');
-                            setTimeout(() => setCopiedPostKey(null), 2500);
-                          }
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold border border-sky-400/30 text-sky-400 hover:bg-sky-400/10 transition-colors"
-                      >
-                        {copiedPostKey === 'consultantWednesday' ? (
-                          <>
-                            <Check className="w-3 h-3 text-emerald-400" />
-                            <span className="text-emerald-400">{isEn ? 'Copied' : '복사됨'}</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" />
-                            <span>{isEn ? 'Copy' : '복사'}</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                    <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
-                      {article.linkedinKit.consultantWednesday[lang]}
-                    </p>
-                  </div>
-
-                  {/* Friday: Executive Question */}
-                  <div
-                    className={`p-4 rounded-xl border space-y-2.5 ${
-                      theme === 'dark'
-                        ? 'bg-white/[0.03] border-white/10'
-                        : 'bg-white border-slate-200 shadow-sm'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">
-                        {isEn ? 'Friday — Executive Question & Poll' : '금요일 — 경영진 디스커션 질문'}
-                      </span>
-                      <button
-                        onClick={async () => {
-                          const success = await copyTextToClipboard(article.linkedinKit!.executiveQuestionFriday[lang]);
-                          if (success) {
-                            setCopiedPostKey('executiveFriday');
-                            setTimeout(() => setCopiedPostKey(null), 2500);
-                          }
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold border border-sky-400/30 text-sky-400 hover:bg-sky-400/10 transition-colors"
-                      >
-                        {copiedPostKey === 'executiveFriday' ? (
-                          <>
-                            <Check className="w-3 h-3 text-emerald-400" />
-                            <span className="text-emerald-400">{isEn ? 'Copied' : '복사됨'}</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" />
-                            <span>{isEn ? 'Copy' : '복사'}</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                    <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
-                      {article.linkedinKit.executiveQuestionFriday[lang]}
-                    </p>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* Section 7: Other Strategic Publications */}
+            {/* Section 6: Other Strategic Publications */}
             {insightsArticles.length > 1 && (
               <section className="pt-4 border-t dark:border-white/10 border-slate-200">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4">
