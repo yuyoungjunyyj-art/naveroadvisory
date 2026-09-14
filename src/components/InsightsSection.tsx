@@ -38,25 +38,23 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
 }) => {
   const isEn = lang === 'en';
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
-  const [shareDropdownOpen, setShareDropdownOpen] = useState(false);
+  const [activeSlug, setActiveSlug] = useState<string>(insightsArticles[0].slug);
 
-  // We feature the primary publication
-  const featuredArticle = insightsArticles[0];
-  const shareUrl = getInsightShareUrl(featuredArticle.slug);
-  const shareTitle = `${featuredArticle.title[lang]} | NAVERO Strategic Advisory`;
+  const activeArticle =
+    insightsArticles.find((a) => a.slug === activeSlug) || insightsArticles[0];
+  const shareUrl = getInsightShareUrl(activeArticle.slug);
 
-  // Dynamic publication view count
-  const [viewCount, setViewCount] = useState<number>(() =>
-    getArticleViews(featuredArticle.id, featuredArticle.publishedAt)
-  );
+  // Dynamic publication view count for active article
+  const viewCount = getArticleViews(activeArticle.id, activeArticle.publishedAt);
 
   const handleArticleClick = (slug: string) => {
+    const article = insightsArticles.find((a) => a.slug === slug) || activeArticle;
     trackArticleView({
-      articleId: featuredArticle.id,
-      articleTitle: featuredArticle.title[lang],
-      category: featuredArticle.category[lang],
-      publishedAt: featuredArticle.publishedAt,
-      viewCount,
+      articleId: article.id,
+      articleTitle: article.title[lang],
+      category: article.category[lang],
+      publishedAt: article.publishedAt,
+      viewCount: getArticleViews(article.id, article.publishedAt),
       lang,
     });
     onOpenArticle(slug);
@@ -69,17 +67,10 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
 
     if (success) {
       setCopiedSlug(slug);
-      trackArticleShare(featuredArticle.id, 'copy_link');
+      trackArticleShare(activeArticle.id, 'copy_link');
       setTimeout(() => {
         setCopiedSlug(null);
       }, 3000);
-    }
-  };
-
-  const openShareWindow = (url: string, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    if (typeof window !== 'undefined') {
-      window.open(url, '_blank', 'noopener,noreferrer,width=600,height=500');
     }
   };
 
@@ -94,7 +85,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Top Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-semibold uppercase tracking-widest bg-sky-500/10 border-sky-500/20 text-sky-400">
               <Newspaper className="w-3.5 h-3.5" />
@@ -125,6 +116,50 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
           </div>
         </div>
 
+        {/* Article Selector Tabs */}
+        {insightsArticles.length > 1 && (
+          <div className="flex flex-wrap items-center gap-2 mb-6">
+            <span className="text-xs font-mono uppercase tracking-wider text-slate-400 mr-2">
+              {isEn ? 'Publications:' : '리포트 목록:'}
+            </span>
+            {insightsArticles.map((article, idx) => {
+              const isSelected = article.slug === activeArticle.slug;
+              const isLatest = idx === 0;
+              return (
+                <button
+                  key={article.id}
+                  onClick={() => setActiveSlug(article.slug)}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all border ${
+                    isSelected
+                      ? 'bg-sky-500 text-white border-sky-400 shadow-md shadow-sky-500/20'
+                      : theme === 'dark'
+                      ? 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white'
+                      : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-950 shadow-sm'
+                  }`}
+                >
+                  {isLatest && (
+                    <span
+                      className={`text-[9px] font-mono uppercase px-1.5 py-0.2 rounded font-bold ${
+                        isSelected
+                          ? 'bg-white/20 text-white'
+                          : 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                      }`}
+                    >
+                      {isEn ? 'Latest' : '최신'}
+                    </span>
+                  )}
+                  <span className="truncate max-w-[200px] sm:max-w-[320px]">
+                    {article.title[lang]}
+                  </span>
+                  <span className="font-mono text-[10px] opacity-75">
+                    ({article.date[lang]})
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {/* Featured Publication Teaser Card */}
         <article
           id="insight-teaser"
@@ -145,17 +180,19 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
             <div className="flex flex-wrap items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono font-bold tracking-wider uppercase bg-sky-500/15 text-sky-400 border border-sky-400/30">
                 <Sparkles className="w-3 h-3" />
-                {featuredArticle.category[lang]} | {featuredArticle.corridor[lang]}
+                {activeArticle.category[lang]} | {activeArticle.corridor[lang]}
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                Featured Publication
-              </span>
+              {activeArticle.slug === insightsArticles[0].slug && (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Featured Publication
+                </span>
+              )}
             </div>
 
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
               <span className="flex items-center gap-1.5" title="Publication Date">
                 <Calendar className="w-3.5 h-3.5 text-sky-400" />
-                <span>{formatPublishedDate(featuredArticle.publishedAt, lang)}</span>
+                <span>{formatPublishedDate(activeArticle.publishedAt, lang)}</span>
               </span>
               <span className="opacity-30">|</span>
               <span className="flex items-center gap-1.5 font-mono text-[11px]" title="Total Reads">
@@ -165,7 +202,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               <span className="opacity-30">|</span>
               <span className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-sky-400" />
-                <span>{featuredArticle.readTime[lang]}</span>
+                <span>{activeArticle.readTime[lang]}</span>
               </span>
             </div>
           </div>
@@ -175,12 +212,12 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
             {/* Headline & Subtitle */}
             <div className="space-y-3">
               <h3
-                onClick={() => handleArticleClick(featuredArticle.slug)}
+                onClick={() => handleArticleClick(activeArticle.slug)}
                 className={`text-2xl sm:text-3xl lg:text-4xl font-serif font-bold tracking-tight cursor-pointer transition-colors ${
                   theme === 'dark' ? 'text-white hover:text-sky-300' : 'text-[#0c1c4f] hover:text-sky-600'
                 }`}
               >
-                {featuredArticle.title[lang]}
+                {activeArticle.title[lang]}
               </h3>
 
               <p
@@ -188,7 +225,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
                   theme === 'dark' ? 'text-sky-200' : 'text-sky-900'
                 }`}
               >
-                {featuredArticle.subtitle[lang]}
+                {activeArticle.subtitle[lang]}
               </p>
             </div>
 
@@ -204,7 +241,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
                 {isEn ? 'Article Thesis & Scope' : '아티클 핵심 논제'}
               </div>
               <p className="text-sm sm:text-base leading-relaxed font-sans">
-                {featuredArticle.teaserSummary[lang]}
+                {activeArticle.teaserSummary[lang]}
               </p>
             </div>
 
@@ -214,7 +251,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
                 {isEn ? 'Key Critical Insights in This Publication:' : '본 리포트에서 다루는 핵심 인사이트:'}
               </span>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {featuredArticle.previewTakeaways[lang].map((takeaway, idx) => (
+                {activeArticle.previewTakeaways[lang].map((takeaway, idx) => (
                   <div
                     key={idx}
                     className={`p-4 rounded-xl border flex flex-col justify-between ${
@@ -265,9 +302,9 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               <div className="relative">
                 <button
                   id="btn-teaser-share"
-                  onClick={(e) => handleShare(featuredArticle.slug, e)}
+                  onClick={(e) => handleShare(activeArticle.slug, e)}
                   className={`inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full text-xs font-semibold border transition-all ${
-                    copiedSlug === featuredArticle.slug
+                    copiedSlug === activeArticle.slug
                       ? 'border-emerald-500/40 bg-emerald-500/15 text-emerald-400'
                       : theme === 'dark'
                       ? 'border-white/10 text-slate-300 hover:bg-white/5 hover:text-white'
@@ -275,7 +312,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
                   }`}
                   title={shareUrl}
                 >
-                  {copiedSlug === featuredArticle.slug ? (
+                  {copiedSlug === activeArticle.slug ? (
                     <>
                       <Check className="w-3.5 h-3.5 text-emerald-400" />
                       <span>{isEn ? 'Link Copied' : '링크 복사됨'}</span>
@@ -292,7 +329,7 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
               {/* Read Full Article Button */}
               <button
                 id="btn-open-article-subpage"
-                onClick={() => handleArticleClick(featuredArticle.slug)}
+                onClick={() => handleArticleClick(activeArticle.slug)}
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-sky-500 hover:bg-sky-400 transition-all shadow-md shadow-sky-500/25 hover:shadow-lg hover:shadow-sky-500/30 group"
               >
                 <span>{isEn ? 'Read Full Publication' : '전체 아티클 읽기'}</span>

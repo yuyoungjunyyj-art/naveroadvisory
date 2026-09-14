@@ -175,6 +175,7 @@ export default function App() {
         onClose={handleCloseArticle}
         theme={theme}
         lang={lang}
+        onSelectArticle={handleOpenArticle}
       />
 
       {/* Comprehensive Footer */}

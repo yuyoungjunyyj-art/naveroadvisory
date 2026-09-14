@@ -38,7 +38,15 @@ export interface InsightArticle {
     en: string;
     ko: string;
   };
+  problemSectionTitle?: {
+    en: string;
+    ko: string;
+  };
   assumptionProblem: {
+    en: string;
+    ko: string;
+  };
+  coreSectionTitle?: {
     en: string;
     ko: string;
   };
@@ -53,11 +61,41 @@ export interface InsightArticle {
       ko: string;
     };
   }>;
+  modelComparison?: Array<{
+    model: {
+      en: string;
+      ko: string;
+    };
+    riskAllocation: {
+      en: string;
+      ko: string;
+    };
+    decisionRights: {
+      en: string;
+      ko: string;
+    };
+    learningSpeed: {
+      en: string;
+      ko: string;
+    };
+    koreaSuitability: {
+      en: string;
+      ko: string;
+    };
+  }>;
   verdictQuote: {
     en: string;
     ko: string;
   };
   verdictDetail: {
+    en: string;
+    ko: string;
+  };
+  decisionQuestionsTitle?: {
+    en: string;
+    ko: string;
+  };
+  decisionQuestionsIntro?: {
     en: string;
     ko: string;
   };
@@ -80,9 +118,290 @@ export interface InsightArticle {
     en: string;
     ko: string;
   };
+  linkedinKit?: {
+    brandPageMonday: {
+      en: string;
+      ko: string;
+    };
+    consultantWednesday: {
+      en: string;
+      ko: string;
+    };
+    executiveQuestionFriday: {
+      en: string;
+      ko: string;
+    };
+  };
 }
 
 export const insightsArticles: InsightArticle[] = [
+  {
+    id: 'franchising-governance-not-shortcut',
+    slug: 'franchising-is-governance-not-a-shortcut',
+    category: {
+      en: 'OPERATING MODEL | FRANCHISE',
+      ko: '운영 모델 | 프랜차이즈 거버넌스',
+    },
+    corridor: {
+      en: 'GLOBAL ↔ SOUTH KOREA',
+      ko: '글로벌 ↔ 한국',
+    },
+    publishedAt: '2026-09-14',
+    date: {
+      en: 'Sep 14, 2026',
+      ko: '2026년 9월 14일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'Franchising Is Governance, Not a Shortcut',
+      ko: '프랜차이즈는 거버넌스이지, 지름길이 아니다',
+    },
+    subtitle: {
+      en: 'How foreign brands should choose an operating model for South Korea',
+      ko: '해외 브랜드가 한국 진출 운영 모델을 선택하는 실질적 기준',
+    },
+    teaserSummary: {
+      en: 'Franchising can accelerate expansion, but it cannot replace a control decision. In South Korea, an incoming brand should choose the model that protects its customer promise and learning loop - not the model that produces the quickest launch headline.',
+      ko: '프랜차이즈는 확장을 가속할 수 있지만, 통제권에 관한 핵심 의사결정을 대체할 수는 없습니다. 한국에 진입하는 해외 브랜드는 가장 빠른 론칭 헤드라인을 만들어내는 모델이 아니라, 고객과의 약속과 현지 학습 루프(Learning Loop)를 온전히 지켜낼 수 있는 운영 모델을 선택해야 합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'Operating models distribute risk, decision rights, and learning loops in fundamentally different ways.',
+        "Korea’s franchise disclosure regulations are a compliance floor, not a guarantee of operational fidelity.",
+        'Before partner selection, design a governance map defining what the principal must still decide in year three.',
+      ],
+      ko: [
+        '운영 모델(프랜차이즈, JV, 라이선스, 직영)은 리스크, 의사결정 권한, 시장 학습 기회를 근본적으로 다르게 배분합니다.',
+        '한국 공정위 정보공개서 규정은 필수적인 준법 하한선일 뿐, 파트너가 브랜드 품질을 유지해줄 것이라는 보증이 아닙니다.',
+        '파트너를 선정하기 전, 진출 3년 차에도 본사가 반드시 통제해야 할 의사결정 권한을 정의한 거버넌스 지도를 수립해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'Franchising can accelerate expansion, but it cannot replace a control decision. In South Korea, an incoming brand should choose the model that protects its customer promise and learning loop - not the model that produces the quickest launch headline.',
+      ko: '프랜차이즈는 확장을 가속할 수 있지만, 통제권에 관한 핵심 의사결정을 대체할 수는 없습니다. 한국에 진입하는 해외 브랜드는 가장 빠른 론칭 헤드라인을 만들어내는 모델이 아니라, 고객과의 약속과 현지 학습 루프(Learning Loop)를 온전히 지켜낼 수 있는 운영 모델을 선택해야 합니다.',
+    },
+    problemSectionTitle: {
+      en: 'Why the model matters',
+      ko: '운영 모델 선택이 결정적인 이유 (Why the model matters)',
+    },
+    assumptionProblem: {
+      en: 'A franchise, joint venture, licence, and direct corporate build distribute risk, decision rights, and learning in different ways. The wrong structure can separate a brand from the data, product decisions and customer feedback that define its equity. The right structure does not eliminate friction. It makes the friction visible and allocates it deliberately.',
+      ko: '프랜차이즈, 합작투자(JV), 라이선스, 그리고 직영 법인 설립은 리스크, 의사결정 권한, 시장 학습을 각기 다른 방식으로 배분합니다. 잘못된 구조는 브랜드를 그 자산 가치의 본질인 고객 데이터, 제품 의사결정 권한, 소비자 피드백으로부터 완전히 분리시켜 버릴 수 있습니다. 올바른 구조는 마찰을 없애는 것이 아니라, 마찰을 투명하게 가시화하고 의도적으로 배분하는 것입니다.',
+    },
+    coreSectionTitle: {
+      en: 'The structural test: Three foundational questions',
+      ko: '구조적 적합성 테스트: 3가지 핵심 질문 (The structural test)',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Which brand decisions are non-negotiable?',
+          ko: '어떤 브랜드 의사결정이 타협 불가능한가?',
+        },
+        detail: {
+          en: 'Preserving core brand integrity requires clear red lines on recipe formulations, service choreographies, and brand positioning that cannot be compromised for local convenience.',
+          ko: '레시피 조리법, 서비스 접점 동선, 브랜드 포지셔닝 등 현지 파트너의 단기적 편의를 위해 결코 양보해서는 안 될 레드라인을 사전에 명확히 획정해야 합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Which local capabilities are genuinely hard to build?',
+          ko: '어떤 현지 역량이 자체 구축하기에 실질적으로 어려운가?',
+        },
+        detail: {
+          en: 'Determine whether local real estate landlord access, cold-chain ingredient sourcing, or institutional talent acquisition truly justify sharing long-term brand equity upside.',
+          ko: 'A급 핵심 상권 임대인 네트워크, 신선 식자재 콜드체인 수급, 현지 전문 인재 채용 등 파트너에게 장기적인 지분이나 로열티 초과 이익을 나눠줄 만한 실질적 역량이 무엇인지 냉정하게 판별해야 합니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'What information must come back to the principal each week?',
+          ko: '매주 본사 경영진으로 반드시 보고되어야 할 핵심 정보는 무엇인가?',
+        },
+        detail: {
+          en: 'Ensure uninterrupted weekly access to unit-level POS data, customer satisfaction ratings, ingredient price variance, and footfall metrics rather than sanitised monthly summaries.',
+          ko: '가공된 월간 보고서가 아닌, 매장 단위 POS 실시간 매출, 순고객추천지수(NPS), 원부자재 매입단가 변동, 방문객 객단가 데이터를 본사가 직접 실시간 검증할 수 있어야 합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Compliance rules are a floor, not an operational guarantee.',
+          ko: '한국 공정위 정보공개서 제도는 법적 하한선일 뿐, 품질 보증이 아닙니다.',
+        },
+        detail: {
+          en: 'Korea’s strict Fair Trade Commission (KFTC) franchise disclosure requirements ensure transparency, but they do not answer whether your partner can preserve standards or navigate supply chain shifts without diluting your brand.',
+          ko: '대한민국 공정거래위원회의 가맹사업 정보공개서 규제는 가맹점주 보호를 위한 법적 의무일 뿐, 현지 파트너가 브랜드 고유의 서비스 표준을 지키거나 공급망 위기 시 브랜드 가치 훼손 없이 대응해줄 수 있는지를 보장하지 않습니다.',
+        },
+      },
+    ],
+    modelComparison: [
+      {
+        model: {
+          en: 'Direct Corporate Build (직영 법인)',
+          ko: '직영 법인 설립 (Direct Corporate Build)',
+        },
+        riskAllocation: {
+          en: '100% Capital & Operational risk borne by principal',
+          ko: '자본 및 운영 리스크 본사 100% 부담',
+        },
+        decisionRights: {
+          en: 'Full, absolute control over menu, CX, pricing, and data',
+          ko: '메뉴, 고객경험, 가격, 데이터 완전 통제',
+        },
+        learningSpeed: {
+          en: 'Maximum direct learning loop with real Korean consumers',
+          ko: '한국 소비자와의 직접 피드백 루프 극대화',
+        },
+        koreaSuitability: {
+          en: 'Ideal for flagship 1-3 proof of concept before scaling',
+          ko: '스케일업 전 1~3호점 단위 경제성 검증에 최적',
+        },
+      },
+      {
+        model: {
+          en: 'Joint Venture (JV, 합작 투자)',
+          ko: '합작 법인 (Joint Venture)',
+        },
+        riskAllocation: {
+          en: 'Shared equity capital & local operational risk',
+          ko: '지분율에 따른 자본 및 운영 리스크 분담',
+        },
+        decisionRights: {
+          en: 'Board-level veto rights on brand, IP, and key suppliers',
+          ko: '이사회 수준의 브랜드·IP·핵심공급망 거부권 보유',
+        },
+        learningSpeed: {
+          en: 'High data visibility via board and executive secondment',
+          ko: '본사 파견 인력 및 이사회를 통한 높은 데이터 투명성',
+        },
+        koreaSuitability: {
+          en: 'Best when deep Korean real-estate or logistics leverage is vital',
+          ko: '한국 대기업 유통망이나 부동산 파이프라인 결합 시 적합',
+        },
+      },
+      {
+        model: {
+          en: 'Master Franchise (마스터 프랜차이즈)',
+          ko: '마스터 프랜차이즈 (Master Franchise)',
+        },
+        riskAllocation: {
+          en: 'Low capital risk; heavy brand equity dilution risk',
+          ko: '자본 투입 적으나 브랜드 가치 훼손 리스크 상존',
+        },
+        decisionRights: {
+          en: 'Contractual rights only; local partner controls daily operations',
+          ko: '계약상 권한에 국한되며 일상 운영은 파트너가 전담',
+        },
+        learningSpeed: {
+          en: 'Low to moderate; depends strictly on audit and POS clauses',
+          ko: '감사권 및 POS 데이터 연동 조항에 따라 가변적',
+        },
+        koreaSuitability: {
+          en: 'Viable only with mature SOPs and comprehensive governance mapping',
+          ko: '성숙한 매뉴얼과 정밀한 계약 거버넌스 지도 확보 시 가능',
+        },
+      },
+      {
+        model: {
+          en: 'Brand Licence (브랜드 라이선스)',
+          ko: '브랜드 라이선스 (Brand Licence)',
+        },
+        riskAllocation: {
+          en: 'Minimal financial commitment; royalty-based yield',
+          ko: '재무 부담 최소화, 로열티 수익 중심',
+        },
+        decisionRights: {
+          en: 'Very limited; brand guideline enforcement through audits',
+          ko: '극히 제한적, 가이드라인 위반 시 계약 해지권 중심',
+        },
+        learningSpeed: {
+          en: 'Lowest; disconnected from day-to-day customer insights',
+          ko: '최저 수준; 일상 고객 경험 및 데이터와 단절',
+        },
+        koreaSuitability: {
+          en: 'Recommended only for non-core extensions or CPG retail goods',
+          ko: 'F&B 매장보다는 완제품 유통 및 라이프스타일 굿즈에 권장',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Do not begin with "Can we franchise?" Begin with "What must we still be able to decide in year three?"',
+      ko: '“한국에서 프랜차이즈가 가능한가?”로 시작하지 마십시오. “진출 3년 차에도 본사가 반드시 직접 결정해야 할 사안은 무엇인가?”로 시작하십시오.',
+    },
+    verdictDetail: {
+      en: 'Then create a governance map covering menu or service changes, supplier approval, data access, customer experience, site selection, and remediation rights. Korean legal counsel should review the structure before execution.',
+      ko: '그런 다음 메뉴 및 서비스 변경 승인권, 원부자재 공급업체 승인권, 고객 데이터 접근 권한, 고객 경험(CX) 기준, 출점지 선정, 그리고 계약 위반 시 시정 조치권(Remediation rights)을 망라하는 정밀한 거버넌스 맵(Governance Map)을 구축하십시오. 최종 실행에 앞서 한국 전문 법률 자문단을 통해 계약 구조를 면밀히 검토받아야 합니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Decision questions for leadership before signing',
+      ko: '계약 서명 전 경영진이 자문해야 할 3대 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before committing to a partner or corporate entity in South Korea, brand leadership should establish clear, consensus answers to these three strategic questions:',
+      ko: '한국 현지 파트너 또는 법인 구조를 확정하기 전, 브랜드 경영진은 다음 세 가지 전략적 질문에 대해 확고한 내부 합의를 도출해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Which decision rights cannot be delegated under any circumstances?',
+        'Which local capability is genuinely worth sharing long-term upside for?',
+        'What concrete evidence would justify transitioning to a different operating model after the first flagship site?',
+      ],
+      ko: [
+        '어떠한 상황에서도 현지 파트너에게 위임할 수 없는 핵심 의사결정 권한(Decision Rights)은 무엇인가?',
+        '장기적인 초과 이익(Upside)을 나눠주면서까지 현지 파트너로부터 확보할 가치가 있는 역량은 무엇인가?',
+        '1호 플래그십 매장 오픈 이후 다른 운영 모델로 전환하는 것을 정당화할 실증적 데이터와 기준은 무엇인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'KFTC Franchise Policy',
+          ko: '대한민국 공정거래위원회 가맹사업 정책 (KFTC)',
+        },
+        url: 'https://www.ftc.go.kr/eng/contents.do?key=551',
+        desc: {
+          en: 'Korea Fair Trade Commission Franchise Information Disclosure & Compliance System',
+          ko: '가맹사업거래의 공정화에 관한 법률 및 정보공개서 등록 가이드라인',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩 (KTO Data Lab)',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization Big Data Commercial Footfall & Expenditure Portal',
+          ko: '한국관광공사 상권 소비 패턴 및 외국인 관광 지출 빅데이터 분석 포털',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory, or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 세무, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+    linkedinKit: {
+      brandPageMonday: {
+        en: 'Franchising can accelerate expansion. It can also lock a brand into the wrong local governance model. In Korea, the decision carries operational and disclosure implications - not just a growth target. Navero compares franchise, JV, licence and direct operation through one practical lens: where must the brand retain control, and where must it stay adaptable? Read: https://naveroadvisory.com/?article=franchising-is-governance-not-a-shortcut#insights #FranchiseStrategy #KoreaMarket #Hospitality',
+        ko: '프랜차이즈는 확장을 가속할 수 있지만, 자칫 잘못된 현지 거버넌스 모델에 브랜드를 영구 고착시킬 수 있습니다. 한국에서 운영 모델 선택은 단순한 성장 목표가 아니라 실질적인 운영 및 공정위 공시 의무를 수반합니다. 나베로는 직영, 합작투자(JV), 프랜차이즈, 라이선스를 하나의 실천적 렌즈로 비교합니다: 브랜드는 어디서 통제권을 지켜야 하고, 어디서 적응해야 하는가? 전문 읽기: https://naveroadvisory.com/?article=franchising-is-governance-not-a-shortcut#insights #프랜차이즈전략 #한국시장 #거버넌스',
+      },
+      consultantWednesday: {
+        en: '“Can we franchise Korea?” is usually the wrong first question. Start here instead: What customer promise cannot be delegated? Which local capabilities are hard to build? What decision rights must remain with the brand? Compliance is a floor. The operating model must be designed before a partner is selected. Source: KFTC franchise policy, accessed September 2026.',
+        ko: '“한국에서 프랜차이즈 할 수 있을까?”는 대개 잘못된 첫 질문입니다. 대신 이렇게 시작하십시오: 위임할 수 없는 고객과의 약속은 무엇인가? 자체 구축하기 힘든 현지 역량은 무엇인가? 브랜드가 끝까지 보유해야 할 결정권은 무엇인가? 규제 준수는 최소한의 바닥입니다. 파트너를 고르기 전에 운영 모델부터 설계되어야 합니다. (출처: KFTC 가맹사업 정책, 2026년 9월)',
+      },
+      executiveQuestionFriday: {
+        en: 'If you were entering Korea with one flagship and a five-year growth plan, which model would you test first: direct build, JV, franchise or licence? More importantly, what evidence would change your mind?',
+        ko: '만약 귀하가 1개의 플래그십과 5개년 성장 계획을 갖고 한국에 진출한다면, 직영·JV·프랜차이즈·라이선스 중 어떤 모델을 먼저 테스트하시겠습니까? 그리고 더 중요한 질문: 어떤 실증 데이터가 귀하의 마음을 바꾸게 만들겠습니까?',
+      },
+    },
+  },
   {
     id: 'korea-entry-assumptions',
     slug: 'is-south-korea-the-next-market',

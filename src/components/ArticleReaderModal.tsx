@@ -13,10 +13,14 @@ import {
   ArrowUpRight,
   Sparkles,
   Eye,
+  Linkedin,
+  Copy,
+  Table,
+  BookOpen,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Theme, Language } from '../types';
-import { InsightArticle } from '../data/insightsData';
+import { InsightArticle, insightsArticles } from '../data/insightsData';
 import { getInsightShareUrl, copyTextToClipboard } from '../utils/seo';
 import {
   incrementArticleView,
@@ -36,6 +40,7 @@ interface ArticleReaderModalProps {
   onClose: () => void;
   theme: Theme;
   lang: Language;
+  onSelectArticle?: (slug: string) => void;
 }
 
 export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
@@ -44,9 +49,11 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
   onClose,
   theme,
   lang,
+  onSelectArticle,
 }) => {
   const isEn = lang === 'en';
   const [copied, setCopied] = useState(false);
+  const [copiedPostKey, setCopiedPostKey] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentViews, setCurrentViews] = useState<number>(() => {
     return article ? getArticleViews(article.id, article.publishedAt) : 0;
@@ -271,14 +278,14 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
 
           {/* Article Full Body */}
           <div className="p-6 sm:p-10 space-y-12">
-            {/* Section 1: The assumption problem */}
+            {/* Section 1: Problem / The Why */}
             <section className="space-y-4">
               <h2
                 className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
                   theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
                 }`}
               >
-                {isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)'}
+                {article.problemSectionTitle?.[lang] || (isEn ? 'The assumption problem' : '전제의 함정 (The assumption problem)')}
               </h2>
               <p
                 className={`text-base sm:text-lg leading-relaxed ${
@@ -289,22 +296,22 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
               </p>
             </section>
 
-            {/* Section 2: Five assumptions to retire (Numbered list without boxes) */}
+            {/* Section 2: Core Analytical Breakdown / The Structural Test */}
             <section className="space-y-6">
               <h2
                 className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
                   theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
                 }`}
               >
-                {isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)'}
+                {article.coreSectionTitle?.[lang] || (isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제 (Five assumptions to retire)')}
               </h2>
 
-              {/* Numbered Editorial List without boxes */}
+              {/* Numbered Editorial List */}
               <ol className="divide-y divide-slate-200 dark:divide-white/10 list-none p-0 m-0">
                 {article.fiveAssumptions.map((item, idx) => (
                   <li
                     key={item.num}
-                    id={`assumption-${idx + 1}`}
+                    id={`core-point-${idx + 1}`}
                     className="py-6 first:pt-1 last:pb-2 flex items-start gap-4 sm:gap-6"
                   >
                     <div className="flex-shrink-0 w-8 sm:w-10">
@@ -332,6 +339,82 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 ))}
               </ol>
             </section>
+
+            {/* Section 2.5: Operating Model Comparison Matrix (If present) */}
+            {article.modelComparison && article.modelComparison.length > 0 && (
+              <section className="space-y-4">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                  <Table className="w-4 h-4" />
+                  <span>
+                    {isEn ? 'Operating Model Matrix: Risk vs Control vs Learning' : '운영 모델 비교 매트릭스: 리스크·통제권·학습'}
+                  </span>
+                </div>
+                <h3
+                  className={`text-lg sm:text-xl font-serif font-bold ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                  }`}
+                >
+                  {isEn
+                    ? 'Comparing Four Entry Archetypes in South Korea'
+                    : '한국 진출 4대 운영 모델 비교 분석'}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  {article.modelComparison.map((m, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-5 rounded-2xl border space-y-3.5 transition-all ${
+                        theme === 'dark'
+                          ? 'bg-white/[0.02] border-white/10 hover:border-sky-500/40 hover:bg-white/[0.04]'
+                          : 'bg-white border-slate-200 shadow-sm hover:border-sky-300 hover:shadow'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between border-b pb-2.5 dark:border-white/10 border-slate-100">
+                        <span className="font-bold text-sm sm:text-base text-sky-400 font-serif">
+                          {m.model[lang]}
+                        </span>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 uppercase">
+                          Model 0{idx + 1}
+                        </span>
+                      </div>
+                      <div className="space-y-2 text-xs">
+                        <div>
+                          <span className="text-slate-400 font-semibold block mb-0.5">
+                            {isEn ? 'Risk & Capital' : '리스크 & 자본 투입'}:
+                          </span>
+                          <span className={theme === 'dark' ? 'text-slate-200' : 'text-slate-700'}>
+                            {m.riskAllocation[lang]}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 font-semibold block mb-0.5">
+                            {isEn ? 'Decision Rights' : '의사결정 통제권'}:
+                          </span>
+                          <span className={theme === 'dark' ? 'text-slate-200' : 'text-slate-700'}>
+                            {m.decisionRights[lang]}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 font-semibold block mb-0.5">
+                            {isEn ? 'Learning Loop Speed' : '현지 학습 속도'}:
+                          </span>
+                          <span className={theme === 'dark' ? 'text-slate-200' : 'text-slate-700'}>
+                            {m.learningSpeed[lang]}
+                          </span>
+                        </div>
+                        <div className="pt-1 border-t dark:border-white/5 border-slate-100">
+                          <span className="text-sky-500 font-semibold block mb-0.5">
+                            {isEn ? 'Korea Applicability' : '한국 시장 권고 기준'}:
+                          </span>
+                          <span className={`font-medium ${theme === 'dark' ? 'text-sky-200' : 'text-sky-900'}`}>
+                            {m.koreaSuitability[lang]}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Section 3: Advisory Verdict */}
             <section
@@ -361,25 +444,27 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
               </p>
             </section>
 
-            {/* Section 4: 3 Critical Questions Before Signing */}
+            {/* Section 4: Critical Decision Questions Before Signing */}
             <section className="space-y-4">
               <h2
                 className={`text-xl sm:text-2xl font-serif font-bold tracking-tight ${
                   theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
                 }`}
               >
-                {isEn
-                  ? 'Three questions principals should answer before signing'
-                  : '계약 서명 전 경영진이 자문해야 할 3가지 질문'}
+                {article.decisionQuestionsTitle?.[lang] ||
+                  (isEn
+                    ? 'Three questions principals should answer before signing'
+                    : '계약 서명 전 경영진이 자문해야 할 3가지 질문')}
               </h2>
               <p
                 className={`text-sm sm:text-base leading-relaxed ${
                   theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
                 }`}
               >
-                {isEn
-                  ? 'Before capital is committed to leases, fit-outs, or joint ventures, leadership should establish explicit, evidence-backed answers to three core questions:'
-                  : '임대차 계약, 인테리어 시공 또는 합작 투자에 자본을 투입하기 전에, 경영진은 다음 세 가지 핵심 질문에 대해 명확하고 실증적인 답을 확보해야 합니다:'}
+                {article.decisionQuestionsIntro?.[lang] ||
+                  (isEn
+                    ? 'Before capital is committed to leases, fit-outs, or joint ventures, leadership should establish explicit, evidence-backed answers to three core questions:'
+                    : '임대차 계약, 인테리어 시공 또는 합작 투자에 자본을 투입하기 전에, 경영진은 다음 세 가지 핵심 질문에 대해 명확하고 실증적인 답을 확보해야 합니다:')}
               </p>
               <div className="space-y-3 pt-2">
                 {article.decisionQuestions[lang].map((q, idx) => (
@@ -428,10 +513,10 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 }`}
               >
                 {isEn
-                  ? 'Market observations are calibrated against official tourism big data, commercial district footfall indices, and macroeconomic accounts published by Korean statutory bodies:'
-                  : '나베로의 시장 진단 및 조언은 대한민국 공공기관이 발표하는 공식 관광 빅데이터, 상권 유동인구 지표 및 국가 통계 데이터를 바탕으로 정밀 검증됩니다:'}
+                  ? 'Market observations are calibrated against official statutory frameworks, commercial footfall indices, and macroeconomic accounts published by Korean statutory bodies:'
+                  : '나베로의 시장 진단 및 조언은 대한민국 공공기관이 발표하는 공식 정책 규제, 상권 유동인구 지표 및 국가 통계 데이터를 바탕으로 정밀 검증됩니다:'}
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {article.sources.map((src, idx) => (
                   <a
                     key={idx}
@@ -462,6 +547,213 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 {article.disclaimer[lang]}
               </p>
             </section>
+
+            {/* Section 6: LinkedIn Thought Leadership & Distribution Kit (If provided) */}
+            {article.linkedinKit && (
+              <section
+                className={`p-6 sm:p-8 rounded-2xl border ${
+                  theme === 'dark'
+                    ? 'bg-sky-950/20 border-sky-500/30'
+                    : 'bg-sky-50/50 border-sky-200'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                    <Linkedin className="w-4 h-4" />
+                    <span>
+                      {isEn ? 'Executive Distribution & Thought Leadership Kit' : '경영진 브리핑 & 링크드인 배포 카피'}
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    Ready to Post
+                  </span>
+                </div>
+                <p
+                  className={`text-xs sm:text-sm leading-relaxed mb-5 ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
+                  }`}
+                >
+                  {isEn
+                    ? 'Copyable distribution copy tailored for corporate channels, principal consultant commentary, and Friday executive polls:'
+                    : '기업 브랜드 페이지, 시니어 컨설턴트 인사이트, 금요일 경영진 설문용으로 검증된 배포용 카피입니다:'}
+                </p>
+
+                <div className="space-y-4">
+                  {/* Monday: Brand Page */}
+                  <div
+                    className={`p-4 rounded-xl border space-y-2.5 ${
+                      theme === 'dark'
+                        ? 'bg-white/[0.03] border-white/10'
+                        : 'bg-white border-slate-200 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">
+                        {isEn ? 'Monday — Brand Page' : '월요일 — 브랜드 공식 페이지'}
+                      </span>
+                      <button
+                        onClick={async () => {
+                          const success = await copyTextToClipboard(article.linkedinKit!.brandPageMonday[lang]);
+                          if (success) {
+                            setCopiedPostKey('brandMonday');
+                            setTimeout(() => setCopiedPostKey(null), 2500);
+                          }
+                        }}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold border border-sky-400/30 text-sky-400 hover:bg-sky-400/10 transition-colors"
+                      >
+                        {copiedPostKey === 'brandMonday' ? (
+                          <>
+                            <Check className="w-3 h-3 text-emerald-400" />
+                            <span className="text-emerald-400">{isEn ? 'Copied' : '복사됨'}</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3 h-3" />
+                            <span>{isEn ? 'Copy' : '복사'}</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
+                      {article.linkedinKit.brandPageMonday[lang]}
+                    </p>
+                  </div>
+
+                  {/* Wednesday: Principal Consultant */}
+                  <div
+                    className={`p-4 rounded-xl border space-y-2.5 ${
+                      theme === 'dark'
+                        ? 'bg-white/[0.03] border-white/10'
+                        : 'bg-white border-slate-200 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">
+                        {isEn ? 'Wednesday — Principal Consultant' : '수요일 — 총괄 컨설턴트 논평'}
+                      </span>
+                      <button
+                        onClick={async () => {
+                          const success = await copyTextToClipboard(article.linkedinKit!.consultantWednesday[lang]);
+                          if (success) {
+                            setCopiedPostKey('consultantWednesday');
+                            setTimeout(() => setCopiedPostKey(null), 2500);
+                          }
+                        }}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold border border-sky-400/30 text-sky-400 hover:bg-sky-400/10 transition-colors"
+                      >
+                        {copiedPostKey === 'consultantWednesday' ? (
+                          <>
+                            <Check className="w-3 h-3 text-emerald-400" />
+                            <span className="text-emerald-400">{isEn ? 'Copied' : '복사됨'}</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3 h-3" />
+                            <span>{isEn ? 'Copy' : '복사'}</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
+                      {article.linkedinKit.consultantWednesday[lang]}
+                    </p>
+                  </div>
+
+                  {/* Friday: Executive Question */}
+                  <div
+                    className={`p-4 rounded-xl border space-y-2.5 ${
+                      theme === 'dark'
+                        ? 'bg-white/[0.03] border-white/10'
+                        : 'bg-white border-slate-200 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">
+                        {isEn ? 'Friday — Executive Question & Poll' : '금요일 — 경영진 디스커션 질문'}
+                      </span>
+                      <button
+                        onClick={async () => {
+                          const success = await copyTextToClipboard(article.linkedinKit!.executiveQuestionFriday[lang]);
+                          if (success) {
+                            setCopiedPostKey('executiveFriday');
+                            setTimeout(() => setCopiedPostKey(null), 2500);
+                          }
+                        }}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold border border-sky-400/30 text-sky-400 hover:bg-sky-400/10 transition-colors"
+                      >
+                        {copiedPostKey === 'executiveFriday' ? (
+                          <>
+                            <Check className="w-3 h-3 text-emerald-400" />
+                            <span className="text-emerald-400">{isEn ? 'Copied' : '복사됨'}</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3 h-3" />
+                            <span>{isEn ? 'Copy' : '복사'}</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
+                      {article.linkedinKit.executiveQuestionFriday[lang]}
+                    </p>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Section 7: Other Strategic Publications */}
+            {insightsArticles.length > 1 && (
+              <section className="pt-4 border-t dark:border-white/10 border-slate-200">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4">
+                  <BookOpen className="w-4 h-4 text-sky-400" />
+                  <span>{isEn ? 'Other Advisory Publications' : '기타 전략 리서치 리포트'}</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {insightsArticles
+                    .filter((a) => a.id !== article.id)
+                    .map((otherArticle) => (
+                      <div
+                        key={otherArticle.id}
+                        onClick={() => {
+                          if (onSelectArticle) {
+                            onSelectArticle(otherArticle.slug);
+                            if (scrollContainerRef.current) {
+                              scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                          }
+                        }}
+                        className={`p-5 rounded-2xl border cursor-pointer transition-all ${
+                          theme === 'dark'
+                            ? 'bg-white/[0.02] border-white/10 hover:border-sky-500/50 hover:bg-white/[0.05]'
+                            : 'bg-slate-50 border-slate-200 hover:border-sky-300 hover:bg-white hover:shadow-sm'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between text-[11px] text-slate-400 mb-2">
+                          <span className="font-mono text-sky-400 uppercase font-semibold">
+                            {otherArticle.date[lang]}
+                          </span>
+                          <span>{otherArticle.readTime[lang]}</span>
+                        </div>
+                        <h4
+                          className={`text-sm sm:text-base font-serif font-bold mb-1.5 leading-snug ${
+                            theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                          }`}
+                        >
+                          {otherArticle.title[lang]}
+                        </h4>
+                        <p
+                          className={`text-xs line-clamp-2 ${
+                            theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
+                          }`}
+                        >
+                          {otherArticle.subtitle[lang]}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* Article Footer Consultation Bar */}
