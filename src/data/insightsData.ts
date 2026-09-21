@@ -50,6 +50,10 @@ export interface InsightArticle {
     en: string;
     ko: string;
   };
+  coreSectionIntro?: {
+    en: string;
+    ko: string;
+  };
   fiveAssumptions: Array<{
     num: string;
     headline: {
@@ -121,6 +125,195 @@ export interface InsightArticle {
 }
 
 export const insightsArticles: InsightArticle[] = [
+  {
+    id: 'koreas-visitor-recovery-is-over',
+    slug: 'koreas-visitor-recovery-is-over',
+    category: {
+      en: 'TOURISM | HOSPITALITY | SEOUL',
+      ko: '관광 | 호스피탈리티 | 서울 상권',
+    },
+    corridor: {
+      en: 'GLOBAL ↔ SOUTH KOREA',
+      ko: '글로벌 ↔ 한국',
+    },
+    publishedAt: '2026-09-21',
+    date: {
+      en: 'Sep 21, 2026',
+      ko: '2026년 9월 21일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: "Korea's Visitor Recovery Is Over",
+      ko: '한국의 방한 관광객 회복 국면은 끝났다',
+    },
+    subtitle: {
+      en: 'The harder question for operators: where is value accruing in Seoul?',
+      ko: '운영사를 위한 더 어려운 질문: 서울의 어디에서 가치가 축적되고 있는가?',
+    },
+    teaserSummary: {
+      en: 'Arrival growth is an invitation to investigate, not a site-selection recommendation. A useful investment or operating decision requires evidence of visitor mix, purpose, category spend, district concentration and supply - all at the same time.',
+      ko: '입국자 수 증가는 추가 조사를 위한 신호일 뿐, 출점지 추천서가 아닙니다. 유의미한 투자나 운영 의사결정을 내리려면 방문객 구성, 여행 목적, 카테고리별 지출, 상권 집중도, 그리고 신규 공급을 동시에 입증할 수 있는 다각도의 실증 데이터가 필요합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'National arrival figures can be encouraging while leaving the key commercial question unanswered: who is spending, where and on what?',
+        'Read demand through a bundle of variables: source market mix, length of stay, trip purpose, category spend, district concentration, and supply.',
+        'Treat visitor recovery as the top of the funnel. Build the commercial view one level deeper before deciding on format or commitment.',
+      ],
+      ko: [
+        '국가 전체의 입국자 수 증가는 긍정적일 수 있으나, "누가, 어디서, 무엇에 지출하고 있는가"라는 핵심 상업적 질문에는 답을 주지 못합니다.',
+        '수요는 출발국 구성, 체류 기간, 방문 목적, 소비 품목, 상권 집중도, 신규 공급 등 복합적인 변수를 통해 종합적으로 읽어야 합니다.',
+        '방문객 회복을 단순한 깔때기 최상단으로 인식하고, 플래그십 직영이나 위탁운영 등 진출 포맷을 결정하기 전에 한 단계 더 깊은 상업적 관점을 정립해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'Arrival growth is an invitation to investigate, not a site-selection recommendation. A useful investment or operating decision requires evidence of visitor mix, purpose, category spend, district concentration and supply - all at the same time.',
+      ko: '입국자 수 증가는 추가 조사를 위한 신호일 뿐, 출점지 추천서가 아닙니다. 유의미한 투자나 운영 의사결정을 내리려면 방문객 구성, 여행 목적, 카테고리별 지출, 상권 집중도, 그리고 신규 공급을 동시에 입증할 수 있는 다각도의 실증 데이터가 필요합니다.',
+    },
+    problemSectionTitle: {
+      en: 'Beyond the headline',
+      ko: '헤드라인 너머의 본질',
+    },
+    assumptionProblem: {
+      en: 'National arrival figures can be encouraging while leaving the key commercial question unanswered: who is spending, where and on what? KTO’s public data infrastructure is valuable because it supports analysis by nationality, region and selected spending signals. Seoul’s own reporting shows how strongly visitor expenditure can concentrate by category and district. Neither source alone tells a hotel, restaurant or wellness brand where to sign a lease.',
+      ko: '전국 단위의 입국자 통계는 긍정적일 수 있지만 정작 가장 중요한 상업적 질문—"누가, 어디에서, 무엇에 돈을 쓰고 있는가?"—에는 답을 주지 못합니다. 한국관광공사(KTO)의 공공 데이터 인프라는 국적, 지역 및 선별된 지출 신호별 분석을 지원하므로 대단히 유용합니다. 서울시의 자체 보고서 역시 관광객 지출이 특정 소비 카테고리와 자치구 상권에 얼마나 강하게 집중되는지를 여실히 보여줍니다. 그러나 두 데이터 소스 중 어느 하나만으로는 호텔, 레스토랑, 또는 웰니스 브랜드가 어디에 임대차 계약을 체결해야 하는지 알려주지 못합니다.',
+    },
+    coreSectionTitle: {
+      en: 'What a decision-grade view needs',
+      ko: '의사결정급 분석에 필요한 핵심 변수',
+    },
+    coreSectionIntro: {
+      en: 'Read demand through a bundle of variables: source market mix, length of stay, trip purpose, spending category, district concentration, repeat behaviour and new supply. A destination can experience strong visitor growth while a proposed format sees weak conversion. Conversely, a smaller cohort can create a stronger premium opportunity if its location, occasion and price logic are aligned.',
+      ko: '수요는 출발국 믹스, 체류 기간, 방문 목적, 소비 품목, 상권 집중도, 재방문 행동 및 신규 공급 등 복합적인 변수 묶음을 통해 종합적으로 파악해야 합니다. 목적지 전체는 강력한 방문객 증가를 경험할 수 있지만, 제안된 브랜드 포맷은 저조한 전환율을 보일 수 있습니다. 반대로, 규모가 작은 타깃 고객군이라도 입지, 소비 오케이션, 가격 논리가 정합성을 갖춘다면 훨씬 견고한 프리미엄 비즈니스 기회를 창출할 수 있습니다.',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Source market mix & length of stay',
+          ko: '출발국 구성 믹스 및 체류 기간의 질적 분화',
+        },
+        detail: {
+          en: 'Aggregate arrival numbers conceal critical shifts in origin markets. High-volume transit visitors generate very different dwell times and hospitality conversion compared to high-intent regional travelers.',
+          ko: '총 입국자 수의 단순 집계는 출발국별 중대한 구조적 변화를 가립니다. 단순 경유형 단기 방문객과 높은 목적성을 지닌 중장기 체류객은 접객 소비 전환율과 체류 시간에서 완전히 다른 패턴을 보입니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Trip purpose & occasion alignment',
+          ko: '여행 목적과 소비 오케이션의 정합성',
+        },
+        detail: {
+          en: 'A destination can experience strong visitor growth while a proposed format sees weak conversion. Formats succeed only when aligned with the specific occasion and purpose driving the visit.',
+          ko: '목적지 전체의 방문객이 급증하더라도 제안된 브랜드 포맷의 방문 동기와 불일치할 경우 전환율은 극히 저조할 수 있습니다. 소비자가 해당 공간을 찾는 구체적인 오케이션과 맞아떨어져야 합니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Spending category concentration',
+          ko: '소비 품목별 극단적 편중과 객단가 현실',
+        },
+        detail: {
+          en: 'Visitor expenditure concentrates heavily by category. Duty-free and cosmetics spending dynamics do not automatically translate into dining, nightlife, or premium hospitality service budgets.',
+          ko: '방한 관광객의 지출은 특정 품목에 극도로 편중됩니다. 면세점이나 뷰티·의료 쇼핑 지출의 호조가 식음료(F&B), 라이프스타일 서비스, 프리미엄 호스피탈리티 객단가로 자동 전이되지 않습니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'District concentration & micro-location footfall',
+          ko: '서울 자치구 상권별 집중도와 미세 보행 동선',
+        },
+        detail: {
+          en: 'Seoul’s official reporting reveals severe geographic concentration across select districts. Being "in Seoul" is meaningless without understanding micro-district footfall, transit accessibility, and dwell patterns.',
+          ko: '서울시 공식 통계는 특정 자치구 상권으로의 극단적 지출 집중을 입증합니다. 마이크로 상권의 보행 동선과 체류 특성을 정밀 분석하지 않은 단순 "서울 진출"은 실패 리스크를 높입니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'Repeat behaviour vs new supply absorption',
+          ko: '재방문 행동 패턴과 신규 공급 흡수율',
+        },
+        detail: {
+          en: 'A smaller cohort can create a stronger premium opportunity if its location, occasion, and price logic are aligned. Operators must evaluate whether upcoming hospitality supply will absorb demand.',
+          ko: '규모가 작은 타깃 집단이라도 입지, 소비 오케이션, 가격 논리가 부합한다면 훨씬 견고한 프리미엄 기회를 창출합니다. 향후 공급될 신규 호텔과 상업 시설이 유입 수요를 잠식하지 않는지 면밀히 측정해야 합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Treat visitor recovery as the top of the funnel. Build the commercial view one level deeper: which customer cohort can a specific site win repeatedly, and why?',
+      ko: '방문객 회복을 깔때기의 최상단으로 취급하십시오. 한 단계 더 깊은 상업적 관점을 세워야 합니다: 특정 입지가 지속적으로 확보할 수 있는 핵심 고객군은 누구이며, 그 이유는 무엇인가?',
+    },
+    verdictDetail: {
+      en: 'Only then should an operator decide whether the opportunity is a flagship, a managed format, a partnership or a wait-and-watch market.',
+      ko: '그 질문에 명확한 답을 도출한 후에야 비로소 운영사는 플래그십 직영 출점, 위탁 운영 포맷, 파트너십 제휴, 혹은 시장 관망 중 어떤 전략을 택해야 할지 결정할 수 있습니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Decision questions for leadership before commitment',
+      ko: '의사결정권자가 자문해야 할 3대 핵심 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before signing a lease or committing capital to Seoul hospitality, brand leadership should establish clear, evidence-backed answers to three direct questions:',
+      ko: '서울 시장에서 임대차 계약에 서명하거나 자본을 투입하기 전, 브랜드 경영진은 다음 세 가지 질문에 대해 명확하고 실증적인 답을 확보해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Which source markets matter to the proposed format?',
+        'What does card-spend data include and exclude?',
+        'Where is new supply likely to absorb demand?',
+      ],
+      ko: [
+        '제안된 브랜드 포맷에 실질적으로 중요한 핵심 출발국 시장은 어디인가?',
+        '카드 결제 빅데이터가 포함하는 영역과 누락하는 사각지대는 무엇인가?',
+        '신규 공급이 유입 수요를 어느 지역에서 집중 흡수할 것인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization big data analytics portal',
+          ko: '한국관광공사 관광 빅데이터 통합 분석 플랫폼',
+        },
+      },
+      {
+        title: {
+          en: 'KTO methodology',
+          ko: 'KTO 통계 방법론',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/getMetaInfoList.do',
+        desc: {
+          en: 'Data collection and verification standards metadata',
+          ko: '관광 통계 메타데이터 및 분석 프레임워크',
+        },
+      },
+      {
+        title: {
+          en: 'Seoul visitor spend report',
+          ko: '서울시 외국인 관광객 지출 보고서',
+        },
+        url: 'https://english.seoul.go.kr/international-arrivals-to-seoul-rise-21-spending-jumps-57-visitors-spend-krw-5-6-trillion-in-h1-2026/',
+        desc: {
+          en: 'International arrivals to Seoul rise 21%, spending jumps 57% (KRW 5.6 trillion in H1 2026)',
+          ko: '2026년 상반기 서울 방문 외래 관광객 21% 증가 및 지출액 5.6조 원 공식 분석 보고',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
   {
     id: 'franchising-governance-not-shortcut',
     slug: 'franchising-is-governance-not-a-shortcut',

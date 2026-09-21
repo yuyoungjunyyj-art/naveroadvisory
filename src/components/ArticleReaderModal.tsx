@@ -317,6 +317,16 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                 {article.coreSectionTitle?.[lang] || (isEn ? 'Five assumptions to retire' : '재검토해야 할 5가지 전제')}
               </h2>
 
+              {article.coreSectionIntro && (
+                <p
+                  className={`text-base sm:text-lg leading-relaxed ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                  }`}
+                >
+                  {article.coreSectionIntro[lang]}
+                </p>
+              )}
+
               {/* Numbered Editorial List */}
               <ol className="divide-y divide-slate-200 dark:divide-white/10 list-none p-0 m-0">
                 {article.fiveAssumptions.map((item, idx) => (
