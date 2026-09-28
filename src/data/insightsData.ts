@@ -1,3 +1,18 @@
+export interface AdaptationCharterItem {
+  dimension: {
+    en: string;
+    ko: string;
+  };
+  hqControl: {
+    en: string;
+    ko: string;
+  };
+  localAutonomy: {
+    en: string;
+    ko: string;
+  };
+}
+
 export interface InsightArticle {
   id: string;
   slug: string;
@@ -65,6 +80,15 @@ export interface InsightArticle {
       ko: string;
     };
   }>;
+  adaptationCharterTitle?: {
+    en: string;
+    ko: string;
+  };
+  adaptationCharterIntro?: {
+    en: string;
+    ko: string;
+  };
+  adaptationCharter?: AdaptationCharterItem[];
   modelComparison?: Array<{
     model: {
       en: string;
@@ -125,6 +149,228 @@ export interface InsightArticle {
 }
 
 export const insightsArticles: InsightArticle[] = [
+  {
+    id: 'korea-does-not-reward-foreign-concepts-that-arrive-untranslated',
+    slug: 'korea-does-not-reward-foreign-concepts-that-arrive-untranslated',
+    category: {
+      en: 'BRAND STRATEGY | F&B and HOSPITALITY | KOREA MARKET ENTRY',
+      ko: '브랜드 전략 | F&B 및 호스피탈리티 | 한국 시장 진출',
+    },
+    corridor: {
+      en: 'GLOBAL ↔ SOUTH KOREA',
+      ko: '글로벌 ↔ 한국',
+    },
+    publishedAt: '2026-09-28',
+    date: {
+      en: 'Sep 28, 2026',
+      ko: '2026년 9월 28일',
+    },
+    readTime: {
+      en: '5 min read',
+      ko: '5분 소요',
+    },
+    title: {
+      en: 'Korea Does Not Reward Foreign Concepts That Arrive Untranslated',
+      ko: '한국 시장은 번역되지 않은 외래 콘셉트에 보상하지 않는다',
+    },
+    subtitle: {
+      en: 'How global hospitality and F&B brands survive the cliff between initial hype and sustainable loyalty.',
+      ko: '글로벌 호스피탈리티 및 F&B 브랜드가 초기 유행과 지속 가능한 재방문 사이의 절벽을 극복하는 법',
+    },
+    teaserSummary: {
+      en: 'Localisation is not a cosmetic exercise menu twerk. It is the disciplined, non-negotiable separation of a brand’s core heritage promise from the indigenous digital, spatial, and operational systems required to survive in South Korea.',
+      ko: '현지화는 단순한 메뉴 수정 같은 표면적 손질이 아닙니다. 이는 브랜드 고유의 헤리티지 가치와, 한국 시장에서 살아남기 위해 필수적인 고유의 디지털·공간·운영 시스템을 엄격하고 규율 있게 분리해내는 작업입니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'A three-hour queue outside your flagship during month one does not validate product-market fit; it merely confirms that consumers recognize your concept as temporary social validation currency (injung-shot).',
+        'The real commercial stress test occurs between months six and nine, when trend-seekers migrate to the next opening and P&L must depend on habitual, repeat local footfall.',
+        'Durable market survival demands an Adaptation Charter: protecting the non-negotiable global brand promise while localizing native reservation tech, micro-district codes, and dining tempos.',
+      ],
+      ko: [
+        '오픈 첫 달 플래그십 매장 앞의 3시간 대기열은 제품-시장 적합성을 증명하지 못하며, 단지 한국의 초연결 소비자들이 해당 콘셉트를 당 시즌의 "인증샷" 화폐로 소비했음을 의미할 뿐입니다.',
+        '진정한 상업적 스트레스 테스트는 트렌드 추종자들이 다음 신규 매장으로 이동하고 손익계산서가 온전히 일상적인 지역 재방문 수요에 의존해야 하는 오픈 6~9개월 차에 비로소 시작됩니다.',
+        '지속 가능한 시장 안착을 위해서는 글로벌 브랜드의 타협 불가능한 헤리티지를 수호하되, 예약 플랫폼·상권별 행동 양식·식사 템포를 철저히 현지화하는 "적응 헌장(Adaptation Charter)" 구축이 필수적입니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'Localisation is not a cosmetic exercise menu twerk. It is the disciplined, non-negotiable separation of a brand’s core heritage promise from the indigenous digital, spatial, and operational systems required to survive in South Korea.',
+      ko: '현지화는 단순한 메뉴 수정 같은 표면적 손질이 아닙니다. 이는 브랜드 고유의 헤리티지 가치와, 한국 시장에서 살아남기 위해 필수적인 고유의 디지털·공간·운영 시스템을 엄격하고 규율 있게 분리해내는 작업입니다.',
+    },
+    problemSectionTitle: {
+      en: 'Beyond the headline: Interpretation, not imitation',
+      ko: '헤드라인 너머의 본질: 모방이 아닌 재해석',
+    },
+    assumptionProblem: {
+      en: 'Foreign hospitality executives frequently mistake opening velocity for brand durability.\n\nIn Seoul, a three-hour queue outside your flagship during month one does not validate product-market fit. It merely confirms that South Korea’s hyper-connected consumer base has recognized your concept as this season’s social validation currency (injung-shot / 인증샷).\n\nThe real commercial stress test never happens during the launch cycle. It occurs between months six and nine, when the curious digital trend-seekers migrate to the next foreign opening, the social cameras disappear, and the P&L is forced to depend entirely on habitual, repeat local footfall.\n\nHistorically, imported concepts fail in one of two directions:\n\n• The Sovereign Replicator: Corporate headquarters insists every operational detail from London, Milan, or New York is sacred. They demand the Korean guest adapt their booking rituals, table pacing, and payment habits to match the foreign standard. The result: severe customer friction and rapid abandonment once the novelty wears off.\n\n• The Panicked Chameleon: Faced with dipping numbers in month five, the operator panics and alters the menu, price point, and service model to mimic domestic competitors. In doing so, they erase the authentic foreign identity and premium pricing power that justified market entry in the first place.',
+      ko: '해외 호스피탈리티 경영진은 종종 오픈 초기 폭발적인 고객 유입 속도를 브랜드의 영속성으로 착각합니다.\n\n서울에서 오픈 첫 달 플래그십 매장 앞에 늘어선 3시간의 대기열은 제품-시장 적합성(PMF)을 입증하지 않습니다. 그것은 단지 한국의 초연결 소비자들이 귀사의 콘셉트를 이번 시즌의 사회적 인정 화폐("인증샷")로 소비하고 있음을 확인해 줄 뿐입니다.\n\n진정한 상업적 스트레스 테스트는 론칭 주기에 나타나지 않습니다. 호기심 많은 디지털 트렌드 탐색자들이 다음 외래 브랜드 오픈 매장으로 이동하고, 소셜 미디어 카메라 플래시가 사라지며, 손익계산서(P&L)가 오직 일상적인 현지인들의 습관적 재방문 매출에 의존해야 하는 6~9개월 차에 비로소 시작됩니다.\n\n역사적으로 한국에 수입된 외래 콘셉트는 주로 다음 두 가지 극단적인 방향으로 실패를 겪어왔습니다:\n\n• 군주적 복제자(The Sovereign Replicator): 본사가 런던, 밀라노, 뉴욕의 모든 운영 방식을 성역화합니다. 한국 고객이 현지 표준 대신 외국의 예약 방식, 식사 템포, 결제 습관에 맞추길 요구합니다. 그 결과 극심한 고객 마찰과 함께 유행이 끝남과 동시에 급격한 고객 이탈을 맞이합니다.\n\n• 공황에 빠진 카멜레온(The Panicked Chameleon): 5개월 차에 지표가 하락하기 시작하자 운영사가 패닉에 빠져 국내 경쟁업체를 흉내 내며 메뉴, 가격대, 서비스 모델을 마구잡이로 수정합니다. 그 과정에서 애초에 시장 진입을 정당화했던 고유한 외래 정체성과 프리미엄 가격 결정력을 스스로 지워버립니다.',
+    },
+    coreSectionTitle: {
+      en: 'The practical operational work: Friction points that erode foreign equity',
+      ko: '실무적 운영 과제: 해외 브랜드의 가치를 갉아먹는 마찰 지점들',
+    },
+    coreSectionIntro: {
+      en: 'The durable alternative is interpretation, not imitation: identify the singular proposition that guests must recognize anywhere in the world, while systematically engineering local acceptance across seven critical touchpoints: discovery, table reservation, service cadence, product architecture, group dining behavior, price anchoring, and retention loops. A meaningful market entry strategy avoids broad generalisations about Korean consumer sophistication. Instead, it resolves specific operational frictions across three core dimensions:',
+      ko: '지속 가능한 해법은 맹목적 모방이 아닌 "정밀한 재해석"입니다. 전 세계 고객이 어디서나 동일하게 인지해야 할 단 하나의 고유 가치 제안을 명확히 식별하되, 7가지 핵심 접점(발견, 테이블 예약, 서비스 템포, 제품 구조, 단체 식사 행동, 가격 기준점, 재방문 루프)에서 현지 수용성을 체계적으로 설계해야 합니다. 실효성 있는 시장 진출 전략은 한국 소비자의 안목에 대한 막연한 일반화를 지양하고, 3대 핵심 차원에서 발생하는 구체적인 운영 마찰을 체계적으로 해결합니다:',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'A. The indigenous digital ecosystem (Naver Place & CatchTable)',
+          ko: 'A. 토착 디지털 생태계 장벽 (네이버 플레이스 및 캐치테이블 연동)',
+        },
+        detail: {
+          en: 'Forcing Korean diners onto global booking engines, bespoke native apps, or legacy email concierges is a direct tax on customer acquisition. Dining discovery, user reviews, and geolocated social proof live natively on Naver Place; a brand without an optimised Naver Place presence is functionally invisible. In high-end and premium casual dining, CatchTable controls waitlisting, instant seat notifications, and cancellation deposit management. Friction-free booking within this native ecosystem determines local conversion.',
+          ko: '한국 다이닝 고객에게 글로벌 자체 예약 엔진, 별도 다운로드 앱, 혹은 이메일 컨시어지 이용을 강요하는 것은 고객 획득 비용에 매기는 직접적인 세금과 같습니다. 식당 검색, 사용자 리뷰, 위치 기반 소셜 검증은 본질적으로 "네이버 플레이스"에서 발생하며, 최적화된 네이버 플레이스가 없는 브랜드는 사실상 존재하지 않는 것과 같습니다. 또한 파인다이닝 및 프리미엄 캐주얼 다이닝에서 "캐치테이블"은 대기 등록, 빈자리 알림, 취소 위약금 관리를 완벽히 장악하고 있습니다. 이 네이티브 생태계와의 매끄러운 연동이 현지 예약 전환율을 결정합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'B. Micro-geography & cohort alignment (Seongsu, Apgujeong, Hannam, Yeouido)',
+          ko: 'B. 마이크로 상권 지리와 고객 코호트 정합성 (성수·압구정·한남·여의도)',
+        },
+        detail: {
+          en: 'The first physical address dictates the brand\'s social ceiling. Seoul is not a uniform market; its sub-districts operate with distinct cultural codes: Seongsu-dong (youth subculture, pop-up speed, aesthetic discovery; demands continuous reinvention to prevent rapid burnout), Apgujeong & Dosan (status-signalling, luxury lifestyle, VIP hospitality pacing), Hannam-dong (cosmopolitan, community-driven, uncompromising culinary concepts), and Yeouido & Gwanghwamun (institutionally corporate, high-speed business lunches, fixed courses, and Private Dining Rooms).',
+          ko: '첫 번째 출점 주소는 브랜드가 도달할 수 있는 사회적 위상의 상한선을 결정합니다. 서울은 단일 상권이 아니며, 각 자치구는 고유한 문화적 규범을 따릅니다: 성수동(청년 하위문화, 팝업 속도, 미학적 탐색의 진앙지; 빠른 번아웃 방지를 위한 지속적 재발명 요구), 압구정·도산(사회적 지위 과시, 럭셔리 라이프스타일, VIP 호스피탈리티 페이싱), 한남동(코스모폴리탄 커뮤니티, 원형에 가까운 타협 없는 미식 콘셉트 선호), 여의도·광화문(제도권 대기업 중심, 빠른 비즈니스 런치, 코스 구조, 프라이빗 룸(PDR) 필수).',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'C. Dining rhythms and group economics (Turnover, PDR ratios, and Course pacing)',
+          ko: 'C. 식사 템포와 단체 회식 경제학 (회전율, PDR 비율 및 코스 전개)',
+        },
+        detail: {
+          en: 'Western dining models often celebrate extended, unhurried table occupancy. In contrast, Korean corporate dining and urban social gatherings operate on tight turnarounds, precise pacing, and fluid payment handling. Without dedicated Private Dining Rooms (PDRs) and course deployment tailored to the specific daypart (especially high-speed business lunch sets), operators compromise their seat-yield efficiency.',
+          ko: '서구식 다이닝 모델은 종종 여유롭고 긴 테이블 체류 시간을 미덕으로 삼습니다. 반면 한국의 직장인 회식과 도심 소셜 모임은 매우 빠른 테이블 회전, 정밀한 음식 서빙 템포, 간편한 개별 결제를 요구합니다. 전용 프라이빗 룸(PDR)을 갖추지 못하거나, 특정 시간대(특히 점심 45분 집중 비즈니스 세트)에 맞춘 신속한 코스 배치가 이뤄지지 않으면 좌석 수익률(Seat Yield)이 치명적으로 훼손됩니다.',
+        },
+      },
+    ],
+    adaptationCharterTitle: {
+      en: 'The Binding Strategic Framework: The Adaptation Charter',
+      ko: '구속력 있는 전략 프레임워크: 적응 헌장 (Adaptation Charter)',
+    },
+    adaptationCharterIntro: {
+      en: 'Before a master franchise agreement is signed or the first lease is secured, leadership must formalise a binding Adaptation Charter. This operational document defines what is centrally non-negotiable versus what local operating teams are empowered to modify based on verified customer behaviour:',
+      ko: '마스터 프랜차이즈 계약을 체결하거나 첫 매장 임대차 계약을 맺기 전, 경영진은 구속력을 갖춘 "적응 헌장(Adaptation Charter)"을 공식화해야 합니다. 이 문서는 본사가 중앙에서 통제하는 타협 불가능한 영역과, 현지 고객 행동 데이터에 기반해 현지 운영팀이 변경할 수 있는 자율 영역을 명확히 정의합니다:',
+    },
+    adaptationCharter: [
+      {
+        dimension: {
+          en: 'Brand Story & Identity',
+          ko: '브랜드 스토리 & 아이덴티티',
+        },
+        hqControl: {
+          en: 'Brand heritage, core typography, master architectural philosophy, tonal values.',
+          ko: '브랜드 고유 헤리티지, 마스터 타이포그래피, 건축 철학, 브랜드 톤앤매너 원칙.',
+        },
+        localAutonomy: {
+          en: 'Seating layout densities, queue staging, lighting warmth, private dining room (PDR) ratios.',
+          ko: '좌석 배치 밀도, 대기열 동선 설계, 조명 색온도, 프라이빗 다이닝 룸(PDR) 공간 비율.',
+        },
+      },
+      {
+        dimension: {
+          en: 'Product & Menu Architecture',
+          ko: '제품 & 메뉴 구조',
+        },
+        hqControl: {
+          en: 'Global hero recipes, signature beverage formats, core sensory standards.',
+          ko: '글로벌 대표 시그니처 레시피, 핵심 음료 포맷, 미각 및 관능 품질 기준.',
+        },
+        localAutonomy: {
+          en: 'Portion sizing, side-dish accompaniments, local seasonality, midday business lunch set architecture.',
+          ko: '1인분 서빙 용량, 곁들임 반찬/피클류, 현지 제철 식자재 반영, 점심 비즈니스 세트 메뉴 구조.',
+        },
+      },
+      {
+        dimension: {
+          en: 'Guest Journey & Tech',
+          ko: '고객 여정 & 테크 시스템',
+        },
+        hqControl: {
+          en: 'Service ethos, welcome standards, signature hospitality touchpoints.',
+          ko: '서비스 철학, 고객 환대 기준, 시그니처 호스피탈리티 터치포인트.',
+        },
+        localAutonomy: {
+          en: 'Booking platforms (CatchTable), local search (Naver Place), contactless checkout, service tempo.',
+          ko: '현지 예약 플랫폼(캐치테이블), 로컬 검색(네이버 플레이스), 간편결제 시스템, 서빙 템포 조절.',
+        },
+      },
+      {
+        dimension: {
+          en: 'Marketing & Partnerships',
+          ko: '마케팅 & 로컬 파트너십',
+        },
+        hqControl: {
+          en: 'Master visual assets, brand partnership guardrails.',
+          ko: '글로벌 마스터 비주얼 에셋, 브랜드 협업 및 제휴 기본 가이드라인.',
+        },
+        localAutonomy: {
+          en: 'Micro-district neighbourhood collaborations, Kakao gifting mechanics, local lifestyle alignment.',
+          ko: '상권별 로컬 브랜드 협업, 카카오톡 선물하기 쿠폰 메커니즘, 현지 라이프스타일 접목.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Protect the brand promise. Localise the delivery system.',
+      ko: '브랜드의 핵심 약속은 수호하고, 이를 전달하는 시스템은 철저히 현지화하라.',
+    },
+    verdictDetail: {
+      en: 'Before a master franchise agreement is signed or the first lease is secured, leadership must formalise a binding Adaptation Charter. This operational document defines what is centrally non-negotiable versus what local operating teams are empowered to modify based on verified customer behaviour.',
+      ko: '마스터 프랜차이즈 계약에 서명하거나 첫 매장 임대차 계약을 확정하기 전, 경영진은 구속력 있는 적응 헌장(Adaptation Charter)을 공식화해야 합니다. 본사가 중앙에서 통제하는 변경 불가 영역과 현지 고객의 검증된 행동 패턴에 맞춰 자율적으로 수정할 수 있는 영역을 문서로 확정하는 것만이 한국 시장에서의 장기 생존을 보장합니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Three critical decision questions before signing or committing capital',
+      ko: '계약 체결 및 자본 투입 전 경영진이 자문해야 할 3대 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before signing an expansion agreement or funding a rollout in Seoul, principals should insist on evidence-backed clarity for three strategic questions:',
+      ko: '서울 진출 계약서에 서명하거나 매장 롤아웃에 자금을 투입하기 전, 경영진은 다음 3가지 전략 질문에 대해 명확한 실증 증거를 확보해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'What is truly non-negotiable in the brand promise?',
+        'Which service routines require local testing?',
+        'Which changes require evidence rather than opinion?',
+      ],
+      ko: [
+        '브랜드가 고객에게 전달하는 핵심 가치 중 절대로 타협할 수 없는 본질은 무엇인가?',
+        '어떤 서비스 루틴과 운영 프로세스가 현지 실증 테스트를 거쳐야 하는가?',
+        '단순한 직관이나 의견이 아니라, 철저한 고객 데이터와 실증 근거를 바탕으로 결정되어야 하는 변경 사항은 무엇인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization big data analytics portal',
+          ko: '한국관광공사 관광 빅데이터 통합 분석 플랫폼',
+        },
+      },
+      {
+        title: {
+          en: 'KOSIS (Korean Statistical Information Service)',
+          ko: '국가통계포털',
+        },
+        url: 'https://kosis.kr/eng/',
+        desc: {
+          en: 'National official statistical portal for commercial, dining, and consumer trends',
+          ko: '통계청 국가통계포털 (상권·식음료 및 가계 소비 트렌드 통계)',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
   {
     id: 'koreas-visitor-recovery-is-over',
     slug: 'koreas-visitor-recovery-is-over',

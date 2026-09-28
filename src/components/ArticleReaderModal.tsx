@@ -15,6 +15,8 @@ import {
   Eye,
   Table,
   BookOpen,
+  Lock,
+  Sliders,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Theme, Language } from '../types';
@@ -298,13 +300,15 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
               >
                 {article.problemSectionTitle?.[lang] || (isEn ? 'The assumption problem' : '전제의 함정')}
               </h2>
-              <p
-                className={`text-base sm:text-lg leading-relaxed ${
+              <div
+                className={`text-base sm:text-lg leading-relaxed space-y-4 ${
                   theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
                 }`}
               >
-                {article.assumptionProblem[lang]}
-              </p>
+                {article.assumptionProblem[lang].split('\n\n').map((para, pIdx) => (
+                  <p key={pIdx}>{para}</p>
+                ))}
+              </div>
             </section>
 
             {/* Section 2: Core Analytical Breakdown / The Structural Test */}
@@ -430,6 +434,134 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
                             {m.koreaSuitability[lang]}
                           </span>
                         </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Section 2.6: Strategic Adaptation Charter Framework (If present) */}
+            {article.adaptationCharter && article.adaptationCharter.length > 0 && (
+              <section className="space-y-4">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                  <Table className="w-4 h-4" />
+                  <span>
+                    {article.adaptationCharterTitle?.[lang] ||
+                      (isEn
+                        ? 'Strategic Operational Framework: The Adaptation Charter'
+                        : '전략적 운영 프레임워크: 적응 헌장 (Adaptation Charter)')}
+                  </span>
+                </div>
+
+                {article.adaptationCharterIntro && (
+                  <p
+                    className={`text-base sm:text-lg leading-relaxed ${
+                      theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                    }`}
+                  >
+                    {article.adaptationCharterIntro[lang]}
+                  </p>
+                )}
+
+                {/* Desktop / Tablet Structured Table View */}
+                <div className="hidden sm:block overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr
+                        className={`border-b text-xs font-mono uppercase tracking-wider ${
+                          theme === 'dark'
+                            ? 'bg-white/[0.04] border-white/10 text-slate-300'
+                            : 'bg-slate-100/90 border-slate-200 text-slate-700'
+                        }`}
+                      >
+                        <th className="py-3.5 px-4 font-bold w-1/4">
+                          {isEn ? 'Operational Dimension' : '운영 차원'}
+                        </th>
+                        <th className="py-3.5 px-4 font-bold w-[38%] text-amber-500 dark:text-amber-400">
+                          <span className="inline-flex items-center gap-1.5">
+                            <Lock className="w-3.5 h-3.5" />
+                            {isEn ? 'Central HQ Control (Non-Negotiable)' : '본사 중앙 통제 (변경 불가)'}
+                          </span>
+                        </th>
+                        <th className="py-3.5 px-4 font-bold w-[37%] text-emerald-500 dark:text-emerald-400">
+                          <span className="inline-flex items-center gap-1.5">
+                            <Sliders className="w-3.5 h-3.5" />
+                            {isEn ? 'Local Operator Autonomy (Must Localise)' : '현지 운영 자율성 (필수 현지화)'}
+                          </span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 dark:divide-white/10 text-xs sm:text-sm">
+                      {article.adaptationCharter.map((row, idx) => (
+                        <tr
+                          key={idx}
+                          className={`transition-colors ${
+                            theme === 'dark'
+                              ? 'hover:bg-white/[0.02] bg-[#08152b]/40'
+                              : 'hover:bg-slate-50/70 bg-white'
+                          }`}
+                        >
+                          <td className="py-4 px-4 font-serif font-bold text-sky-500 dark:text-sky-400 align-top">
+                            {row.dimension[lang]}
+                          </td>
+                          <td
+                            className={`py-4 px-4 align-top leading-relaxed ${
+                              theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                            }`}
+                          >
+                            <div className="flex items-start gap-2">
+                              <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 flex-shrink-0" />
+                              <span>{row.hqControl[lang]}</span>
+                            </div>
+                          </td>
+                          <td
+                            className={`py-4 px-4 align-top leading-relaxed ${
+                              theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+                            }`}
+                          >
+                            <div className="flex items-start gap-2">
+                              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 flex-shrink-0" />
+                              <span>{row.localAutonomy[lang]}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Mobile Card View */}
+                <div className="sm:hidden space-y-3.5 pt-1">
+                  {article.adaptationCharter.map((row, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-4 rounded-xl border space-y-3 ${
+                        theme === 'dark'
+                          ? 'bg-white/[0.02] border-white/10'
+                          : 'bg-white border-slate-200 shadow-sm'
+                      }`}
+                    >
+                      <div className="font-serif font-bold text-base text-sky-400 border-b pb-2 dark:border-white/10 border-slate-100">
+                        {row.dimension[lang]}
+                      </div>
+                      <div className="space-y-1 text-xs">
+                        <div className="inline-flex items-center gap-1.5 font-bold text-amber-500 dark:text-amber-400 uppercase font-mono text-[10px]">
+                          <Lock className="w-3 h-3" />
+                          <span>{isEn ? 'HQ Control (Non-Negotiable)' : '본사 중앙 통제 (변경 불가)'}</span>
+                        </div>
+                        <p className={theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}>
+                          {row.hqControl[lang]}
+                        </p>
+                      </div>
+                      <div className="space-y-1 text-xs pt-1 border-t dark:border-white/5 border-slate-100">
+                        <div className="inline-flex items-center gap-1.5 font-bold text-emerald-500 dark:text-emerald-400 uppercase font-mono text-[10px]">
+                          <Sliders className="w-3 h-3" />
+                          <span>{isEn ? 'Local Autonomy (Must Localise)' : '현지 자율성 (필수 현지화)'}</span>
+                        </div>
+                        <p className={theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}>
+                          {row.localAutonomy[lang]}
+                        </p>
                       </div>
                     </div>
                   ))}
