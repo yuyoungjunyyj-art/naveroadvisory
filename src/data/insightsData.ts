@@ -217,8 +217,8 @@ export const insightsArticles: InsightArticle[] = [
       {
         num: '01',
         headline: {
-          en: 'A. The indigenous digital ecosystem (Naver Place & CatchTable)',
-          ko: 'A. 토착 디지털 생태계 장벽 (네이버 플레이스 및 캐치테이블 연동)',
+          en: 'The indigenous digital ecosystem (Naver Place & CatchTable)',
+          ko: '토착 디지털 생태계 장벽 (네이버 플레이스 및 캐치테이블 연동)',
         },
         detail: {
           en: 'Forcing Korean diners onto global booking engines, bespoke native apps, or legacy email concierges is a direct tax on customer acquisition. Dining discovery, user reviews, and geolocated social proof live natively on Naver Place; a brand without an optimised Naver Place presence is functionally invisible. In high-end and premium casual dining, CatchTable controls waitlisting, instant seat notifications, and cancellation deposit management. Friction-free booking within this native ecosystem determines local conversion.',
@@ -228,8 +228,8 @@ export const insightsArticles: InsightArticle[] = [
       {
         num: '02',
         headline: {
-          en: 'B. Micro-geography & cohort alignment (Seongsu, Apgujeong, Hannam, Yeouido)',
-          ko: 'B. 마이크로 상권 지리와 고객 코호트 정합성 (성수·압구정·한남·여의도)',
+          en: 'Micro-geography & cohort alignment (Seongsu, Apgujeong, Hannam, Yeouido)',
+          ko: '마이크로 상권 지리와 고객 코호트 정합성 (성수·압구정·한남·여의도)',
         },
         detail: {
           en: 'The first physical address dictates the brand\'s social ceiling. Seoul is not a uniform market; its sub-districts operate with distinct cultural codes: Seongsu-dong (youth subculture, pop-up speed, aesthetic discovery; demands continuous reinvention to prevent rapid burnout), Apgujeong & Dosan (status-signalling, luxury lifestyle, VIP hospitality pacing), Hannam-dong (cosmopolitan, community-driven, uncompromising culinary concepts), and Yeouido & Gwanghwamun (institutionally corporate, high-speed business lunches, fixed courses, and Private Dining Rooms).',
@@ -239,8 +239,8 @@ export const insightsArticles: InsightArticle[] = [
       {
         num: '03',
         headline: {
-          en: 'C. Dining rhythms and group economics (Turnover, PDR ratios, and Course pacing)',
-          ko: 'C. 식사 템포와 단체 회식 경제학 (회전율, PDR 비율 및 코스 전개)',
+          en: 'Dining rhythms and group economics (Turnover, PDR ratios, and Course pacing)',
+          ko: '식사 템포와 단체 회식 경제학 (회전율, PDR 비율 및 코스 전개)',
         },
         detail: {
           en: 'Western dining models often celebrate extended, unhurried table occupancy. In contrast, Korean corporate dining and urban social gatherings operate on tight turnarounds, precise pacing, and fluid payment handling. Without dedicated Private Dining Rooms (PDRs) and course deployment tailored to the specific daypart (especially high-speed business lunch sets), operators compromise their seat-yield efficiency.',
