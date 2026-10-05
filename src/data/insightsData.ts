@@ -150,6 +150,184 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'four-seouls-four-entry-problems',
+    slug: 'four-seouls-four-entry-problems',
+    category: {
+      en: 'DISTRICT STRATEGY | SEOUL | SITE SELECTION',
+      ko: '상권 전략 | 서울 | 출점 입지 선정',
+    },
+    corridor: {
+      en: 'SEOUL SUB-DISTRICTS ↔ GLOBAL OPERATORS',
+      ko: '서울 핵심 상권 ↔ 글로벌 운영사',
+    },
+    publishedAt: '2026-10-05',
+    date: {
+      en: 'Oct 05, 2026',
+      ko: '2026년 10월 5일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'Four Seouls, Four Entry Problems',
+      ko: '4개의 서울, 4개의 진출 과제',
+    },
+    subtitle: {
+      en: 'Gangnam, Hannam, Seongsu and Yeouido are not interchangeable market definitions',
+      ko: '강남, 한남, 성수, 여의도는 결코 상호 호환 가능한 시장이 아니다',
+    },
+    teaserSummary: {
+      en: 'District names are useful shorthand, not market strategy. A proposal must define the repeat customer, occasion, micro-location requirements and operational constraints before it calls a Seoul district "right."',
+      ko: '자치구 상권 명칭은 유용한 편의적 약칭일 뿐, 시장 진출 전략이 아닙니다. 특정 콘셉트가 서울의 어느 상권을 "적합하다"고 규정하기 전에, 반드시 반복 방문 고객, 소비 오케이션, 마이크로 입지 요건, 그리고 실질적인 운영 제약 조건을 먼저 정의해야 합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'Gangnam, Hannam, Seongsu, and Yeouido are brand signals that become dangerous when shorthand replaces evidence.',
+        'The same city contains sharply different demand rhythms, spending mixes, weekday economics, and landlord expectations.',
+        'Compare districts through four operating lenses: repeat customer cohort, target occasion, micro-location logistics, and invalidation data.',
+      ],
+      ko: [
+        '강남, 한남, 성수, 여의도는 브랜드 지향점의 상징일 뿐, 이러한 편의적 라벨이 실증 데이터를 대체할 때 치명적인 실패로 이어집니다.',
+        '동일한 서울 안에서도 상권에 따라 주중/주말 수요 리듬, 지출 믹스, 평일 경제성, 임대인 기대치가 극단적으로 상이합니다.',
+        '운영사는 4대 운영 렌즈(반복 방문 고객군, 점유할 소비 오케이션, 마이크로 입지 물류·접근성, 가설 반증 데이터)를 통해 상권을 정밀 비교해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'District names are useful shorthand, not market strategy. A proposal must define the repeat customer, occasion, micro-location requirements and operational constraints before it calls a Seoul district "right."',
+      ko: '자치구 상권 명칭은 유용한 편의적 약칭일 뿐, 시장 진출 전략이 아닙니다. 특정 콘셉트가 서울의 어느 상권을 "적합하다"고 규정하기 전에, 반드시 반복 방문 고객, 소비 오케이션, 마이크로 입지 요건, 그리고 실질적인 운영 제약 조건을 먼저 정의해야 합니다.',
+    },
+    problemSectionTitle: {
+      en: 'The shorthand trap',
+      ko: '약칭의 함정: 라벨이 실증 분석을 대체할 때',
+    },
+    assumptionProblem: {
+      en: 'Gangnam, Hannam, Seongsu and Yeouido are regularly used as brand signals. That can be useful in a first conversation, but it becomes dangerous when the label replaces evidence. The same city can contain sharply different demand rhythms, spending mixes, customer motivations, weekday economics, visibility needs and landlord expectations. A beautiful district narrative does not show that a proposed format can trade there.',
+      ko: '강남, 한남, 성수, 여의도는 글로벌 본사 경영진과의 초기 대화에서 손쉬운 브랜드 지향점 신호로 자주 활용됩니다. 첫 미팅에서는 유용할 수 있지만, 이러한 지역 라벨이 실증 데이터를 대체하기 시작하면 대단히 위험해집니다. 동일한 서울 시내라 하더라도 상권에 따라 수요 리듬, 지출 믹스, 고객의 방문 동기, 주중 경제성, 가시성 요구조건, 임대인의 기대치가 극단적으로 갈립니다. 매력적인 상권 스토리텔링만으로는 제안된 브랜드 포맷이 그곳에서 실제로 수익성 있게 영업할 수 있는지 전혀 증명하지 못합니다.',
+    },
+    coreSectionTitle: {
+      en: 'A better comparison: Four operating lenses',
+      ko: '실무적 상권 비교: 4대 핵심 운영 렌즈',
+    },
+    coreSectionIntro: {
+      en: 'Compare districts through four operating lenses. First, who is the expected repeat customer? Second, which occasion is the format meant to own? Third, how must the micro-location work for access, frontage, staffing and delivery? Fourth, what data point would validate the hypothesis? Seoul’s public reporting provides a starting view of visitor-spend concentration, but an operator should add local observation, lease intelligence and competitor mapping.',
+      ko: '상권은 4가지 실무 운영 렌즈를 통해 체계적으로 비교 분석되어야 합니다. 첫째, 지속적으로 유입되어야 할 반복 방문 고객은 누구인가? 둘째, 해당 포맷이 점유하고자 하는 소비 오케이션은 무엇인가? 셋째, 도로 접근성, 전면 노출도, 인력 수급, 배송 및 물류 측면에서 마이크로 입지는 어떻게 작동해야 하는가? 넷째, 이 출점 가설을 입증할 결정적 데이터는 무엇인가? 서울시의 공식 공공 보고서는 방문객 지출 집중도에 대한 초기 시각을 제공하지만, 운영사는 반드시 현장 관찰, 임대차 실거래 정보, 경쟁사 밀도 매핑을 결합해야 합니다.',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Expected repeat customer cohort',
+          ko: '반복 방문 핵심 고객 코호트 정의',
+        },
+        detail: {
+          en: 'Who must visit twice for the concept to work? Tourism and first-time curiosity footfall can mask fatal commercial flaws. Each district attracts fundamentally distinct cohorts: corporate expense-account diners in Yeouido, status-seeking luxury spenders in Gangnam/Cheongdam, cosmopolitan tastemakers in Hannam, and trend-focused digital natives in Seongsu.',
+          ko: '콘셉트가 지속되기 위해 두 번 이상 찾아와야 할 핵심 고객은 누구입니까? 관광객과 1회성 호기심 고객은 비즈니스의 치명적 결함을 가립니다. 여의도의 법인 카드 결제 직장인, 강남·청담의 사회적 위상 지향형 럭셔리 소비자, 한남의 글로벌 테이스트메이커, 성수의 트렌드 탐색형 청년층 등 상권별 반복 고객은 완전히 다른 층위를 형성합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Occasion ownership & daypart dynamics',
+          ko: '소비 오케이션 점유 및 시간대별 매출 역학',
+        },
+        detail: {
+          en: 'Which occasion is the format meant to own? A district’s strength in weekend leisurely brunches does not support a high-rent venue requiring weekday midday seat turnover. Yeouido demands 45-minute corporate lunch velocity; Seongsu thrives on aesthetic dwell time; Hannam rewards intimate evening culinary engagement.',
+          ko: '해당 포맷이 확실하게 점유해야 하는 소비 오케이션은 무엇입니까? 주말 여유로운 브런치에 최적화된 상권은 주중 점심 빠른 회전율을 필요로 하는 고임대료 매장을 감당할 수 없습니다. 여의도는 45분짜리 비즈니스 런치 속도를 요구하고, 성수는 미학적 공간 체류 시간을 기반으로 하며, 한남은 밀도 높은 저녁 식음료 경험에 강력한 프리미엄을 부여합니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Micro-location logistics & physical constraints',
+          ko: '마이크로 입지 물리 조건과 운영 제약 (접근성·전면·물류)',
+        },
+        detail: {
+          en: 'How must the micro-location work for access, frontage, staffing, and delivery? Being in "Hannam" or "Seongsu" is meaningless if your back-alley site lacks delivery vehicle turnaround, valet staging, kitchen exhaust permits, or sufficient utility infrastructure. District reputation cannot overcome micro-site physical friction.',
+          ko: '도로 접근성, 전면(Frontage) 가시성, 인력 채용, 납품 물류 측면에서 실제 현장은 어떻게 작동해야 합니까? 골목 안쪽에 위치해 발레파킹 대기 공간이 없거나, 주방 배기 닥트 인허가가 불가능하거나, 대형 식자재 배송 차량 진입이 막힌다면 "한남동"이나 "성수동"이라는 명칭은 아무런 보호막이 되지 못합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Hypothesis validation & kill-metric data',
+          ko: '가설 검증 및 실패 반증 데이터 지표',
+        },
+        detail: {
+          en: 'What data point would validate or disprove the district thesis? Rather than collecting confirmatory marketing praise, operators must identify the kill-metrics: card-spend seasonality, evening footfall drop-off rates, local lease turnover velocity, and competitor attrition before committing capital.',
+          ko: '해당 상권 진출 가설을 단번에 검증하거나 반증할 데이터 지표는 무엇입니까? 브랜드를 칭찬하는 마케팅 자료 대신, 자본 투입 전 신용카드 결제 계절성, 평일 야간 유동인구 급감율, 인근 점포 공실률 및 폐업 주기 등 핵심 위험 지표를 먼저 식별해야 합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Do not choose a neighbourhood because it is culturally fashionable or commercially famous. Choose it because it gives the format the right customer, occasion and economics.',
+      ko: '문화적으로 유행하거나 상업적으로 유명하다는 이유만으로 상권을 선택하지 마십시오. 오직 해당 브랜드 포맷에 부합하는 타깃 고객, 소비 오케이션, 그리고 지속 가능한 경제성을 제공하는 입지여야 합니다.',
+    },
+    verdictDetail: {
+      en: 'The goal is a small number of validated micro-markets, not a list of fashionable addresses.',
+      ko: '최종 목표는 유행하는 번지수 목록을 모으는 것이 아니라, 철저히 실증 검증된 소수의 마이크로 상권을 확보하는 것입니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Three decision questions for operators',
+      ko: '운영사가 반드시 검증해야 할 3대 의사결정 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before signing a commercial lease in Seoul, principals should demand quantitative, evidence-backed answers to three core questions:',
+      ko: '서울 상권에서 임대차 계약에 서명하기 전, 경영진은 다음 3가지 핵심 질문에 대해 정량적이고 실증적인 답을 요구해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Who must visit twice for the concept to work?',
+        'What does the micro-location need to deliver?',
+        'Which data would disprove the district thesis?',
+      ],
+      ko: [
+        '콘셉트가 안착하기 위해 반드시 두 번 이상 재방문해야 하는 핵심 고객은 누구인가?',
+        '선택한 마이크로 입지가 물리적·운영적으로 반드시 충족해야 할 요건은 무엇인가?',
+        '해당 상권 진출 가설을 단번에 반증하거나 무효화할 수 있는 데이터는 무엇인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'Seoul visitor spend report',
+          ko: '서울시 외래 관광객 지출 보고서',
+        },
+        url: 'https://english.seoul.go.kr/international-arrivals-to-seoul-rise-21-spending-jumps-57-visitors-spend-krw-5-6-trillion-in-h1-2026/',
+        desc: {
+          en: 'International arrivals to Seoul rise 21%, spending jumps 57% in H1 2026',
+          ko: '2026년 상반기 서울 방문 관광객 및 소비 지출 공식 분석 (서울시 발표)',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization big data analytics portal',
+          ko: '한국관광공사 관광 빅데이터 통합 분석 플랫폼',
+        },
+      },
+      {
+        title: {
+          en: 'KOSIS (Korean Statistical Information Service)',
+          ko: '국가통계포털',
+        },
+        url: 'https://kosis.kr/eng/',
+        desc: {
+          en: 'National official statistical portal for commercial, demographic, and economic accounts',
+          ko: '통계청 국가통계포털 (상권 및 가계 소비 트렌드 통계)',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'korea-does-not-reward-foreign-concepts-that-arrive-untranslated',
     slug: 'korea-does-not-reward-foreign-concepts-that-arrive-untranslated',
     category: {
