@@ -150,6 +150,188 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'koreas-wellness-opportunity-beyond-beauty-led-demand',
+    slug: 'koreas-wellness-opportunity-beyond-beauty-led-demand',
+    category: {
+      en: 'WELLNESS | HOSPITALITY | MARKET DEFINITION',
+      ko: '웰니스 | 호스피탈리티 | 시장 정의',
+    },
+    corridor: {
+      en: 'GLOBAL ↔ SOUTH KOREA',
+      ko: '글로벌 ↔ 한국',
+    },
+    publishedAt: '2026-10-12',
+    date: {
+      en: 'Oct 12, 2026',
+      ko: '2026년 10월 12일',
+    },
+    readTime: {
+      en: '5 min read',
+      ko: '5분 소요',
+    },
+    title: {
+      en: "Korea's Wellness Opportunity Is Moving Beyond Beauty-Led Demand",
+      ko: '한국의 웰니스 시장 기회: 뷰티 주도형 수요를 넘어서다',
+    },
+    subtitle: {
+      en: 'Why a broad wellness label is not yet a market-entry strategy',
+      ko: '포괄적인 웰니스 라벨이 시장 진출 전략이 될 수 없는 이유',
+    },
+    teaserSummary: {
+      en: '“Wellness” can describe very different businesses. A defensible Korea strategy defines the customer problem, operating boundary and repeat-demand model before it claims a market opportunity.',
+      ko: '‘웰니스’라는 단어는 본질적으로 완전히 다른 사업들을 포괄합니다. 방어 가능한 한국 시장 진출 전략을 수립하려면, 시장 기회를 주장하기 전에 고객의 문제, 운영의 경계, 그리고 반복 수요 모델을 명확히 정의해야 합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'Beauty, medical services, recovery, sleep, and destination retreats are grouped under "wellness," but they are not interchangeable in motivation, frequency, or regulatory boundaries.',
+        'Interest in K-beauty or medical tourism does not automatically validate a hotel spa, recovery club, or sleep concept; demand for one service does not prove repeat economics for another.',
+        'Operators must define the customer problem, the operating boundary with regulated clinical care, and a commercial route to repeat willingness-to-pay before committing capital.',
+      ],
+      ko: [
+        '뷰티, 의료 관광, 리커버리, 수면, 데스티네이션 리트리트는 모두 "웰니스"로 묶이지만 소비 동기, 방문 빈도, 규제 경계 측면에서 결코 상호 호환될 수 없습니다.',
+        'K-뷰티나 의료 관광의 호조가 호텔 스파, 리커버리 클럽, 수면 케어 콘셉트의 사업성을 입증하지 않으며, 특정 서비스 수요가 다른 분야의 재방문 경제성으로 직결되지 않습니다.',
+        '자본을 투입하기 전 고객의 구체적 결핍, 의료 규제와의 운영 경계선, 그리고 반복 지불 의향을 입증할 상업 모델을 먼저 정립해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: '“Wellness” can describe very different businesses. A defensible Korea strategy defines the customer problem, operating boundary and repeat-demand model before it claims a market opportunity.',
+      ko: '‘웰니스’라는 단어는 본질적으로 완전히 다른 사업들을 포괄합니다. 방어 가능한 한국 시장 진출 전략을 수립하려면, 시장 기회를 주장하기 전에 고객의 문제, 운영의 경계, 그리고 반복 수요 모델을 명확히 정의해야 합니다.',
+    },
+    problemSectionTitle: {
+      en: 'The category mistake',
+      ko: '범주의 오류: 뷰티·의료 수요와 웰니스의 혼동',
+    },
+    assumptionProblem: {
+      en: 'Beauty, aesthetics, medical services, recovery, fitness, sleep, functional food and destination stays are often grouped under “wellness.” They are not interchangeable.\n\nThey differ in customer motivation, willingness to pay, frequency of use, service delivery, capital requirements and regulatory boundaries. Treating them as one market creates an attractive presentation—but not an executable operating plan.\n\nThis matters particularly for hospitality brands. Interest in Korean beauty, medical tourism or premium lifestyle does not automatically validate a hotel spa, recovery club, sleep concept or destination retreat. Demand for one service does not prove repeat economics for another.\n\nThe real question is not whether Korea has a wellness opportunity. It is whether a specific offer can earn trust, create repeat behavior and operate credibly within local conditions.',
+      ko: '뷰티, 에스테틱, 의료 서비스, 리커버리, 피트니스, 수면, 기능성 식품, 그리고 데스티네이션 스테이는 흔히 ‘웰니스’라는 하나의 포괄적 범주로 묶입니다. 그러나 이들은 결코 상호 대체 가능한 사업이 아닙니다.\n\n고객의 소비 동기, 지불 용의(WTP), 이용 빈도, 서비스 전달 방식, 자본 투입 규모, 그리고 규제적 경계선이 근본적으로 다릅니다. 이들을 단일 시장으로 취급하는 것은 투자 제안서상으로는 매력적일지 모르나, 실행 가능한 현장 운영 계획이 될 수 없습니다.\n\n이는 특히 호스피탈리티 브랜드에게 중대한 문제입니다. K-뷰티, 의료 관광 또는 프리미엄 라이프스타일에 대한 높은 관심이 호텔 스파, 리커버리 클럽, 수면 케어 콘셉트, 또는 리트리트 시설의 사업성을 자동으로 보장하지 않습니다. 한 영역의 수요가 다른 영역의 반복 소비 경제성을 증명해 주지 못하기 때문입니다.\n\n진짜 핵심 질문은 ‘한국에 웰니스 시장 기회가 존재하는가’가 아닙니다. ‘구체적으로 설계된 제안이 현지 소비자의 신뢰를 얻고, 반복 방문 행동을 창출하며, 한국 특유의 규제 및 시장 조건 속에서 신뢰성 있게 운영될 수 있는가’입니다.',
+    },
+    coreSectionTitle: {
+      en: 'What to define first: Customer problem, boundary, and commercial model',
+      ko: '시장 진입 전 우선 정의해야 할 4대 핵심 축',
+    },
+    coreSectionIntro: {
+      en: 'Start with the customer problem, not the global category. Who is paying? What outcome are they buying? Is the proposition about recovery, sleep, stress relief, performance, preventative lifestyle or destination escape? How often can that customer realistically return? Then define the operating boundary, test the commercial model, and separate initial curiosity from defensible repeat retention:',
+      ko: '글로벌 카테고리가 아니라 ‘고객의 구체적 문제’에서부터 출발해야 합니다. 비용을 지불하는 주체는 누구인가? 그들이 구매하고자 하는 실질적 결과(Outcome)는 무엇인가? 리커버리, 수면, 스트레스 해소, 퍼포먼스 향상, 예방적 라이프스타일, 혹은 일상 탈출 중 무엇을 약속하는가? 그 고객이 현실적으로 얼마나 자주 재방문할 수 있는가? 이후 운영 경계를 획정하고, 상업적 모델을 실증하여 일시적 호기심과 방어 가능한 재방문율을 엄격히 구분해야 합니다:',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'The customer problem & outcome purchased',
+          ko: '고객의 구체적 결핍과 구매 효용(Outcome)',
+        },
+        detail: {
+          en: 'Start with the customer problem, not the global category. Who is paying? What outcome are they buying? Is the proposition about recovery, sleep, stress relief, performance, preventative lifestyle or destination escape? How often can that customer realistically return?',
+          ko: '글로벌 카테고리가 아닌 고객의 구체적 결핍에서 출발해야 합니다. 비용을 지불하는 주체는 누구이며, 어떤 실질적 결과를 구매하는가? 리커버리, 수면 개선, 스트레스 완화, 신체 퍼포먼스, 예방 건강, 데스티네이션 힐링 중 무엇을 제공하며, 고객이 연간 몇 회나 반복 방문할 수 있는지 현실적으로 산정해야 합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Hospitality vs regulated clinical operating boundaries',
+          ko: '호스피탈리티와 규제된 의료·임상 서비스의 운영 경계선',
+        },
+        detail: {
+          en: 'Define the operating boundary clearly. Which elements are hospitality-led? Which require specialist partners? Where does the lifestyle experience end and a clinical or regulated medical service begin in South Korea’s strict healthcare regulatory environment?',
+          ko: '운영의 경계선을 정밀하게 획정해야 합니다. 어느 요소까지가 호스피탈리티 서비스이며, 어느 지점부터 전문 파트너가 필요한가? 한국의 엄격한 의료법 및 면허 규제 환경 속에서, 라이프스타일 웰니스 경험이 끝나고 인허가가 필요한 의료·임상 영역이 시작되는 지점을 명확히 분리해야 합니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Commercial route to repeatable demand',
+          ko: '일회성 호기심을 넘어선 반복 수요 상업 모델 검증',
+        },
+        detail: {
+          en: 'A concept must show a route to repeat demand—not simply initial curiosity. That means validating price acceptance, customer acquisition channels, daypart utilisation, membership or package conversion, staffing requirements, partnership economics and the metrics that indicate retention.',
+          ko: '초기 호기심 고객을 넘어선 반복 수요 창출 경로를 입증해야 합니다. 객단가 수용도, 고객 획득 채널(CAC), 시간대별 공간 가동률, 멤버십 또는 패키지 전환율, 전문 테라피스트 인력 수급, 파트너십 수익 분배, 그리고 실질적인 고객 리텐션 지표를 검증해야 합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Macro visitor data vs wellness-hospitality product validation',
+          ko: '공공 거시 데이터와 현장 웰니스 상품성의 괴리 식별',
+        },
+        detail: {
+          en: 'Public visitor, medical and consumer data can signal where to investigate. They do not, by themselves, validate a wellness-hospitality product. High-level medical tourist volumes do not automatically translate into viable room-yield or spa-treatment economics for an international operator.',
+          ko: '공공 방문객 통계, 의료 관광 보고서, 소비 빅데이터는 추가 조사 대상을 가리키는 신호일 뿐, 그 자체로 개별 웰니스-호스피탈리티 상품의 타당성을 입증하지 못합니다. 거시적 외국인 환자 입국 통계가 특정 인터내셔널 호텔의 스파 및 리커버리 수익성을 보증하지 않습니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Korea’s wellness opportunity is not a single market waiting to be entered. It is a series of distinct operating models that must be defined, tested and governed differently.',
+      ko: '한국의 웰니스 기회는 진입만을 기다리는 단일 시장이 아닙니다. 서로 다르게 정의되고, 검증되며, 관리되어야 하는 복수의 개별 운영 모델들의 집합입니다.',
+    },
+    verdictDetail: {
+      en: 'The brands most likely to succeed will not lead with a broad “wellness” label. They will build a narrow and credible service proposition around a clear customer problem, a practical operating boundary and a measurable repeat-demand engine. For international hospitality and lifestyle operators, this is a management challenge as much as a market-entry question: align the concept, site, partner model, service design, compliance boundary and local KPIs before committing capital. Define the offer before sizing the market. Build the repeat model before scaling the footprint.',
+      ko: '가장 성공 가능성이 높은 브랜드는 모호한 ‘웰니스’ 라벨을 전면에 내세우지 않습니다. 명확한 고객 결핍, 현실적인 운영 경계선, 그리고 측정 가능한 반복 수요 엔진을 중심으로 좁고 신뢰할 수 있는 서비스 제안을 구축합니다. 글로벌 호스피탈리티 및 라이프스타일 운영사에게 이는 단순한 시장 진입을 넘어선 거버넌스 과제입니다. 자본을 투입하기 전 콘셉트, 입지, 파트너십 모델, 서비스 설계, 규제 준수 경계, 로컬 KPI를 일치시켜야 합니다. 시장 규모를 추정하기 전에 구체적 오퍼를 정의하고, 거점을 확장하기 전에 반복 방문 모델을 먼저 입증하십시오.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Five decision questions for wellness and hospitality principals',
+      ko: '웰니스 및 호스피탈리티 경영진이 자문해야 할 5대 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before capital is committed to Korean wellness concepts, sites, or partnerships, leadership should demand clear, evidence-backed answers to five operational questions:',
+      ko: '한국 웰니스 콘셉트, 출점 입지, 또는 현지 파트너십에 자본을 투입하기 전, 경영진은 다음 5가지 운영 질문에 대해 명확하고 실증적인 답을 요구해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Which specific customer problem are we solving?',
+        'Who pays, and what outcome are they willing to pay for?',
+        'Where is the boundary between hospitality, lifestyle and regulated care?',
+        'What evidence would prove repeat willingness to pay?',
+        'Which local operating capabilities or partnerships are essential to deliver the promise?',
+      ],
+      ko: [
+        '우리가 해결하고자 하는 구체적인 고객의 문제는 무엇인가?',
+        '비용을 지불하는 주체는 누구이며, 어떤 실질적 결과에 기꺼이 지불하는가?',
+        '호스피탈리티, 라이프스타일, 그리고 인허가 규제를 받는 의료 영역 간의 경계는 어디인가?',
+        '지속적인 재방문 지불 의향을 입증할 실증적 근거는 무엇인가?',
+        '브랜드의 약속을 이행하기 위해 반드시 확보해야 할 현지 운영 역량 및 파트너십은 무엇인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'MOHW / KHIDI International Healthcare Briefing',
+          ko: '보건복지부 / 한국보건산업진흥원 글로벌 헬스케어 동향',
+        },
+        url: 'https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=1485207&insttCode=A260111&type=N',
+        desc: {
+          en: 'Official briefing on international patient arrivals and medical tourism trends',
+          ko: '외국인 환자 유치 및 글로벌 헬스케어 공식 브리핑',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization big data analytics portal',
+          ko: '한국관광공사 관광 빅데이터 통합 분석 플랫폼',
+        },
+      },
+      {
+        title: {
+          en: 'Seoul visitor-spend reporting',
+          ko: '서울시 외래 관광객 지출 보고서',
+        },
+        url: 'https://english.seoul.go.kr/international-arrivals-to-seoul-rise-21-spending-jumps-57-visitors-spend-krw-5-6-trillion-in-h1-2026/',
+        desc: {
+          en: 'International arrivals to Seoul rise 21%, spending jumps 57% in H1 2026',
+          ko: '2026년 상반기 서울 방문 관광객 및 소비 지출 공식 분석 (서울시 발표)',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'four-seouls-four-entry-problems',
     slug: 'four-seouls-four-entry-problems',
     category: {
