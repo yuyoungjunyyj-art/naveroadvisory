@@ -160,10 +160,10 @@ export const insightsArticles: InsightArticle[] = [
       en: 'GLOBAL ↔ SOUTH KOREA',
       ko: '글로벌 ↔ 한국',
     },
-    publishedAt: '2026-10-12',
+    publishedAt: '2026-10-24',
     date: {
-      en: 'Oct 12, 2026',
-      ko: '2026년 10월 12일',
+      en: 'Oct 24, 2026',
+      ko: '2026년 10월 24일',
     },
     readTime: {
       en: '5 min read',
