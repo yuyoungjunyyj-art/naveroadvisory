@@ -150,6 +150,195 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'beauty-and-medical-wellness-demand-not-property-strategy',
+    slug: 'beauty-and-medical-wellness-demand-not-property-strategy',
+    category: {
+      en: 'REAL ESTATE | BEAUTY | SEOUL',
+      ko: '부동산 전략 | 뷰티·의료 | 서울',
+    },
+    corridor: {
+      en: 'GLOBAL CAPITAL ↔ SEOUL COMMERCIAL REAL ESTATE',
+      ko: '글로벌 자본 ↔ 서울 상업용 부동산',
+    },
+    publishedAt: '2026-10-26',
+    date: {
+      en: 'Oct 26, 2026',
+      ko: '2026년 10월 26일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'Beauty and Medical-Wellness Demand Are Not a Property Strategy',
+      ko: '뷰티 및 의료 웰니스 수요는 그 자체로 부동산 전략이 아니다',
+    },
+    subtitle: {
+      en: 'How to test a Seoul micro-market thesis before capital is committed',
+      ko: '자본을 투입하기 전 서울 미시 상권 가설을 엄밀히 실증하는 법',
+    },
+    teaserSummary: {
+      en: 'A busy street or fast-growing treatment category can signal interest. It does not establish durable real-estate value. A property thesis needs repeat demand, format fit, supply analysis and operating evidence.',
+      ko: '번화한 거리나 급성장하는 뷰티·의료 시술 카테고리는 관심의 신호일 뿐, 지속 가능한 부동산 가치를 입증하지 못합니다. 부동산 투자 전략은 반복 수요, 공간 포맷 적합성, 경쟁 공급 분석, 그리고 현장 운영 실증을 필요로 합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'Beauty and medical-wellness clusters in Seoul demonstrate strong visitor spend, but activity should not be confused with long-term real estate causation.',
+        'A local cluster may be driven by narrow treatment fads, temporary travel patterns, or irreplaceable micro-ecosystems that cannot be replicated elsewhere.',
+        'Before committing capital, operators and investors must test repeat ratios, micro-location alignment, and planned competing supply pipelines.',
+      ],
+      ko: [
+        '서울의 뷰티 및 의료 웰니스 클러스터는 높은 관광객 소비를 보여주지만, 눈앞의 집적 현상을 지속 가능한 부동산 투자 원인으로 오인해서는 안 됩니다.',
+        '특정 클러스터는 특정 단일 시술 유행, 일시적인 여행 패턴, 또는 다른 지역으로 복제 불가능한 미시 생태계에 의해 형성되었을 가능성이 큽니다.',
+        '자본을 투입하기 전 반복 수요 비율, 타깃 고객과 미시 입지의 부합 여부, 그리고 인근 경쟁 공급 파이프라인을 엄밀히 실증해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'A busy street or fast-growing treatment category can signal interest. It does not establish durable real-estate value. A property thesis needs repeat demand, format fit, supply analysis and operating evidence.',
+      ko: '번화한 거리나 급성장하는 뷰티·의료 시술 카테고리는 관심의 신호일 뿐, 지속 가능한 부동산 가치를 입증하지 못합니다. 부동산 투자 전략은 반복 수요, 공간 포맷 적합성, 경쟁 공급 분석, 그리고 현장 운영 실증을 필요로 합니다.',
+    },
+    problemSectionTitle: {
+      en: 'Signal versus causation',
+      ko: '신호와 인과관계의 엄격한 분리',
+    },
+    assumptionProblem: {
+      en: 'Beauty and medical-wellness services are visible in parts of Seoul and public data shows their importance in international visitor spending. The tempting conclusion is that they are creating a blanket real-estate opportunity. That leap confuses activity with causation. A local cluster may be driven by a narrow treatment type, a temporary travel pattern or an ecosystem that cannot be copied one district away.',
+      ko: '뷰티 및 의료 웰니스 서비스는 서울 주요 상권에서 뚜렷하게 관측되며, 공공 통계 역시 외래 관광객 지출에서 이들 업종이 차지하는 비중이 막대함을 보여줍니다. 이에 따라 많은 이들이 이 현상이 도시 전역에 걸친 무차별적 부동산 기회를 창출하고 있다는 유혹적인 결론에 도달합니다. 그러나 이러한 비약은 일시적 상업 활동(Activity)과 구조적 인과관계(Causation)를 혼동하는 것입니다. 특정 지역의 클러스터는 지극히 좁은 특정 시술 유형, 일시적 여행 트렌드, 혹은 단 한 블록 떨어진 곳으로도 복제될 수 없는 고유 생태계에 의해 유지되고 있을 수 있습니다.',
+    },
+    coreSectionTitle: {
+      en: 'The test before the thesis: Five pillars of micro-market validation',
+      ko: '가설 수립 전 5대 검증 기준: 미시 시장 실증 프레임워크',
+    },
+    coreSectionIntro: {
+      en: 'Test five things before connecting category activity to property strategy: the ratio of repeat to one-off demand; district and category spend; the best hospitality, retail or service format; competing supply; and operating constraints. A location also needs to serve the brand’s intended customer, not merely capture passers-by. Lease intelligence and a current supply view are essential additions to public visitor data.',
+      ko: '업종의 활성화를 부동산 전략으로 연결하기 전에 반드시 5가지 핵심 요소를 실증해야 합니다: 반복 수요 대 일회성 수요의 비율, 권역별 및 업종별 지출 집중도, 최적의 호스피탈리티·리테일·서비스 포맷 적합성, 경쟁 공급 파이프라인, 그리고 현장 운영 제약 요건입니다. 출점 입지는 단순히 지나가는 유동 인구를 흡수하는 것이 아니라 브랜드가 의도한 타깃 고객을 정밀하게 유인할 수 있어야 합니다. 공공 외래객 지출 데이터에 더해 현장 임대 인텔리전스와 최신 공급 동향 분석이 필수적입니다.',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Repeat versus one-off demand ratio',
+          ko: '재방문 대 일회성 소비 수요 비율',
+        },
+        detail: {
+          en: 'Test the ratio of repeat local demand to one-off visitor traffic, and evaluate what mechanism actually sustains retention once the initial marketing spike subsides.',
+          ko: '일회성 방문객 유입 대비 지속적인 로컬 재방문 수요의 비율을 측정하고, 초기 마케팅 효과가 소멸된 이후에도 리텐션을 유지해 줄 실질적 동인을 검증합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'District and category spend concentration',
+          ko: '권역별·업종별 지출 집중도와 유효 객단가',
+        },
+        detail: {
+          en: 'Analyze granular transaction data by submarket and treatment type. High foot traffic on a boulevard does not automatically guarantee willingness to pay for premium services.',
+          ko: '마이크로 권역 및 시술·서비스 유형별 세부 결제 데이터를 심층 분석합니다. 유동 인구가 밀집된 대로변이라도 프리미엄 서비스에 대한 높은 지불 용의로 직결되지 않습니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Format fit for hospitality, retail or service',
+          ko: '호스피탈리티, 리테일, 서비스 포맷의 공간 적합성',
+        },
+        detail: {
+          en: 'Select the optimal operational format—whether boutique clinic, wellness retreat, luxury retail, or hybrid hospitality. The location must serve the target customer rather than simply capturing undifferentiated passers-by.',
+          ko: '부티크 클리닉, 웰니스 리트리트, 럭셔리 리테일, 하이브리드 호텔 등 최적의 운영 포맷을 도출합니다. 입지는 무차별적인 통행객을 흡수하는 데 그치지 않고 타깃 고객의 방문 목적을 정밀하게 수용해야 합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Current and planned competing supply',
+          ko: '경쟁 공급 현황 및 파이프라인 개발 동향',
+        },
+        detail: {
+          en: 'Map competing facilities both currently operating and in the development pipeline. A high-growth category often attracts sudden supply agglomeration that compresses margins and lease yields.',
+          ko: '현재 운영 중인 경쟁 시설뿐만 아니라 인허가 및 착공 파이프라인에 있는 신규 공급을 매핑합니다. 고성장 카테고리는 급격한 공급 팽창으로 임대 수익률과 마진을 순식간에 압박할 수 있습니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'Operating constraints and micro-location lease intelligence',
+          ko: '운영 제약 요건과 미시 입지 임대 인텔리전스',
+        },
+        detail: {
+          en: 'Evaluate vertical accessibility, signage rights, clinical zoning laws, staffing availability, and landlord expectations. Combine public visitor data with rigorous on-the-ground lease intelligence.',
+          ko: '수직 동선 접근성, 간판 및 노출 규제, 의료·상업 용도 제한, 전문 인력 수급, 임대인의 기대 조건을 종합 점검합니다. 공공 외래객 통계에 현장 기반의 정밀한 임대 인텔리전스를 결합해야 합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Do not mistake a crowded street for an investable strategy. Use beauty and medical-wellness signals as a prompt for fieldwork, not as the conclusion.',
+      ko: '붐비는 거리를 투자 가능한 전략으로 착각하지 마십시오. 뷰티와 의료 웰니스 신호는 현장 조사의 출발점이지, 결론이 아닙니다.',
+    },
+    verdictDetail: {
+      en: 'If the evidence is incomplete, frame the proposal as an experiment, negotiate flexibility and preserve optionality. Real-estate capital in Seoul should never be deployed on broad category narratives; it must be underpinned by unit-level repeat economics, disciplined format engineering, and verified micro-market supply dynamics.',
+      ko: '실증적 근거가 불충분하다면 프로젝트를 실험적 파일럿으로 구성하고, 임대차 조건에서 유연성을 확보하며, 전략적 선택권을 보존해야 합니다. 서울에서의 상업용 부동산 자본 투입은 모호한 카테고리 내러티브에 의존해서는 안 되며, 단위당 반복 방문 경제성, 정밀한 공간 포맷 설계, 그리고 검증된 미시 시장 공급 동태에 기반해야 합니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Decision questions for operators and investors',
+      ko: '운영사 및 투자자가 던져야 할 3대 의사결정 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before capital is committed to a Seoul property thesis based on beauty and medical-wellness demand, leadership should demand clear answers to three essential questions:',
+      ko: '뷰티 및 의료 웰니스 수요를 근거로 서울 부동산에 자본을 투입하기 전, 경영진은 다음 3가지 핵심 질문에 대해 실증적인 답변을 요구해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'What percentage of demand is repeat versus one-off, and what sustains it?',
+        'Does the micro-location serve the target customer or merely capture generic footfall?',
+        'What competing supply is planned or under construction in the same submarket?',
+      ],
+      ko: [
+        '수요 중 재방문 대 일회성 비중은 얼마이며, 이를 지속적으로 유지시키는 동인은 무엇인가?',
+        '해당 미시 입지가 타깃 고객의 방문 목적에 부합하는가, 아니면 단순한 일반 통행객만을 포착하고 있는가?',
+        '동일 권역 내에 현재 계획 중이거나 착공·시공 중인 경쟁 공급 파이프라인은 어느 정도인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'Seoul Visitor Spend Reporting (H1 2026)',
+          ko: '서울시 외래 관광객 지출 보고서 (2026 상반기)',
+        },
+        url: 'https://english.seoul.go.kr/international-arrivals-to-seoul-rise-21-spending-jumps-57-visitors-spend-krw-5-6-trillion-in-h1-2026/',
+        desc: {
+          en: 'International arrivals to Seoul rise 21%, spending jumps 57% to KRW 5.6 trillion in H1 2026',
+          ko: '2026 상반기 서울 방문 외래객 21% 증가, 지출 57% 급증(5.6조 원 달성) 공식 통계',
+        },
+      },
+      {
+        title: {
+          en: 'Seoul Medical Tourism Report',
+          ko: '서울시 외국인 환자 유치 및 의료 지출 실적',
+        },
+        url: 'https://english.seoul.go.kr/seoul-draws-1m-international-medical-tourists-in-2024-with-%E2%82%A91-2t-in-medical-spending/',
+        desc: {
+          en: 'Seoul draws international medical tourists with KRW 1.2 trillion in medical spending',
+          ko: '서울 100만 외국인 환자 유치 및 1.2조 원 의료 지출 실적 공식 통계',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization big data analytics portal',
+          ko: '한국관광공사 관광 빅데이터 통합 분석 플랫폼',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'koreas-wellness-opportunity-beyond-beauty-led-demand',
     slug: 'koreas-wellness-opportunity-beyond-beauty-led-demand',
     category: {
