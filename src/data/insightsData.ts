@@ -150,6 +150,195 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: '1-17-million-foreign-patients-hotel-market',
+    slug: '1-17-million-foreign-patients-hotel-market',
+    category: {
+      en: 'MEDICAL TRAVEL | SEOUL | HOSPITALITY',
+      ko: '의료 관광 | 서울 | 호스피탈리티',
+    },
+    corridor: {
+      en: 'GLOBAL HOSPITALITY ↔ SEOUL MEDICAL TRAVEL',
+      ko: '글로벌 호스피탈리티 ↔ 서울 의료 관광',
+    },
+    publishedAt: '2026-10-28',
+    date: {
+      en: 'Oct 28, 2026',
+      ko: '2026년 10월 28일',
+    },
+    readTime: {
+      en: '5 min read',
+      ko: '5분 소요',
+    },
+    title: {
+      en: '1.17 Million Foreign Patients Do Not Create a Hotel Market',
+      ko: '117만 외국인 환자가 곧바로 호텔 시장을 의미하지는 않는다',
+    },
+    subtitle: {
+      en: 'What Seoul hospitality must prove before treating medical travel as demand',
+      ko: '서울 호스피탈리티 업계가 의료 관광을 유효 수요로 간주하기 전 입증해야 할 것',
+    },
+    teaserSummary: {
+      en: 'Patient volume is a market signal and not a hospitality demand model. The opportunity lies in the medical journeys that create measurable, non-clinical guest needs.',
+      ko: '환자 유치 실적은 시장의 신호일 뿐, 호스피탈리티 수요 모델이 아닙니다. 실질적인 사업 기회는 측정 가능하고 비임상적인 투숙객의 니즈를 발생시키는 구체적인 의료 여정에 있습니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'South Korea recorded 1.17 million foreign patients in 2024 with Seoul capturing 85.4%, but headline patient volumes do not automatically translate into hotel room nights.',
+        'Without granular proof on clinical journey types, companion travel, length of stay, and recovery needs, large patient statistics remain speculative market signals rather than executable hospitality demand.',
+        'Dedicated hospitality and residence operators must test five commercial conversion criteria before designing medical-stay propositions or committing capital.',
+      ],
+      ko: [
+        '2024년 한국은 117만 명의 외국인 환자를 기록하고 서울이 85.4%를 차지했으나, 환자 수 총량이 곧바로 호텔 객실 수요로 전환되는 것은 아닙니다.',
+        '임상 여정 유형, 동반자 여행 패턴, 체류 기간, 회복기 니즈에 대한 정밀한 실증 없이는 거대한 환자 통계도 가설 단계의 시장 신호에 불과합니다.',
+        '의료 연계 호스피탈리티 및 레지던스 운영사는 전용 상품을 기획하거나 자본을 투입하기 전 5대 전환 검증 기준을 반드시 증명해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'Patient volume is a market signal and not a hospitality demand model. The opportunity lies in the medical journeys that create measurable, non-clinical guest needs.',
+      ko: '환자 유치 실적은 시장의 신호일 뿐, 호스피탈리티 수요 모델이 아닙니다. 실질적인 사업 기회는 측정 가능하고 비임상적인 투숙객의 니즈를 발생시키는 구체적인 의료 여정에 있습니다.',
+    },
+    problemSectionTitle: {
+      en: 'The headline trap',
+      ko: '헤드라인 통계의 함정',
+    },
+    assumptionProblem: {
+      en: 'South Korea recorded 1.17 million foreign patients in 2024. Seoul accounted for 85.4% of that activity. For hotels, serviced residences and wellness operators, the number is compelling. It suggests a growing visitor segment with high-intent travel, defined destinations and potentially significant spending power. But patient volume is not the same as hotel demand. A recorded consultation or treatment does not reveal whether a visitor stays overnight, where they stay, whether they travel with family or friends, how long they remain in Seoul, or which non-clinical services they need. It does not establish the incremental room nights, ancillary spend or repeatable demand required to justify a dedicated hospitality offer. The mistake is not taking medical travel seriously. The mistake is assuming that a large patient figure automatically converts into a viable hotel, residence or wellness proposition.',
+      ko: '대한민국은 2024년 117만 명의 외국인 환자를 기록했으며, 서울이 이 중 85.4%를 차지했습니다. 호텔, 서비스드 레지던스, 웰니스 운영사에게 이 수치는 매우 매력적으로 다가옵니다. 높은 목적성을 지닌 여행, 명확한 목적지, 그리고 상당한 지출 잠재력을 가진 성장하는 외래객 세그먼트를 시사하기 때문입니다. 그러나 환자 유치 건수는 호텔 수요와 동일하지 않습니다. 병원 진료나 시술 기록만으로는 해당 방문객이 서울에서 숙박을 하는지, 어디에 묵는지, 가족이나 지인을 동반하는지, 서울에 며칠 동안 머무는지, 또는 어떤 비임상적 케어 서비스를 필요로 하는지 알 수 없습니다. 이는 전용 호스피탈리티 상품을 정당화하는 데 필요한 순증 객실일수, 부대 서비스 지출, 혹은 반복 가능한 수요를 증명해 주지 못합니다. 오류는 의료 관광 자체를 가볍게 여기는 데서 오는 것이 아닙니다. 오류는 거대한 환자 통계가 실행 가능한 호텔, 레지던스, 혹은 웰니스 비즈니스 모델로 자동 전환될 것이라고 맹신하는 데 있습니다.',
+    },
+    coreSectionTitle: {
+      en: 'Five conversion tests before building a medical-stay model',
+      ko: '의료 연계 스테이 모델 구축 전 검증해야 할 5대 전환 기준',
+    },
+    coreSectionIntro: {
+      en: 'To turn medical travel statistics into a defensible hospitality strategy, an operator must prove five specific links between the patient’s clinical path and their stay requirements:',
+      ko: '의료 관광 통계를 방어 가능한 호스피탈리티 전략으로 전환하기 위해, 운영사는 환자의 임상적 경로와 숙박 요구 조건 사이의 5가지 구체적 연결 고리를 입증해야 합니다:',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Where does the journey take place?',
+          ko: '물리적 동선과 입지 적합성',
+        },
+        detail: {
+          en: 'Map the patient’s physical journey between clinical facilities and accommodation. Proximity alone is insufficient; access must consider privacy, reduced mobility post-procedure, discreet transit options, and district noise levels. A luxury hotel situated 20 minutes away in heavy traffic cannot compete with discreet serviced accommodation two blocks from the clinic.',
+          ko: '의료 시설과 숙소 사이의 물리적 동선을 정밀하게 매핑해야 합니다. 단순한 거리적 근접성만으로는 부족합니다. 시술 후 거동 제한, 프라이버시 보호, 눈에 띄지 않는 개별 이동 동선, 상권 소음 수준 등을 종합적으로 고려해야 합니다. 정체 구간을 거쳐 20분 걸리는 특급 호텔은 클리닉에서 두 블록 떨어진 프라이빗 레지던스와 경쟁할 수 없습니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Does the journey create overnight demand?',
+          ko: '숙박 수요와 순증 객실일수',
+        },
+        detail: {
+          en: 'Differentiate between outpatient day visits and multi-night clinical recovery stays. Outpatient dermatology or light aesthetic consultations rarely generate incremental hotel nights beyond generic tourism trips. Meaningful hospitality volume requires procedures with documented recovery windows or multi-stage treatment schedules spanning consecutive nights.',
+          ko: '당일 외래 방문과 다박(Multi-night) 임상 회복 체류를 엄격히 구분해야 합니다. 외래 피부과 시술이나 가벼운 미용 상담은 일반 관광 체류 이상의 순증 호텔 객실일수를 거의 창출하지 않습니다. 의미 있는 호스피탈리티 수요는 연속 숙박이 불가피한 회복기나 다단계 치료 일정이 수반되는 시술군에서만 발생합니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Who else is travelling?',
+          ko: '동반 여행객의 니즈와 부대 소비',
+        },
+        detail: {
+          en: 'Examine travelling companions, family members, or caregivers accompanying the patient. While the patient may remain resting in-room, accompanying guests drive F&B, wellness, cultural activities, and high-value district retail spend. A successful model designs distinct programming for companions rather than treating them as passive bystanders.',
+          ko: '환자와 동행하는 가족, 지인, 간병 동반자의 여행 패턴을 분석해야 합니다. 환자가 객실에서 휴식을 취하는 동안, 동반자는 식음(F&B), 웰니스, 문화 체험, 고급 리테일 소비를 주도합니다. 성공적인 호스피탈리티 모델은 동반자를 단순한 수동적 보호자가 아닌 고부가가치 복합 소비자로 정의하고 맞춤형 프로그램을 설계합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'What can hospitality responsibly deliver?',
+          ko: '책임 있는 비임상적 서비스 경계',
+        },
+        detail: {
+          en: 'Define the strict boundary between clinical healthcare and hospitality service. Hotels cannot provide medical care, post-surgical nursing, or regulated clinical oversight without specialized licensing. Hospitality value lies in non-clinical comfort: allergen-free bespoke nutrition, soundproofing, ergonomic recovery bedding, discreet room service, and verified medical concierge coordination.',
+          ko: '의료 행위와 호스피탈리티 서비스 간의 엄격한 법적·운영적 경계를 설정해야 합니다. 호텔은 인허가 없이 의료 처치나 수술 후 간호 업무를 수행할 수 없습니다. 호스피탈리티의 진정한 가치는 회복 맞춤형 영양식단, 정숙한 방음, 인체공학적 회복 침구, 프라이빗 룸서비스, 신뢰할 수 있는 병원 연계 컨시어지 등 비임상적 편의에 있습니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'Do the unit economics work?',
+          ko: '단위 경제성과 지속 가능한 수익 모델',
+        },
+        detail: {
+          en: 'Calculate the customer acquisition cost (CAC), agency commission structures, and operational costs of specialized recovery amenities. Heavy reliance on medical travel intermediaries and international agency referral fees can compress margins below standard corporate or leisure yields unless direct booking trust and lifetime loyalty are established.',
+          ko: '고객 획득 비용(CAC), 에이전시 수수료 구조, 특화 편의시설 도입에 따른 운영 비용을 철저히 계산해야 합니다. 의료 관광 유치 에이전시에 과도하게 의존할 경우 수수료 부담으로 인해 일반 기업 출장이나 레저 고객보다 수익성이 악화될 수 있으므로, 직간접 예약 신뢰 확보와 지속 가능한 마진 구조가 필수적입니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'A headline statistic of 1.17 million patients is an invitation to do rigorous fieldwork, not a license to underwrite a hotel. Hospitality wins when it solves non-clinical friction in verifiable recovery journeys.',
+      ko: '117만 명이라는 헤드라인 환자 통계는 엄밀한 현장 검증을 시작하라는 신호일 뿐, 호텔 투자를 즉시 정당화하는 면허가 아닙니다. 호스피탈리티의 승리는 검증된 회복 여정에서 발생하는 비임상적 불편을 정밀하게 해결할 때 달성됩니다.',
+    },
+    verdictDetail: {
+      en: 'Treat medical travel data as an initial indicator rather than an operating plan. Operators should map specific clinical specialties, identify where outpatient treatments differ from true overnight recovery requirements, and partner with accredited medical centers before committing dedicated spatial assets or hiring specialized staff.',
+      ko: '외국인 환자 데이터를 운영 계획 자체가 아닌 초기 지표로 취급해야 합니다. 전용 공간 자산을 확충하거나 전문 인력을 고용하기 전에, 진료 과목별 특성을 면밀히 파악하고, 단순 외래 시술과 실제 다박 회복 수요를 분리하며, 공인된 의료 기관과의 정밀한 협력 구조를 먼저 구축해야 합니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Three questions before treating medical travel as hotel demand',
+      ko: '의료 관광을 호텔 유효 수요로 간주하기 전 던져야 할 3대 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before approving capital expenditure or restructuring hospitality assets for medical travelers in Seoul, management must answer:',
+      ko: '서울에서 외국인 환자를 타깃으로 한 자본 지출을 승인하거나 호스피탈리티 자산을 재구성하기 전, 경영진은 다음 3가지 질문에 답해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Which specific medical procedures generate genuine overnight recovery stays rather than daytime outpatient footfall?',
+        'What non-clinical services and companion offerings can our property legally and profitably provide?',
+        'How will our net ADR and RevPAR perform after accounting for medical agency commissions and specialized operational overhead?',
+      ],
+      ko: [
+        '단순 당일 외래 방문이 아닌 실질적인 다박 회복 체류를 발생시키는 구체적인 의료 시술 과목은 무엇인가?',
+        '우리 시설이 법적 규제를 준수하면서도 수익성 있게 제공할 수 있는 비임상 서비스와 동반객 특화 상품은 무엇인가?',
+        '의료 에이전시 수수료와 특화 운영 간접비를 차감한 후의 순 ADR 및 RevPAR는 일반 투숙객 대비 경쟁력이 있는가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'MOHW / KHIDI International Patient Briefing (2024)',
+          ko: '보건복지부 / 한국보건산업진흥원 외국인환자 유치 실적 (2024)',
+        },
+        url: 'https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=1485207&insttCode=A260111&type=N',
+        desc: {
+          en: 'Official briefing on 1.17 million foreign patients visiting South Korea in 2024, led by Seoul',
+          ko: '2024년 대한민국 외국인 환자 117만 명 유치 공식 브리핑 (서울 85.4% 집중)',
+        },
+      },
+      {
+        title: {
+          en: 'Seoul Medical Tourism Report',
+          ko: '서울시 외국인 환자 유치 및 의료 지출 실적',
+        },
+        url: 'https://english.seoul.go.kr/seoul-draws-1m-international-medical-tourists-in-2024-with-%E2%82%A91-2t-in-medical-spending/',
+        desc: {
+          en: 'Seoul draws international medical tourists with KRW 1.2 trillion in medical spending',
+          ko: '서울 100만 외국인 환자 유치 및 1.2조 원 의료 지출 실적 공식 통계',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Visitor analytics, source market arrivals, and district expenditure concentration data',
+          ko: '외래 관광객 입국 현황, 출발 시장별 분석 및 자치구별 소비 집적 데이터',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Navero Insights provides analytical frameworks and strategic commentary based on public datasets and market research. This content does not constitute medical advice, financial underwriting, or formal real-estate investment counsel.',
+      ko: 'Navero Insights는 공공 데이터셋과 시장 조사를 기반으로 분석 프레임워크와 전략적 인사이트를 제공합니다. 본 콘텐츠는 의학적 조언, 금융 인수(Underwriting), 또는 공식 부동산 투자 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'beauty-and-medical-wellness-demand-not-property-strategy',
     slug: 'beauty-and-medical-wellness-demand-not-property-strategy',
     category: {
