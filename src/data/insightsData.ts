@@ -150,6 +150,195 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'wellness-hospitality-beyond-seoul',
+    slug: 'wellness-hospitality-beyond-seoul',
+    category: {
+      en: 'WELLNESS | REGIONAL TOURISM | SITE SELECTION',
+      ko: '웰니스 | 로컬 관광 | 입지 선정',
+    },
+    corridor: {
+      en: 'SEOUL CAPITAL ↔ REGIONAL KOREA DESTINATIONS',
+      ko: '수도권 자본 ↔ 지방 로컬 데스티네이션',
+    },
+    publishedAt: '2026-11-02',
+    date: {
+      en: 'Nov 2, 2026',
+      ko: '2026년 11월 2일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'Wellness Hospitality Beyond Seoul',
+      ko: '서울을 넘어선 로컬 웰니스 호스피탈리티',
+    },
+    subtitle: {
+      en: 'Where a regional Korea proposition can work - and what must be true first',
+      ko: '한국 지방 웰니스 프로젝트가 작동할 수 있는 조건과 선결 과제',
+    },
+    teaserSummary: {
+      en: 'A regional wellness asset needs more than scenery. The proposition must earn the return journey through access, length of stay, repeat demand, credible programming and an economics that survives seasonality.',
+      ko: '지방 웰니스 자산은 수려한 자연경관 이상의 것을 필요로 합니다. 접근성, 체류 기간, 반복 수요, 신뢰성 있는 로컬 프로그램, 그리고 비수기 계절성을 견뎌내는 경제성을 통해 고객의 재방문 여정을 증명해야 합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'A scenic regional landscape makes for an attractive narrative, but scenic beauty alone is not a sustainable hospitality operating model.',
+        'Regional projects are severely constrained by travel friction, domestic weekend-only travel rhythms, severe seasonality, staffing limits, and narrow customer cohorts.',
+        'Operators and investors must validate access, length of stay, repeat economic mechanics, credible local partner networks, and off-season survival before allocating capital.',
+      ],
+      ko: [
+        '수려한 자연경관은 매력적인 투자 내러티브를 만들지만, 풍광 그 자체가 지속 가능한 호스피탈리티 운영 모델이 될 수는 없습니다.',
+        '지방 프로젝트는 이동 마찰, 주말 중심의 국내 여행 패턴, 혹독한 비수기 계절성, 인력 채용 한계, 좁은 타깃 고객층이라는 현실적 제약에 직면합니다.',
+        '자본을 투입하기 전 무마찰 접근성, 적정 체류 기간, 재방문 경제성, 신뢰할 수 있는 로컬 파트너십, 그리고 비수기 생존 모델을 반드시 실증해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'A regional wellness asset needs more than scenery. The proposition must earn the return journey through access, length of stay, repeat demand, credible programming and an economics that survives seasonality.',
+      ko: '지방 웰니스 자산은 수려한 자연경관 이상의 것을 필요로 합니다. 접근성, 체류 기간, 반복 수요, 신뢰성 있는 로컬 프로그램, 그리고 비수기 계절성을 견뎌내는 경제성을 통해 고객의 재방문 여정을 증명해야 합니다.',
+    },
+    problemSectionTitle: {
+      en: 'The regional temptation',
+      ko: '지방 개발의 유혹과 현실적 제약',
+    },
+    assumptionProblem: {
+      en: 'Korea’s regional landscape can make a wellness-hospitality story immediately attractive. Yet a destination is not an operating model. The market may be constrained by access, travel time, seasonality, staffing, domestic travel patterns, local partner capability and the narrowness of the addressable customer cohort. These variables need more attention than a visual concept deck.',
+      ko: '한국의 아름다운 자연경관은 웰니스 호스피탈리티 기획을 한눈에 매력적으로 보이게 만듭니다. 그러나 매력적인 목적지 그 자체가 곧바로 실행 가능한 비즈니스 모델이 되는 것은 아닙니다. 지방 시장은 접근 편의성, 이동 소요 시간, 극심한 계절성, 전문 인력 수급의 한계, 주말에 편중된 국내 여행 패턴, 현지 파트너사의 역량, 그리고 유효 타깃 고객층의 협소함이라는 현실적 제약에 둘러싸여 있습니다. 이러한 변수들은 화려한 비주얼 콘셉트 북보다 훨씬 더 엄밀한 실사 검토를 요구합니다.',
+    },
+    coreSectionTitle: {
+      en: 'The return-journey test: Five operating pillars for regional viability',
+      ko: '재방문 여정 테스트: 지방 웰니스 프로젝트의 5대 생존 기준',
+    },
+    coreSectionIntro: {
+      en: 'Ask whether a guest can get there easily, stay long enough, pay for the experience and return. Then ask whether local programming is credible enough to sustain the proposition beyond the launch period. KTO regional visitation and spending tools, transport assessment and primary customer research should be read together. A single weekend spike or social-media moment is not a reliable demand base. Five critical tests define whether a regional wellness proposal is economically viable:',
+      ko: '고객이 그곳에 수월하게 도달할 수 있는지, 충분히 머무를 가치가 있는지, 합당한 지불 용의가 있는지, 그리고 다시 찾아올 것인지 자문해야 합니다. 나아가 런칭 초기의 반짝 효과를 넘어 프로젝트를 지탱할 현지 프로그램이 충분한 신뢰성을 갖추었는지 검증해야 합니다. 한국관광 데이터랩의 지역별 방문·소비 지표, 교통 접근성 평가, 심층 고객 리서치를 종합적으로 교차 분석해야 합니다. 단 한 번의 주말 인파나 소셜 미디어 바이럴은 결코 지속 가능한 수요 기반이 아닙니다. 지방 웰니스 프로젝트의 성패를 가르는 5대 기준은 다음과 같습니다:',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Frictionless transport and transit access',
+          ko: '무마찰 이동과 교통 인프라 접근성',
+        },
+        detail: {
+          en: 'Can a guest reach the property easily from major metropolitan hubs? Travel friction exceeding 2.5 to 3 hours without seamless high-speed rail, express highway connectivity, or dedicated private transit sharply degrades weekday occupancy and limits spontaneous short-break getaways.',
+          ko: '수도권 주요 거점에서 이동 마찰 없이 편안하게 도착할 수 있는지 검증해야 합니다. KTX 등 고속철도 연계나 쾌적한 고속도로망, 직통 셔틀 없이 편도 2.5~3시간을 초과하는 이동 피로도는 주중 가동률을 급격히 떨어뜨리고 즉흥적인 단기 휴양 수요를 원천 차단합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Length of stay and multi-night value proposition',
+          ko: '체류 기간과 다박(Multi-night) 가치 제안',
+        },
+        detail: {
+          en: 'Does the asset justify more than a single Saturday overnight stay? A durable regional model requires multi-night stay programming—structured retreats, recovery regimens, or extended workations—to balance high fixed overhead and housekeeping turn costs.',
+          ko: '단순한 토요일 1박 체류를 넘어 2박 이상의 다박을 정당화할 콘텐츠가 있는지 점검해야 합니다. 고정 관리비와 객실 턴오버 비용을 상쇄하기 위해서는 체계적인 리트리트, 웰니스 회복 요법, 워케이션 등 연속 체류를 유도하는 구조화된 가치 제안이 필수적입니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Seasonality management and weekday demand mechanics',
+          ko: '비수기 계절성 극복과 주중 수요 창출 메커니즘',
+        },
+        detail: {
+          en: 'What supports cash flow during harsh off-seasons and quiet mid-week windows? Heavy reliance on summer peaks and autumn foliage creates acute operational deficits in winter and spring. Operators must build mid-week corporate offsites, localized wellness memberships, or B2B retreat partnerships.',
+          ko: '혹독한 비수기와 한산한 주중을 버텨낼 현금 흐름 장치가 마련되어 있는지 확인해야 합니다. 여름 성수기나 가을 단풍철에만 기댄 모델은 겨울과 초봄에 심각한 영업 적자를 초래합니다. 주중 기업 오프사이트, 로컬 회원제 웰니스 프로그램, B2B 제휴 등을 선제적으로 구축해야 합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Credible local programming and partner ecosystem',
+          ko: '신뢰성 있는 로컬 프로그램과 협력 파트너 생태계',
+        },
+        detail: {
+          en: 'Which local partner makes the wellness experience authentic and repeatable? Imported wellness rituals without authentic regional grounding feel sterile. True differentiation requires credible local farmers, certified naturalists, artisan tea growers, or regional thermal spa masters who elevate the guest experience beyond standard hotel amenities.',
+          ko: '어떤 현지 파트너가 웰니스 경험을 진정성 있고 지속 가능하게 만드는지 확인해야 합니다. 지역의 맥락과 단절된 천편일률적 프로그램은 쉽게 식상해집니다. 신뢰할 수 있는 현지 농가, 공인 명상·자연치유 전문가, 다도 장인, 온천 자원 등 차별화된 로컬 생태계와의 협업이 뒷받침되어야 합니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'Staffing resilience and unit economics',
+          ko: '운영 인력 수급 탄력성과 단위 경제성',
+        },
+        detail: {
+          en: 'Can the asset attract, train, and retain high-caliber hospitality talent in a regional setting? Staff accommodation, specialized therapist retention, and premium service consistency dictate guest reviews and lifetime repeat value. Projections must withstand regional wage premiums and localized operational friction.',
+          ko: '지방 입지에서 수준 높은 호스피탈리티 인재를 안정적으로 유치하고 유지할 수 있는지 계산해야 합니다. 직원 기숙사 제공, 전문 테라피스트 리텐션, 균일한 서비스 품질 유지는 고객 만족도와 재방문 가치를 결정하며, 인력 수급 비용을 감당할 수 있는 단위 경제성이 실증되어야 합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Begin with a modest, testable proposition. Define the first customer, the stay pattern, the operating partner and the off-season plan. If those elements are not clear, the opportunity remains a destination story rather than a viable regional business.',
+      ko: '규모를 욕심내기보다 작고 검증 가능한 제안에서부터 시작하십시오. 명확한 첫 타깃 고객, 체류 패턴, 운영 파트너, 그리고 비수기 생존 계획을 먼저 정의해야 합니다. 이 요소들이 명확하지 않다면, 사업 기회는 지속 가능한 비즈니스가 아니라 한낱 매력적인 여행지 이야기에 머물 뿐입니다.',
+    },
+    verdictDetail: {
+      en: 'Regional wellness hospitality succeeds when it solves the friction of the return journey rather than just engineering an Instagram-worthy opening. Do not commit substantial capital to visionary masterplans until access routes, multi-night stay patterns, and off-season cash flows have been validated on the ground.',
+      ko: '지방 웰니스 호스피탈리티의 성공은 일시적인 인스타그램 바이럴을 만드는 것이 아니라, 고객이 다시 찾아오는 재방문 여정의 마찰을 제거하는 데 있습니다. 접근 동선, 다박 체류 패턴, 비수기 현금 흐름이 현장에서 철저히 검증되기 전까지는 거대한 마스터플랜에 성급하게 대규모 자본을 투입해서는 안 됩니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Three decision questions for regional site selection',
+      ko: '지방 웰니스 입지 선정 전 던져야 할 3대 의사결정 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before underwriting a regional wellness hospitality project in South Korea, leadership must demand substantiated answers to three core operating questions:',
+      ko: '한국 지방 웰니스 호스피탈리티 프로젝트의 투자를 확정하기 전, 경영진은 다음 3가지 핵심 질문에 대해 실증된 답을 확보해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Can the guest reach the asset without friction?',
+        'What supports off-season and weekday demand?',
+        'Which local partner makes the experience credible?',
+      ],
+      ko: [
+        '고객이 교통 마찰이나 피로감 없이 수월하게 대상 자산에 도달할 수 있는가?',
+        '혹독한 비수기와 한산한 주중 수요를 뒷받침할 구체적인 운영 메커니즘은 무엇인가?',
+        '어떠한 현지 로컬 파트너가 웰니스 경험의 진정성과 지속성을 담보해 주는가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'KTO Data Lab Portal',
+          ko: '한국관광 데이터랩 포털',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization regional visitation and tourist spending big data platform',
+          ko: '한국관광공사 지역별 방문자 수 및 관광 소비 빅데이터 분석 포털',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab Methodology & Metadata',
+          ko: '한국관광 데이터랩 메타데이터 및 분석 방법론',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/getMetaInfoList.do',
+        desc: {
+          en: 'Official statistical methodology, movement indicators, and visitor segmentation frameworks',
+          ko: '관광 빅데이터 이동 지표, 방문자 정의 및 통계 작성 방법론',
+        },
+      },
+      {
+        title: {
+          en: 'Korean Statistical Information Service (KOSIS)',
+          ko: '국가통계포털 (KOSIS)',
+        },
+        url: 'https://kosis.kr/eng/',
+        desc: {
+          en: 'Official national statistics on regional demographics, transport, hospitality accommodation, and local economies',
+          ko: '지역 인구 통계, 교통 인프라, 숙박업 현황 및 지역 경제 공식 통계',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: '1-17-million-foreign-patients-hotel-market',
     slug: '1-17-million-foreign-patients-hotel-market',
     category: {
