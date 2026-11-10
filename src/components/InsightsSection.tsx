@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Newspaper,
   BookOpen,
@@ -7,19 +7,18 @@ import {
   Check,
   Calendar,
   Clock,
-  ExternalLink,
   Bookmark,
   Sparkles,
-  Linkedin,
-  Twitter,
-  Copy,
   Eye,
+  ChevronLeft,
+  ChevronRight,
+  Layers,
+  SlidersHorizontal,
 } from 'lucide-react';
 import { Theme, Language } from '../types';
-import { insightsArticles } from '../data/insightsData';
+import { InsightArticle, insightsArticles } from '../data/insightsData';
 import { getInsightShareUrl, copyTextToClipboard } from '../utils/seo';
 import {
-  getArticleViews,
   formatArticleViews,
   formatPublishedDate,
   useRealtimeArticleViews,
@@ -32,6 +31,8 @@ interface InsightsSectionProps {
   onOpenArticle: (slug: string) => void;
 }
 
+type InsightCategoryFilter = 'all' | 'hospitality' | 'wellness' | 'districts' | 'strategy';
+
 export const InsightsSection: React.FC<InsightsSectionProps> = ({
   theme,
   lang,
@@ -40,6 +41,8 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
   const isEn = lang === 'en';
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
   const [activeSlug, setActiveSlug] = useState<string>(insightsArticles[0].slug);
+  const [selectedCategory, setSelectedCategory] = useState<InsightCategoryFilter>('all');
+  const railRef = useRef<HTMLDivElement>(null);
 
   const activeArticle =
     insightsArticles.find((a) => a.slug === activeSlug) || insightsArticles[0];
@@ -50,6 +53,74 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
     activeArticle.id,
     activeArticle.publishedAt
   );
+
+  const filterLabels: Record<
+    InsightCategoryFilter,
+    { en: string; ko: string }
+  > = {
+    all: { en: 'All Publications', ko: '전체 리포트' },
+    hospitality: { en: 'Hospitality & F&B', ko: '호스피탈리티 & F&B' },
+    wellness: { en: 'Wellness & Medical', ko: '웰니스 & 메디컬' },
+    districts: { en: 'Seoul Districts & Property', ko: '서울 상권 & 부동산' },
+    strategy: { en: 'Market Strategy & Entry', ko: '시장 진출 전략' },
+  };
+
+  const matchesFilter = (article: InsightArticle, filter: InsightCategoryFilter): boolean => {
+    if (filter === 'all') return true;
+    const text = `${article.id} ${article.category.en} ${article.corridor.en} ${article.title.en}`.toLowerCase();
+    if (filter === 'hospitality') {
+      return (
+        text.includes('hospitality') ||
+        text.includes('hotel') ||
+        text.includes('tourism') ||
+        text.includes('f&b')
+      );
+    }
+    if (filter === 'wellness') {
+      return (
+        text.includes('wellness') ||
+        text.includes('medical') ||
+        text.includes('beauty') ||
+        text.includes('patient')
+      );
+    }
+    if (filter === 'districts') {
+      return (
+        text.includes('district') ||
+        text.includes('real estate') ||
+        text.includes('property') ||
+        text.includes('site selection') ||
+        text.includes('seoul')
+      );
+    }
+    if (filter === 'strategy') {
+      return (
+        text.includes('strategy') ||
+        text.includes('entry') ||
+        text.includes('franchis') ||
+        text.includes('governance')
+      );
+    }
+    return true;
+  };
+
+  const filteredArticles = insightsArticles.filter((article) =>
+    matchesFilter(article, selectedCategory)
+  );
+
+  const getFilterCount = (filterKey: InsightCategoryFilter): number => {
+    return insightsArticles.filter((a) => matchesFilter(a, filterKey)).length;
+  };
+
+  const scrollRail = (direction: 'left' | 'right') => {
+    if (railRef.current) {
+      const scrollAmount = 320;
+      railRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   const handleArticleClick = (slug: string) => {
     const article = insightsArticles.find((a) => a.slug === slug) || activeArticle;
@@ -120,49 +191,194 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
           </div>
         </div>
 
-        {/* Article Selector Tabs */}
-        {insightsArticles.length > 1 && (
-          <div className="flex flex-wrap items-center gap-2 mb-6">
-            <span className="text-xs font-mono uppercase tracking-wider text-slate-400 mr-2">
-              {isEn ? 'Publications:' : '리포트 목록:'}
-            </span>
-            {insightsArticles.map((article, idx) => {
-              const isSelected = article.slug === activeArticle.slug;
-              const isLatest = idx === 0;
-              return (
-                <button
-                  key={article.id}
-                  onClick={() => setActiveSlug(article.slug)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all border ${
-                    isSelected
-                      ? 'bg-sky-500 text-white border-sky-400 shadow-md shadow-sky-500/20'
-                      : theme === 'dark'
-                      ? 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white'
-                      : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-950 shadow-sm'
-                  }`}
-                >
-                  {isLatest && (
-                    <span
-                      className={`text-[9px] font-mono uppercase px-1.5 py-0.2 rounded font-bold ${
-                        isSelected
-                          ? 'bg-white/20 text-white'
-                          : 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+        {/* Clean Publication Selector Bar with Topic Filters & Jump Dropdown */}
+        <div className="mb-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-3 border-b dark:border-white/10 border-slate-200">
+            {/* Topic Filter Pills */}
+            <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-1 sm:pb-0">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 mr-1 flex items-center gap-1 shrink-0">
+                <SlidersHorizontal className="w-3.5 h-3.5 text-sky-400" />
+                {isEn ? 'Topic:' : '주제:'}
+              </span>
+              {(['all', 'hospitality', 'wellness', 'districts', 'strategy'] as InsightCategoryFilter[]).map(
+                (catKey) => {
+                  const isCatActive = selectedCategory === catKey;
+                  const count = getFilterCount(catKey);
+                  return (
+                    <button
+                      key={catKey}
+                      type="button"
+                      onClick={() => {
+                        setSelectedCategory(catKey);
+                        const matching = insightsArticles.filter((a) =>
+                          matchesFilter(a, catKey)
+                        );
+                        if (
+                          matching.length > 0 &&
+                          !matching.some((a) => a.slug === activeSlug)
+                        ) {
+                          setActiveSlug(matching[0].slug);
+                        }
+                      }}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                        isCatActive
+                          ? 'bg-sky-500 text-white shadow-sm font-semibold'
+                          : theme === 'dark'
+                          ? 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white'
+                          : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-950'
                       }`}
                     >
-                      {isEn ? 'Latest' : '최신'}
-                    </span>
-                  )}
-                  <span className="truncate max-w-[200px] sm:max-w-[320px]">
-                    {article.title[lang]}
-                  </span>
-                  <span className="font-mono text-[10px] opacity-75">
-                    ({article.date[lang]})
-                  </span>
+                      <span>{filterLabels[catKey][lang]}</span>
+                      <span
+                        className={`text-[10px] font-mono px-1 rounded ${
+                          isCatActive
+                            ? 'bg-white/20 text-white'
+                            : theme === 'dark'
+                            ? 'bg-white/10 text-slate-400'
+                            : 'bg-slate-200 text-slate-600'
+                        }`}
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  );
+                }
+              )}
+            </div>
+
+            {/* Quick Jump Dropdown and Rail Scroll Controls */}
+            <div className="flex items-center gap-2.5 self-end lg:self-auto shrink-0">
+              <div className="relative">
+                <select
+                  value={activeSlug}
+                  onChange={(e) => setActiveSlug(e.target.value)}
+                  aria-label={isEn ? 'Select advisory publication' : '리포트 선택'}
+                  className={`text-xs pl-3 pr-8 py-1.5 rounded-lg border font-medium transition-colors appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-sky-500 ${
+                    theme === 'dark'
+                      ? 'bg-[#08152b] border-white/10 text-slate-200'
+                      : 'bg-white border-slate-300 text-slate-800 shadow-sm'
+                  }`}
+                >
+                  {insightsArticles.map((article, idx) => (
+                    <option key={article.id} value={article.slug}>
+                      #{String(insightsArticles.length - idx).padStart(2, '0')} · {article.date[lang]} · {article.title[lang]}
+                    </option>
+                  ))}
+                </select>
+                <Layers className="w-3.5 h-3.5 text-sky-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-70" />
+              </div>
+
+              {/* Scroll buttons for rail */}
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => scrollRail('left')}
+                  aria-label="Scroll left"
+                  className={`p-1.5 rounded-lg border transition-colors ${
+                    theme === 'dark'
+                      ? 'border-white/10 bg-white/5 hover:bg-white/10 text-slate-300'
+                      : 'border-slate-200 bg-white hover:bg-slate-100 text-slate-700 shadow-sm'
+                  }`}
+                >
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
-              );
-            })}
+                <button
+                  type="button"
+                  onClick={() => scrollRail('right')}
+                  aria-label="Scroll right"
+                  className={`p-1.5 rounded-lg border transition-colors ${
+                    theme === 'dark'
+                      ? 'border-white/10 bg-white/5 hover:bg-white/10 text-slate-300'
+                      : 'border-slate-200 bg-white hover:bg-slate-100 text-slate-700 shadow-sm'
+                  }`}
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           </div>
-        )}
+
+          {/* Clean Horizontal Scroll Rail (Single Row, Uniform Cards) */}
+          <div className="relative mt-3">
+            <div
+              ref={railRef}
+              className="flex gap-3 overflow-x-auto scrollbar-none scroll-smooth pb-2 pt-1"
+            >
+              {filteredArticles.map((article) => {
+                const isSelected = article.slug === activeArticle.slug;
+                const originalIdx = insightsArticles.findIndex((a) => a.id === article.id);
+                const issueNumber = String(insightsArticles.length - originalIdx).padStart(2, '0');
+                const isLatest = originalIdx === 0;
+
+                return (
+                  <button
+                    key={article.id}
+                    type="button"
+                    onClick={() => setActiveSlug(article.slug)}
+                    className={`w-[270px] sm:w-[300px] flex-shrink-0 p-3.5 rounded-xl border cursor-pointer transition-all duration-200 flex flex-col justify-between text-left group relative ${
+                      isSelected
+                        ? theme === 'dark'
+                          ? 'bg-sky-950/40 border-sky-400 ring-1 ring-sky-400/50 shadow-lg shadow-sky-500/10'
+                          : 'bg-sky-50/80 border-sky-400 ring-1 ring-sky-400/50 shadow-md shadow-sky-500/10'
+                        : theme === 'dark'
+                        ? 'bg-white/[0.03] border-white/10 hover:border-sky-500/40 hover:bg-white/[0.06]'
+                        : 'bg-white border-slate-200 hover:border-sky-300 hover:shadow-sm'
+                    }`}
+                  >
+                    <div>
+                      {/* Top: Issue # + Date + Latest badge */}
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-mono text-[10px] font-bold tracking-wider text-sky-400 uppercase">
+                            ISSUE #{issueNumber}
+                          </span>
+                          {isLatest && (
+                            <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                              {isEn ? 'LATEST' : '최신'}
+                            </span>
+                          )}
+                        </div>
+                        <span className="font-mono text-[10px] text-slate-400">
+                          {article.date[lang]}
+                        </span>
+                      </div>
+
+                      {/* Clean 2-line title with no awkward cut-offs */}
+                      <h4
+                        className={`text-xs sm:text-sm font-serif font-bold line-clamp-2 leading-snug transition-colors ${
+                          isSelected
+                            ? 'text-sky-400'
+                            : theme === 'dark'
+                            ? 'text-white group-hover:text-sky-300'
+                            : 'text-[#0c1c4f] group-hover:text-sky-600'
+                        }`}
+                      >
+                        {article.title[lang]}
+                      </h4>
+                    </div>
+
+                    {/* Bottom: Read time & Active indicator */}
+                    <div className="mt-3 pt-2 border-t dark:border-white/10 border-slate-100 flex items-center justify-between text-[11px]">
+                      <span className="text-slate-400 flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-sky-400" />
+                        {article.readTime[lang]}
+                      </span>
+                      <span
+                        className={`font-medium ${
+                          isSelected
+                            ? 'text-sky-400 font-bold'
+                            : 'text-slate-400 group-hover:text-sky-400'
+                        }`}
+                      >
+                        {isSelected ? (isEn ? '● Active' : '● 선택됨') : (isEn ? 'Preview →' : '미리보기 →')}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
 
         {/* Featured Publication Teaser Card */}
         <article
@@ -353,6 +569,110 @@ export const InsightsSection: React.FC<InsightsSectionProps> = ({
             </div>
           </div>
         </article>
+
+        {/* Complete Publications Archive Grid - All 9 Articles Cleanly Arranged */}
+        <div className="mt-20 pt-16 border-t dark:border-white/10 border-slate-200">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono font-semibold uppercase tracking-wider bg-sky-500/10 border-sky-500/20 text-sky-400 mb-2">
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>{isEn ? 'COMPLETE ARCHIVE · 9 EDITIONS' : '전체 리포트 아카이브 · 총 9편'}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight">
+                {isEn ? 'All Published Strategic Intelligence' : '발행된 전략 분석 리포트 전체 보기'}
+              </h3>
+              <p className={`text-sm mt-1 max-w-2xl ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+                {isEn
+                  ? 'Explore our complete library of decision-grade intelligence covering hospitality, tourism, district economics, and market entry strategy in South Korea.'
+                  : '한국 시장 진출, 호텔·F&B 운영, 서울 상권 분석 및 웰니스 전략을 다룬 NAVERO Advisory의 전체 리서치 라이브러리입니다.'}
+              </p>
+            </div>
+            <span className="font-mono text-xs text-slate-400 self-start md:self-end">
+              {isEn ? 'Chronologically organized' : '발행일 순 정렬'}
+            </span>
+          </div>
+
+          {/* 3-Column Uniform Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {insightsArticles.map((article, idx) => {
+              const issueNumber = String(insightsArticles.length - idx).padStart(2, '0');
+              const isLatest = idx === 0;
+              const isCurrentlyActive = article.slug === activeArticle.slug;
+
+              return (
+                <div
+                  key={article.id}
+                  onClick={() => handleArticleClick(article.slug)}
+                  className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between cursor-pointer group ${
+                    isCurrentlyActive
+                      ? theme === 'dark'
+                        ? 'bg-[#081833] border-sky-500/60 shadow-xl shadow-sky-500/10 ring-1 ring-sky-400/40'
+                        : 'bg-sky-50/70 border-sky-400 shadow-lg shadow-sky-500/10'
+                      : theme === 'dark'
+                      ? 'bg-[#08152b]/60 border-white/10 hover:border-sky-500/40 hover:bg-[#08152b] hover:shadow-lg'
+                      : 'bg-white border-slate-200 hover:border-sky-300 hover:shadow-md'
+                  }`}
+                >
+                  {/* Card Top: Issue, Date, Category */}
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs font-bold text-sky-400 uppercase tracking-wider">
+                          ISSUE #{issueNumber}
+                        </span>
+                        {isLatest && (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                            {isEn ? 'LATEST' : '최신'}
+                          </span>
+                        )}
+                      </div>
+                      <span className="font-mono text-xs text-slate-400 flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-sky-400" />
+                        {article.date[lang]}
+                      </span>
+                    </div>
+
+                    {/* Category */}
+                    <div className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wide mb-3 truncate">
+                      {article.category[lang]}
+                    </div>
+
+                    {/* Full Title (unabbreviated, beautiful font) */}
+                    <h4
+                      className={`text-lg sm:text-xl font-serif font-bold tracking-tight mb-2.5 leading-snug group-hover:text-sky-400 transition-colors ${
+                        theme === 'dark' ? 'text-white' : 'text-[#0c1c4f]'
+                      }`}
+                    >
+                      {article.title[lang]}
+                    </h4>
+
+                    {/* Subtitle / Teaser */}
+                    <p
+                      className={`text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 ${
+                        theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
+                      }`}
+                    >
+                      {article.subtitle[lang]}
+                    </p>
+                  </div>
+
+                  {/* Card Footer: Metadata & Read Action */}
+                  <div className="pt-4 border-t dark:border-white/10 border-slate-100 flex items-center justify-between">
+                    <span className="text-xs text-slate-400 flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-sky-400" />
+                      {article.readTime[lang]}
+                    </span>
+
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-400 group-hover:text-sky-300 transition-colors uppercase tracking-wider">
+                      <span>{isEn ? 'Read Report' : '리포트 읽기'}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -150,6 +150,184 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'the-gap-between-hotel-and-retreat',
+    slug: 'the-gap-between-hotel-and-retreat',
+    category: {
+      en: 'HOSPITALITY CONCEPT | WELLNESS | INVESTMENT',
+      ko: '호스피탈리티 콘셉트 | 웰니스 | 투자 전략',
+    },
+    corridor: {
+      en: 'GLOBAL HOSPITALITY CAPITAL ↔ KOREA RETREAT HYBRIDS',
+      ko: '글로벌 호스피탈리티 자본 ↔ 한국형 하이브리드 리트리트',
+    },
+    publishedAt: '2026-11-08',
+    date: {
+      en: 'Nov 8, 2026',
+      ko: '2026년 11월 8일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'The Gap Between Hotel and Retreat',
+      ko: '호텔과 리트리트 사이의 틈새 시장',
+    },
+    subtitle: {
+      en: 'A Korea hospitality thesis to validate before a flagship is built',
+      ko: '플래그십을 짓기 전 반드시 실증해야 할 한국 호스피탈리티 가설',
+    },
+    teaserSummary: {
+      en: 'A gap between conventional hotel stays and intensive retreats may exist, but it is a hypothesis. It becomes a business only when there is evidence of stay purpose, willingness to pay, repeat demand and a workable operating model.',
+      ko: '기존 호텔 투숙과 엄격한 집중형 리트리트 사이의 틈새시장은 매력적으로 보이지만, 이는 어디까지나 가설일 뿐입니다. 명확한 투숙 목적, 가격 지불 용의, 반복 재방문 수요, 그리고 실현 가능한 운영 모델이 입증될 때에만 비로소 사업이 됩니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'Many travellers desire more purpose than a standard hotel room but less rigid scheduling than a full retreat, suggesting an emerging hybrid format.',
+        'A distinctive concept remains vulnerable if operational programming costs are prohibitive, length of stay is too brief, or repeat booking mechanisms fail.',
+        'Operators and investors must deploy paid pilots, test weekday demand, and prove unit-level operating margins before committing capital to a flagship build.',
+      ],
+      ko: [
+        '많은 여행객이 단순한 객실 이상의 경험을 원하면서도 완전한 리트리트의 엄격한 일정보다는 유연한 휴식을 원하며, 이는 새로운 하이브리드 포맷의 기회를 시사합니다.',
+        '차별화된 콘셉트라 하더라도 프로그램 운영비가 과다하거나, 투숙 기간이 너무 짧거나, 재방문 유인 구조가 부재하면 심각한 영업 적자에 직면합니다.',
+        '플래그십 시설에 대규모 자본을 투입하기 전, 유료 파일럿 운영, 주중 수요 창출 메커니즘, 단위당 영업 마진을 사전에 철저히 검증해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'A gap between conventional hotel stays and intensive retreats may exist, but it is a hypothesis. It becomes a business only when there is evidence of stay purpose, willingness to pay, repeat demand and a workable operating model.',
+      ko: '기존 호텔 투숙과 엄격한 집중형 리트리트 사이의 틈새시장은 매력적으로 보이지만, 이는 어디까지나 가설일 뿐입니다. 명확한 투숙 목적, 가격 지불 용의, 반복 재방문 수요, 그리고 실현 가능한 운영 모델이 입증될 때에만 비로소 사업이 됩니다.',
+    },
+    problemSectionTitle: {
+      en: 'Why the idea is attractive',
+      ko: '하이브리드 콘셉트의 매력과 잠재적 위험',
+    },
+    assumptionProblem: {
+      en: 'Many travellers want more than a room, but less structure than a full retreat. That suggests a possible format based on recovery, food, movement, sleep, design or local experience. The idea becomes dangerous when it is treated as self-evident. A distinctive concept can still fail if the programme is too costly to operate, the stay is too short, the price is unclear or the customer does not return.',
+      ko: '많은 여행객들이 단순한 하룻밤 객실 이상의 의미를 원하면서도, 시간표대로 움직이는 엄격한 집중형 리트리트보다는 자유로운 일정을 희망합니다. 이는 리커버리, 미식, 무브먼트, 수면 케어, 디자인 감성, 혹은 로컬 경험을 결합한 새로운 하이브리드 포맷의 가능성을 보여줍니다. 그러나 이러한 아이디어를 당연한 시장 진실로 받아들이는 순간 위험이 시작됩니다. 아무리 독창적인 콘셉트라 할지라도 운영 프로그램 비용이 과도하거나, 고객 체류 기간이 너무 짧거나, 가격 포지셔닝이 모호하거나, 고객이 다시 찾아오지 않는다면 결국 실패할 수밖에 없습니다.',
+    },
+    coreSectionTitle: {
+      en: 'The validation framework: Five tests before building a flagship',
+      ko: '실증 프레임워크: 플래그십 건립 전 검증해야 할 5대 핵심 축',
+    },
+    coreSectionIntro: {
+      en: 'Test stay purpose and length, weekday and weekend demand, price and margin, programme capability and repeatability across sites. Run structured customer interviews, create a paid pilot where possible and determine which parts of the experience can be delivered consistently. Avoid using generic wellness-market figures as proof that a specific Korean format will trade. Five critical operational dimensions must be validated:',
+      ko: '투숙 목적과 적정 체류 기간, 주중과 주말의 수요 균형, 객단가와 영업 마진, 현장 프로그램 운영 역량, 그리고 다점포 복제 가능성을 엄밀히 검증해야 합니다. 정형화된 심층 고객 인터뷰를 진행하고, 가능한 한 소규모 유료 파일럿을 먼저 운영하여 어떤 경험 요소를 지속적으로 제공할 수 있는지 확인하십시오. 막연하고 거대한 글로벌 웰니스 통계를 특정 한국형 포맷의 상업적 생존 근거로 삼는 실수를 피해야 합니다. 검증해야 할 5대 운영 축은 다음과 같습니다:',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Stay purpose and minimum viable length of stay',
+          ko: '투숙 목적의 명확성과 최소 유효 체류 기간',
+        },
+        detail: {
+          en: 'Define the explicit outcome the guest is purchasing—whether deep sleep restoration, physical recovery, creative solitude, or burnout respite. Test whether this outcome realistically demands multi-night stays (2–3 nights) rather than compressing into a single Saturday sleepover that strains housekeeping economics.',
+          ko: '고객이 구매하고자 하는 구체적인 결과(수면 개선, 신체 리커버리, 창의적 고독, 번아웃 치유 등)를 명확히 정의해야 합니다. 이 효용이 단순한 토요일 1박에 그치지 않고 객실 회전 및 운영 고정비를 정당화할 2~3박 이상의 연속 체류로 이어지는지 실증해야 합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Weekday demand drivers and corporate offsite mechanics',
+          ko: '주중 수요 창출 동인과 B2B 오프사이트 모델',
+        },
+        detail: {
+          en: 'What fills beds from Tuesday through Thursday? Hybrid retreat concepts cannot survive on weekend domestic leisure spikes alone. Operators must establish structured B2B corporate offsites, executive wellness retreats, midweek creative residencies, or remote working partnerships to stabilize baseline cash flow.',
+          ko: '화요일부터 목요일까지 주중 객실을 무엇으로 채울 것인지 증명해야 합니다. 하이브리드 리트리트는 주말 레저 수요만으로는 생존할 수 없습니다. 기업 임원 워크숍, 주중 웰니스 오프사이트, 크리에이터 레지던시 등 평일 현금 흐름을 지탱할 B2B·기관 수요 구조를 구축해야 합니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Price positioning, willingness to pay, and contribution margin',
+          ko: '가격 포지셔닝, 지불 용의(WTP), 그리고 공헌 이익',
+        },
+        detail: {
+          en: 'Determine whether local and international guests perceive enough tangible value beyond standard room amenities to justify a 40–80% pricing premium. Calculate contribution margins after deducting high-touch instructor fees, curated nutritional dining, and specialized wellness equipment depreciation.',
+          ko: '투숙객이 일반 호텔 대비 40~80%의 프리미엄 객단가를 지불할 만큼 명확한 차별적 가치를 인지하는지 검증해야 합니다. 전문 강사료, 맞춤형 영양 식단 코스트, 특화 웰니스 장비 감가상각비를 제외한 실제 공헌 이익률을 철저히 계산해야 합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Consistent and repeatable programme delivery',
+          ko: '지속 가능하고 일관된 프로그램 운영 역량',
+        },
+        detail: {
+          en: 'Can the wellness and recovery programming be delivered consistently across all seasons without burning out founder-operators? Transitioning from a boutique passion project to an institutional hospitality asset requires standardized operating procedures (SOPs), reliable talent acquisition, and independent delivery systems.',
+          ko: '특화 웰니스 및 리커버리 프로그램을 특정 창립자의 개인기에 의존하지 않고 사계절 내내 균일하게 운영할 수 있는지 확인해야 합니다. 개인의 열정 기반 프로젝트에서 기관 투자급 호스피탈리티 자산으로 전환하려면 표준 운영 절차(SOP)와 전문 인력 양성 체계가 필수적입니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'Paid pilot validation before flagship capital deployment',
+          ko: '대규모 플래그십 자본 투입 전 유료 파일럿 검증',
+        },
+        detail: {
+          en: 'Validate the concept via existing asset takeovers, pop-up retreat partnerships, or modular prototypes before ground-up construction or major lease commitments. Real transactional behavior with paid guests provides far more reliable underwriting data than sentiment surveys or aesthetic mood boards.',
+          ko: '신축이나 대규모 장기 임대 계약을 맺기 전에 기존 자산 위탁, 팝업 리트리트 제휴, 또는 모듈형 프로토타입을 통해 유료 파일럿을 먼저 진행해야 합니다. 실제 지불 의사를 가진 고객의 결제 데이터만이 감성적인 무드보드나 설문조사보다 훨씬 더 확실한 투자 근거를 제공합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Pilot before flagship. The first commercial objective is not scale; it is validated learning about who buys, which programme drives value and what the format can deliver reliably. Capital should follow evidence, not mood boards.',
+      ko: '플래그십을 짓기 전에 파일럿부터 실행하십시오. 첫 번째 상업적 목표는 무리한 규모 확장이 아닙니다. 누가 돈을 내는지, 어떤 프로그램이 가치를 창출하는지, 그리고 이 포맷이 무엇을 안정적으로 전달할 수 있는지 실증적으로 학습하는 것입니다. 자본은 감성적인 무드보드가 아니라 검증된 실증 데이터 뒤를 따라야 합니다.',
+    },
+    verdictDetail: {
+      en: 'A hybrid hospitality concept operating between hotel and retreat is one of the most promising yet operationally fragile models in Korea. The winners will not be the brands with the most expansive architectural renderings, but the disciplined operators who validate unit economics, staffing pipelines, and repeat customer retention through phased pilots before breaking ground.',
+      ko: '호텔과 리트리트 사이의 하이브리드 콘셉트는 한국 시장에서 가장 유망하면서도 동시에 운영상 가장 취약한 모델 중 하나입니다. 최종적인 승자는 가장 화려한 건축 조감도를 내세우는 브랜드가 아니라, 착공 전 단계적 파일럿을 통해 단위 경제성, 인재 수급 파이프라인, 그리고 재방문 고객 유지율을 철저히 검증해 낸 엄격한 운영사일 것입니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Three decision questions before building a hybrid retreat',
+      ko: '하이브리드 리트리트 건립 전 던져야 할 3대 의사결정 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before underwriting a capital-intensive hybrid hotel-retreat development in South Korea, leadership must answer:',
+      ko: '한국에서 대규모 자본이 소요되는 하이브리드 호텔·리트리트 개발을 승인하기 전, 경영진은 다음 3가지 핵심 질문에 대해 실증된 답을 제시해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'What length of stay makes the proposition work?',
+        'What creates weekday demand?',
+        'Can the programme be delivered consistently and profitably?',
+      ],
+      ko: [
+        '어떠한 체류 기간(Length of stay)이 이 비즈니스 제안의 경제성을 실현시키는가?',
+        '주중 객실 점유율과 현금 흐름을 창출하는 구체적인 수요 동인은 무엇인가?',
+        '특화 프로그램을 균일한 품질과 안정적인 수익성을 유지하며 지속적으로 제공할 수 있는가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'KTO Data Lab Portal',
+          ko: '한국관광 데이터랩 포털',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization tourism big data, visitor movement patterns, and regional spending analytics',
+          ko: '한국관광공사 관광 빅데이터, 방문객 이동 패턴 및 지역 소비 분석 포털',
+        },
+      },
+      {
+        title: {
+          en: 'Korean Statistical Information Service (KOSIS)',
+          ko: '국가통계포털 (KOSIS)',
+        },
+        url: 'https://kosis.kr/eng/',
+        desc: {
+          en: 'Official statistics on accommodation sector revenues, operating margins, visitor occupancy rates, and regional demographic trends',
+          ko: '국내 숙박업 매출액, 영업 이익률, 투숙 점유율 및 지역 인구통계 공식 지표',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'wellness-hospitality-beyond-seoul',
     slug: 'wellness-hospitality-beyond-seoul',
     category: {
