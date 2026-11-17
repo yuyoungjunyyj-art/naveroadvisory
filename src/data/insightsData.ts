@@ -150,6 +150,184 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'tokyo-and-seoul-similar-sophistication-different-expansion-logic',
+    slug: 'tokyo-and-seoul-similar-sophistication-different-expansion-logic',
+    category: {
+      en: 'JAPAN <-> KOREA | CROSS-BORDER STRATEGY | HOSPITALITY',
+      ko: '일본 ↔ 한국 | 크로스보더 전략 | 호스피탈리티',
+    },
+    corridor: {
+      en: 'TOKYO ↔ SEOUL EXPANSION CORRIDOR',
+      ko: '도쿄 ↔ 서울 크로스보더 확장 회랑',
+    },
+    publishedAt: '2026-11-18',
+    date: {
+      en: 'Nov 18, 2026',
+      ko: '2026년 11월 18일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'Tokyo and Seoul: Similar Sophistication, Different Expansion Logic',
+      ko: '도쿄와 서울: 닮은 세련미, 그러나 전혀 다른 시장 확장 논리',
+    },
+    subtitle: {
+      en: 'Why regional familiarity should not flatten two distinct entry decisions',
+      ko: '지역적 유사성이 서로 다른 두 시장의 진입 의사결정을 단순화해서는 안 되는 이유',
+    },
+    teaserSummary: {
+      en: 'Tokyo and Seoul may sit in the same regional strategy deck, but they should not share the same entry assumptions. Each market needs its own customer, district, partner and operating thesis.',
+      ko: '도쿄와 서울이 같은 동북아 전략 보고서에 나란히 등장할 수는 있지만, 동일한 시장 진입 가정을 공유해서는 안 됩니다. 각 시장은 고유한 고객, 상권, 파트너, 그리고 운영 논리를 필요로 합니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'Tokyo and Seoul share global prestige, density, and commercial sophistication, which frequently tempts brands into applying a single regional expansion template.',
+        'Real-estate mechanics, partner dynamics, consumer expectations, and format learning curves differ sharply; success in Tokyo is only a hypothesis for Seoul, not proof.',
+        'Separate each city into independent decision layers—customer cohort, submarket, operating model, supplier ecosystem, and non-negotiable local decisions—while using Japan and Korea to sharpen comparative intelligence.',
+      ],
+      ko: [
+        '도쿄와 서울은 높은 밀도와 디자인 감도, 상업적 세련미를 공유하기 때문에 글로벌 브랜드가 단일 아시아 확장 템플릿을 그대로 이식하려는 유혹에 빠지기 쉽습니다.',
+        '부동산 임대 구조, 파트너십 역학, 소비자 기대치, 포맷 학습 속도는 두 도시 간 현격히 다르며, 도쿄에서의 성공은 서울 시장에 대한 가설일 뿐 검증된 증거가 아닙니다.',
+        '각 도시를 고객군, 세부 상권, 운영 모델, 파트너·공급망 생태계, 그리고 현지 필수 의사결정 계층으로 분리하되, 한·일 양국을 비교 학습 시스템으로 활용해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'Tokyo and Seoul may sit in the same regional strategy deck, but they should not share the same entry assumptions. Each market needs its own customer, district, partner and operating thesis.',
+      ko: '도쿄와 서울이 같은 동북아 전략 보고서에 나란히 등장할 수는 있지만, 동일한 시장 진입 가정을 공유해서는 안 됩니다. 각 시장은 고유한 고객, 상권, 파트너, 그리고 운영 논리를 필요로 합니다.',
+    },
+    problemSectionTitle: {
+      en: 'The comparison trap',
+      ko: '비교의 함정: 표면적 유사성이 부르는 오판',
+    },
+    assumptionProblem: {
+      en: 'Both cities are globally recognised, dense, design-aware and commercially sophisticated. That superficial resemblance can invite a single expansion template. Yet market behaviour, real-estate mechanics, local partnerships, consumer expectations and the pace of format learning require separate investigation. A concept’s success in Tokyo should be treated as a hypothesis for Seoul, not proof.',
+      ko: '도쿄와 서울은 모두 세계적으로 인지도가 높고, 도시 밀도가 높으며, 디자인에 민감하고 상업적으로 고도화된 도시입니다. 이러한 표면적 유사성은 기업들로 하여금 하나의 동일한 확장 템플릿을 적용하고 싶은 유혹에 빠지게 만듭니다. 그러나 실제 소비 행동, 부동산 거래 메커니즘, 현지 파트너십 구조, 소비자의 기대 수준, 그리고 포맷이 시장에 안착하는 학습 속도는 철저히 별개의 조사를 요구합니다. 도쿄에서 특정 콘셉트가 성공했다는 사실은 서울에서의 성공을 입증하는 증거가 아니라, 검증해야 할 하나의 가설로 취급되어야 합니다.',
+    },
+    coreSectionTitle: {
+      en: 'Build two decision systems',
+      ko: '두 개의 독립적인 의사결정 시스템 구축: 5대 분리 기준',
+    },
+    coreSectionIntro: {
+      en: 'Separate the market question into four layers: the customer cohort, the district or submarket, the operating model and the partner or supplier ecosystem. Then identify the one decision that must be made locally in each city. This keeps a regional strategy from becoming a collection of false equivalences. It also makes management more precise about where scale helps and where local expertise is non-negotiable.',
+      ko: '시장 진입 질문을 고객 코호트, 권역 및 미시 상권, 운영 모델, 그리고 파트너·공급망 생태계라는 4개의 계층으로 분리한 뒤, 각 도시에서 반드시 현지화하여 내려야 할 핵심 의사결정을 특정해야 합니다. 이는 지역 전략이 잘못된 등치(False equivalences)의 나열로 전락하는 것을 막아주며, 경영진이 규모의 경제가 작동하는 영역과 현지 전문성이 타협 불가능한 영역을 정밀하게 구분할 수 있게 합니다.',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'The customer cohort and trend velocity',
+          ko: '고객 코호트와 트렌드 소비 속도',
+        },
+        detail: {
+          en: 'Separate who actually buys and how fast demand cycles turn. Tokyo often rewards hyper-specialized loyalty, quiet heritage, and steady craft appreciation, whereas Seoul features rapid digital discovery, compressed hype cycles, and acute sensitivity to social validation before habitual retention stabilizes.',
+          ko: '실제 지갑을 여는 핵심 고객층과 수요 순환의 속도를 분리해 분석해야 합니다. 도쿄는 고도로 세분화된 취향의 충성도와 조용한 헤리티지 축적이 강하게 작동하는 반면, 서울은 빠른 디지털 확산과 압축된 유행 주기 속에서 초기 화제성이 일상적 재방문으로 전환되는 임계 구간을 견뎌야 합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'The district or submarket real-estate mechanics',
+          ko: '권역 및 미시 상권의 부동산 메커니즘',
+        },
+        detail: {
+          en: 'Do not map Tokyo neighborhoods onto Seoul districts as one-for-one equivalents. Lease structures, deposit norms (jeonse/wolse vs. Japanese commercial guarantees), key money expectations, vertical retail economics, and landlord risk appetites reshape unit break-even points differently in each city.',
+          ko: '도쿄의 상권을 서울의 특정 지역과 1:1로 대응시키는 오류를 피해야 합니다. 보증금과 월세 관행, 권리금 구조, 상층부 리테일 수익성, 건물주의 리스크 선호도 등 상업용 부동산의 작동 방식이 다르기 때문에 각 도시의 손익분기점(BEP) 구조는 완전히 다르게 설계됩니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'The operating model and labor structure',
+          ko: '현장 운영 모델과 인력·서비스 구조',
+        },
+        detail: {
+          en: 'Calibrate service delivery, digital frictionlessness, and staffing economics to local conditions. Seoul consumers expect instantaneous digital reservation, delivery, and payment integration alongside responsive service, whereas Tokyo hospitality economics rely on distinct labor hierarchies, tenure expectations, and spatial precision.',
+          ko: '현장 서비스 전달 방식과 디지털 접점, 인력 운영 구조를 현지 여건에 맞게 재설계해야 합니다. 서울에서는 매끄러운 모바일 예약·결제 연동과 즉각적인 대응이 필수적인 반면, 도쿄의 호스피탈리티는 고유한 직무 숙련도와 장기 근속 기반의 공간·동선 정밀도에 크게 의존합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'The partner and supplier ecosystem',
+          ko: '현지 파트너 및 공급망 생태계',
+        },
+        detail: {
+          en: 'Audit local sourcing, cold-chain logistics, regulatory intermediaries, and creative collaborators independently. A trusted distributor, landlord alliance, or culinary sourcing network in Japan does not carry over across the Korea Strait; each market demands its own vetted execution network.',
+          ko: '현지 원재료 조달, 콜드체인 물류, 인허가 대응 파트너, 크리에이티브 협업 네트워크를 각각 독립적으로 검증해야 합니다. 일본 내 검증된 유통사나 부동산 파트너십은 대한해협을 건너 서울에서 그대로 작동하지 않으므로, 한국 시장 고유의 실행 생태계를 별도로 구축해야 합니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'The one non-negotiable local decision in each city',
+          ko: '각 도시에서 타협 없이 현지화해야 할 핵심 결정',
+        },
+        detail: {
+          en: 'Identify the single make-or-break decision that headquarters cannot standardize regionally—whether site underwriting and digital ecosystem integration in Seoul, or real-estate entitlement and craft staffing retention in Tokyo—and assign decision rights to accountable local leadership.',
+          ko: '지역 본부가 일률적으로 표준화할 수 없는 결정적 현지 판단(예: 서울에서의 미시 입지 인수 및 디지털 플랫폼 결합, 도쿄에서의 인허가 조건과 숙련 인력 유지)을 명확히 규정하고, 해당 의사결정 권한을 책임질 수 있는 현지 리더십에 위임해야 합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Use Japan and Korea to sharpen comparative intelligence, not to erase difference. The regional advantage is a shared learning system; the commercial advantage comes from treating each market as its own operating problem.',
+      ko: '일본과 한국은 두 시장의 차이를 지워버리는 도구가 아니라 비교 인텔리전스를 날카롭게 다듬는 거울로 활용해야 합니다. 지역적 시너지는 공유된 학습 시스템에서 나오지만, 실질적인 상업적 우위는 각 시장을 고유한 운영 과제로 대우할 때 비로소 창출됩니다.',
+    },
+    verdictDetail: {
+      en: 'Cross-border expansion across Tokyo and Seoul succeeds when brands separate regional brand stewardship from localized commercial underwriting. Treat insights from one city as structured questions for the other, preserve decision autonomy on real estate and customer acquisition, and build a disciplined comparative feedback loop across both markets.',
+      ko: '도쿄와 서울을 아우르는 크로스보더 확장은 브랜드의 핵심 정체성 관리와 현지 상업성 검증(Underwriting)을 철저히 분리할 때 성공합니다. 한 도시에서 얻은 인사이트는 다른 도시를 위한 정교한 질문지로 치환하고, 부동산 입지 선정과 고객 획득 전략에서는 현지 자율성을 보장하며, 양 시장 간 체계적인 비교 학습 루프를 구축해야 합니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Decision questions for cross-border leadership',
+      ko: '한·일 크로스보더 확장 전 경영진이 던져야 할 3대 의사결정 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before extending a Tokyo-proven hospitality or retail format into Seoul—or vice versa—leadership should answer three precision questions:',
+      ko: '도쿄에서 검증된 호스피탈리티·리테일 포맷을 서울로 확장하거나 그 반대로 진입하기 전, 경영진은 다음 3가지 핵심 질문에 답해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'What does success in Tokyo actually prove about Seoul?',
+        'Which decisions should be local rather than regional?',
+        'Where can a shared learning system create advantage?',
+      ],
+      ko: [
+        '도쿄에서의 성공이 서울 시장에서의 사업성에 대해 실제로 입증해 주는 것은 무엇이며, 입증하지 못하는 것은 무엇인가?',
+        '지역 통합 기준이 아니라 반드시 각 도시 현지에서 독립적으로 내려야 할 의사결정은 무엇인가?',
+        '한·일 양 시장 간 공유된 학습 시스템이 실질적인 경쟁 우위를 만들어내는 영역은 어디인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization visitor analytics, source market arrivals, and district spending patterns',
+          ko: '한국관광공사 외래객 입국 현황, 출발 시장별 행태 및 권역별 지출 분석 데이터',
+        },
+      },
+      {
+        title: {
+          en: 'Korean Statistical Information Service (KOSIS)',
+          ko: '국가통계포털 (KOSIS)',
+        },
+        url: 'https://kosis.kr/eng/',
+        desc: {
+          en: 'Official national statistics on retail, hospitality occupancy, regional demographics, and household consumption',
+          ko: '국내 소매·호스피탈리티 업황, 지역 인구 구조 및 가계 소비에 관한 국가 공식 통계',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'the-gap-between-hotel-and-retreat',
     slug: 'the-gap-between-hotel-and-retreat',
     category: {
