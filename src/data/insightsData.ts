@@ -150,6 +150,195 @@ export interface InsightArticle {
 
 export const insightsArticles: InsightArticle[] = [
   {
+    id: 'gulf-capital-looks-east-korea-corridor-thesis',
+    slug: 'gulf-capital-looks-east-korea-corridor-thesis',
+    category: {
+      en: 'MIDDLE EAST <-> NORTHEAST ASIA | CAPITAL | WELLNESS',
+      ko: '중동 ↔ 동북아 | 자본 | 웰니스',
+    },
+    corridor: {
+      en: 'MIDDLE EAST ↔ NORTHEAST ASIA CORRIDOR',
+      ko: '중동 ↔ 동북아 크로스보더 회랑',
+    },
+    publishedAt: '2026-11-23',
+    date: {
+      en: 'Nov 23, 2026',
+      ko: '2026년 11월 23일',
+    },
+    readTime: {
+      en: '4 min read',
+      ko: '4분 소요',
+    },
+    title: {
+      en: 'Gulf Capital Looks East: A Korea Corridor Thesis to Test',
+      ko: '동쪽으로 향하는 걸프 자본: 검증해야 할 중동↔한국 회랑 가설',
+    },
+    subtitle: {
+      en: 'How to frame a Middle East <-> Korea hospitality and wellness conversation without overclaiming it',
+      ko: '과장 없이 중동↔한국 호스피탈리티 및 웰니스 논의를 구조화하는 법',
+    },
+    teaserSummary: {
+      en: 'The Middle East <-> Korea corridor should be treated as an emerging thesis, not a completed investment narrative. Its strength lies in specific, validated propositions at the intersection of hospitality, wellness, medical travel and local operating expertise.',
+      ko: '중동↔한국 회랑은 이미 완성된 투자 서사가 아니라, 정교하게 검증해야 할 부상 중인 가설로 다뤄져야 합니다. 이 회랑의 강점은 호스피탈리티, 웰니스, 의료 관광, 그리고 현지 운영 전문성이 교차하는 지점의 구체적이고 실증된 제안에 있습니다.',
+    },
+    previewTakeaways: {
+      en: [
+        'A cross-border corridor is only credible when backed by verifiable investor, operator, customer, or knowledge flows—not merely drawn on a presentation map.',
+        'Narrow themes such as destination wellness, premium hospitality, and non-clinical visitor support each require their own evidence packet rather than broad medical-tourism generalizations.',
+        'Treat the GCC markets with country-specific rigor and publish the corridor as a disciplined research agenda rather than announcing a trend before it exists.',
+      ],
+      ko: [
+        '크로스보더 회랑은 단순한 지도 위의 선이 아니라 실제 투자자, 운영사, 고객, 또는 지식의 흐름이 입증될 때에만 신뢰성을 갖습니다.',
+        '데스티네이션 웰니스, 프리미엄 호스피탈리티, 비임상 방문객 지원 등 세부 테마는 막연한 의료 관광 통계가 아닌 각 테마별 실증 데이터 패킷을 필요로 합니다.',
+        '문화적·경제적으로 서로 다른 GCC 국가들을 단일 시장으로 묶지 말고, 검증 가능한 연구 아젠다로서 회랑의 기회를 엄격하게 탐색해야 합니다.',
+      ],
+    },
+    executiveThesis: {
+      en: 'The Middle East <-> Korea corridor should be treated as an emerging thesis, not a completed investment narrative. Its strength lies in specific, validated propositions at the intersection of hospitality, wellness, medical travel and local operating expertise.',
+      ko: '중동↔한국 회랑은 이미 완성된 투자 서사가 아니라, 정교하게 검증해야 할 부상 중인 가설로 다뤄져야 합니다. 이 회랑의 강점은 호스피탈리티, 웰니스, 의료 관광, 그리고 현지 운영 전문성이 교차하는 지점의 구체적이고 실증된 제안에 있습니다.',
+    },
+    problemSectionTitle: {
+      en: 'Do not manufacture a corridor',
+      ko: '회랑을 인위적으로 만들어내지 마라',
+    },
+    assumptionProblem: {
+      en: 'A corridor is credible when it describes actual investor, operator, customer or knowledge flows. It is not credible because it appears on a globe graphic. For Navero, the purpose of the Middle East <-> Northeast Asia module is to ask a practical question: where can a Gulf investor or operator find a Korea proposition that is understandable, governable and locally executable?',
+      ko: '회랑(Corridor)은 실제 투자자, 운영사, 고객, 혹은 전문 지식의 이동을 설명할 때 비로소 설득력을 얻습니다. 프레젠테이션의 지구본 그래픽 위에 선을 그었다고 해서 신뢰가 생기는 것은 아닙니다. 나베로에게 중동↔동북아 모듈의 본질적 목적은 지극히 실용적인 질문에 답하는 것입니다. 걸프 지역의 투자자나 운영사가 한국 시장에서 직관적으로 이해할 수 있고, 투명하게 관리·통제(Governable)할 수 있으며, 현지에서 실질적으로 실행 가능한(Executable) 사업 제안은 과연 어디에 존재하는가?',
+    },
+    coreSectionTitle: {
+      en: 'Start with the narrow opportunity: Five pillars of an evidence packet',
+      ko: '좁고 구체적인 기회에서 출발하라: 실증 패킷의 5대 핵심 구성 요소',
+    },
+    coreSectionIntro: {
+      en: 'Potential themes include destination wellness, premium hospitality, non-clinical visitor support and cross-border knowledge exchange. Each needs its own evidence packet: the relevant customer flow, service boundary, regulatory requirements, local partner capability and capital structure. Medical-tourism figures can inform a market conversation, but they cannot be used to promise investment outcomes or to collapse culturally distinct GCC markets into one segment.',
+      ko: '유망한 테마에는 데스티네이션 웰니스, 프리미엄 호스피탈리티, 비임상 방문객 지원, 그리고 크로스보더 지식 교류가 포함됩니다. 그러나 각 테마는 고객 흐름, 서비스 경계, 규제 요건, 현지 파트너 역량, 자본 구조로 구성된 독립적인 실증 패킷(Evidence packet)을 갖춰야 합니다. 외국인 환자 유치 통계는 시장 논의의 출발점이 될 수는 있으나, 이를 근거로 투자 수익을 단정하거나 문화적·제도적으로 뚜렷이 구분되는 GCC 각국 시장을 하나의 세그먼트로 단순화해서는 안 됩니다.',
+    },
+    fiveAssumptions: [
+      {
+        num: '01',
+        headline: {
+          en: 'Relevant customer and capital flow',
+          ko: '실제 검증 가능한 고객 및 자본 흐름',
+        },
+        detail: {
+          en: 'Anchor every corridor discussion in observable movement rather than macro rhetoric. Track specific Gulf-to-Seoul travel patterns, stay durations, spending cohorts, and institutional capital mandates to confirm whether real commercial traffic exists for the proposed format.',
+          ko: '거시적 수사(Rhetoric)가 아닌 관측 가능한 이동 데이터에 근거해 회랑을 논의해야 합니다. 걸프 지역발 서울 방문 패턴, 체류 기간, 지출 계층, 기관 자본의 투자 맨데이트를 추적하여 해당 포맷을 뒷받침할 실질적 상업 흐름이 존재하는지 확인해야 합니다.',
+        },
+      },
+      {
+        num: '02',
+        headline: {
+          en: 'Clear service boundary and non-clinical scope',
+          ko: '명확한 서비스 경계와 비임상 영역 정의',
+        },
+        detail: {
+          en: 'Separate hospitality and non-clinical visitor support from regulated healthcare delivery. Defining where premium guest hospitality ends and licensed medical care begins prevents compliance failure while clarifying what a foreign operator can credibly own and deliver.',
+          ko: '호스피탈리티 및 비임상 방문객 지원 서비스를 엄격히 규제되는 의료 행위와 명확히 분리해야 합니다. 프리미엄 환대 서비스가 끝나는 지점과 면허 기반 임상 영역이 시작되는 경계를 분명히 설정해야 규제 리스크를 차단하고 해외 운영사의 실질적 역할을 규정할 수 있습니다.',
+        },
+      },
+      {
+        num: '03',
+        headline: {
+          en: 'Regulatory requirements and cross-border governance',
+          ko: '규제 요건과 투명한 크로스보더 거버넌스',
+        },
+        detail: {
+          en: 'Map Korean licensing, foreign investment rules, data privacy standards, and asset-level reporting controls upfront. Gulf institutional capital prioritizes clear governance rights and downside transparency before underwriting unfamiliar local operating models.',
+          ko: '한국의 업종별 인허가 체계, 외국인 투자 규정, 개인정보 보호 기준, 자산 단위의 보고·통제 장치를 사전에 매핑해야 합니다. 걸프 기관 자본은 생소한 현지 운영 모델에 투자하기 전 명확한 거버넌스 권한과 리스크 가시성을 최우선으로 요구합니다.',
+        },
+      },
+      {
+        num: '04',
+        headline: {
+          en: 'Local partner capability and operational execution',
+          ko: '현지 파트너 역량과 현장 실행 신뢰도',
+        },
+        detail: {
+          en: 'Verify whether local Korean operators possess the service precision, cultural fluency, and commercial discipline to serve Gulf visitors and report to international investors. A strong concept fails quickly without a vetted local counterpart capable of sustained daily execution.',
+          ko: '한국 현지 운영사가 걸프 지역 방문객의 기대에 부응하는 서비스 정밀도와 문화적 이해도, 그리고 글로벌 투자자 기준의 경영 규율을 갖추었는지 검증해야 합니다. 일상적 현장 실행을 담보할 검증된 현지 파트너 없이는 어떠한 유망 콘셉트도 지속되기 어렵습니다.',
+        },
+      },
+      {
+        num: '05',
+        headline: {
+          en: 'Capital structure and country-specific GCC calibration',
+          ko: '자본 구조와 GCC 국가별 맞춤형 정합성',
+        },
+        detail: {
+          en: 'Do not collapse the UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman into a single homogenized segment. Align deal structures, holding horizons, risk tolerances, and co-investment terms with the distinct institutional mandates and cultural contexts of each specific GCC market.',
+          ko: 'UAE, 사우디아라비아, 카타르, 쿠웨이트, 바레인, 오만을 하나의 동질적인 시장으로 묶어서는 안 됩니다. 각 GCC 국가의 고유한 기관 투자 성향, 보유 기간, 리스크 허용 범위, 문화적 맥락에 맞춰 딜 구조와 공동 투자 조건을 정교하게 조율해야 합니다.',
+        },
+      },
+    ],
+    verdictQuote: {
+      en: 'Publish the corridor as a research agenda. Identify the two or three questions Navero is monitoring, make the evidence visible and invite operators and investors to compare experience. The right role is a disciplined navigator of the opportunity, not an announcer of a trend before it exists.',
+      ko: '이 회랑을 완성된 결론이 아니라 하나의 연구 아젠다로 제시하십시오. 나베로가 추적 중인 두세 가지 핵심 질문을 분명히 밝히고, 실증 데이터를 투명하게 공개하며, 운영사와 투자자들이 현장 경험을 비교·검증하도록 초대해야 합니다. 우리의 올바른 역할은 아직 실체가 없는 트렌드를 성급히 선언하는 확성기가 아니라, 기회의 지형을 냉철하게 안내하는 규율 있는 항해자입니다.',
+    },
+    verdictDetail: {
+      en: 'Framing the Middle East <-> Korea opportunity with restraint builds far more institutional credibility than inflated regional projections. By focusing on narrow, verifiable propositions and transparent evidence packets, investors and operators can distinguish durable cross-border value from premature headline enthusiasm.',
+      ko: '중동↔한국 시장 기회를 절제된 시각으로 구조화하는 것이 부풀려진 지역 전망보다 훨씬 높은 기관 신뢰를 구축합니다. 좁고 검증 가능한 사업 제안과 투명한 실증 패킷에 집중할 때, 투자자와 운영사는 성급한 헤드라인 열기와 지속 가능한 크로스보더 가치를 명확히 가려낼 수 있습니다.',
+    },
+    decisionQuestionsTitle: {
+      en: 'Decision questions for corridor exploration',
+      ko: '중동↔한국 회랑 탐색을 위한 3대 의사결정 질문',
+    },
+    decisionQuestionsIntro: {
+      en: 'Before framing a Middle East <-> Korea hospitality or wellness mandate for institutional capital, leadership should test three foundational questions:',
+      ko: '기관 자본을 대상으로 중동↔한국 호스피탈리티 또는 웰니스 투자 논리를 제시하기 전, 경영진은 다음 3가지 근본 질문에 답해야 합니다:',
+    },
+    decisionQuestions: {
+      en: [
+        'Which actual flow makes the corridor credible?',
+        'What needs a country-specific GCC view?',
+        'Which proposition is robust enough for a first investor conversation?',
+      ],
+      ko: [
+        '이 회랑에 실질적인 신뢰성을 부여하는 구체적 흐름(투자자·운영사·고객·지식)은 무엇인가?',
+        '범중동 관점이 아니라 GCC 국가별 개별 분석을 반드시 필요로 하는 영역은 무엇인가?',
+        '첫 번째 기관 투자자 논의 테이블에 올릴 수 있을 만큼 실증적으로 견고한 사업 제안은 무엇인가?',
+      ],
+    },
+    sources: [
+      {
+        title: {
+          en: 'MOHW / KHIDI International Patient Briefing',
+          ko: '보건복지부 / 한국보건산업진흥원 외국인환자 유치 실적',
+        },
+        url: 'https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=1485207&insttCode=A260111&type=N',
+        desc: {
+          en: 'Official government briefing on international patient inflows and source market distribution in South Korea',
+          ko: '대한민국 외국인 환자 유치 실적 및 국적별 분포에 관한 정부 공식 브리핑',
+        },
+      },
+      {
+        title: {
+          en: 'KTO Data Lab',
+          ko: '한국관광 데이터랩',
+        },
+        url: 'https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do',
+        desc: {
+          en: 'Korea Tourism Organization visitor analytics, inbound flows, and regional expenditure data',
+          ko: '한국관광공사 외래객 입국 흐름, 국적별 행태 및 지역별 소비 빅데이터 포털',
+        },
+      },
+      {
+        title: {
+          en: 'Seoul Visitor Spend Reporting (H1 2026)',
+          ko: '서울시 외래 관광객 지출 보고서 (2026 상반기)',
+        },
+        url: 'https://english.seoul.go.kr/international-arrivals-to-seoul-rise-21-spending-jumps-57-visitors-spend-krw-5-6-trillion-in-h1-2026/',
+        desc: {
+          en: 'International arrivals to Seoul rise 21%, spending jumps 57% to KRW 5.6 trillion in H1 2026',
+          ko: '2026 상반기 서울 방문 외래객 21% 증가 및 소비 지출 5.6조 원 달성 공식 보고서',
+        },
+      },
+    ],
+    disclaimer: {
+      en: 'Source links identify the evidence base and should be rechecked on the date of publication. Navero views are analytical interpretations, not third-party facts. This article is market commentary, not legal, medical, regulatory or investment advice.',
+      ko: '출처 링크는 본 분석의 실증적 근거를 식별하며, 발행일 기준으로 재확인되었습니다. 나베로의 견해는 독립적 분석 해석이며 제3자의 일방적 주장이 아닙니다. 본 기사는 시장 논평이며 법률, 의료, 규제 또는 투자에 관한 법적 자문이 아닙니다.',
+    },
+  },
+  {
     id: 'tokyo-and-seoul-similar-sophistication-different-expansion-logic',
     slug: 'tokyo-and-seoul-similar-sophistication-different-expansion-logic',
     category: {
